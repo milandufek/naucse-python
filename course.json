@@ -1,0 +1,673 @@
+{
+    "api_version": [
+        0,
+        3
+    ],
+    "course": {
+        "default_time": {
+            "end": "20:00",
+            "start": "18:00"
+        },
+        "description": "Naučte se Python vážně od začátku. Žádné předchozí znalosti nejsou potřeba.",
+        "edit_info": {
+            "branch": "main",
+            "url": "https://github.com/milandufek/naucse-python"
+        },
+        "lessons": {
+            "beginners/and-or": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "and-or/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/and-or/index.md",
+                        "title": "Nebo anebo a",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/and-or/info.yml",
+                "static_files": {},
+                "title": "Nebo anebo a"
+            },
+            "beginners/cmdline": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017.",
+                            "Založeno na tutoriálu <a href=\"https://tutorial.djangogirls.org/en/intro_to_command_line/\">Django Girls</a>."
+                        ],
+                        "content": {
+                            "path": "cmdline/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/cmdline/index.md",
+                        "title": "Příkazová řádka",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/cmdline/info.yml",
+                "static_files": {
+                    "linux-file-browser.png": {
+                        "path": "cmdline/linux-file-browser.png"
+                    },
+                    "macos-file-browser.png": {
+                        "path": "cmdline/macos-file-browser.png"
+                    },
+                    "windows-cmd-properties.png": {
+                        "path": "cmdline/windows-cmd-properties.png"
+                    },
+                    "windows-file-browser.png": {
+                        "path": "cmdline/windows-file-browser.png"
+                    }
+                },
+                "title": "Příkazová řádka"
+            },
+            "beginners/comparisons": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "comparisons/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [
+                            {
+                                "content": "<p>Taková proměnná se dá nastavit pomocí tohoto kódu:</p>\n<div class=\"highlight\"><pre><span></span><span class=\"n\">strana</span> <span class=\"o\">=</span> <span class=\"nb\">float</span><span class=\"p\">(</span><span class=\"nb\">input</span><span class=\"p\">(</span><span class=\"s1\">&#39;Zadej stranu čtverce v centimetrech: &#39;</span><span class=\"p\">))</span>\n<span class=\"n\">cislo_je_spravne</span> <span class=\"o\">=</span> <span class=\"n\">strana</span> <span class=\"o\">&gt;</span> <span class=\"mi\">0</span>\n</pre></div>"
+                            }
+                        ],
+                        "source_file": "lessons/beginners/comparisons/index.md",
+                        "title": "Porovnávání",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/comparisons/info.yml",
+                "static_files": {},
+                "title": "Porovnávání"
+            },
+            "beginners/first-steps": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2019.",
+                            "Část této kapitoly je založena na materiálech <a href=\"https://djangogirls.org/\">DjangoGirls</a>.",
+                            "Část této kapitoly je založena na kurzu <a href=\"https://github.com/ggcarrots/django-carrots\">Geek Girls Carrots</a>.",
+                            "Původní DjangoGirls tutoriál přeložila do češtiny skupina dobrovolníků.\nPoděkování patří hlavně: Davidovi (dakf), Kristýně Kumpánové,\nVeronice Gabrielové, Tomáši Ehrlichovi, Aničce Jaegerové,\nMatějovi Stuchlíkovi, Filipovi Sivákovi a Juraji M. Bezručkovi."
+                        ],
+                        "content": {
+                            "path": "first-steps/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/first-steps/index.md",
+                        "title": "První krůčky",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/first-steps/info.yml",
+                "static_files": {},
+                "title": "První krůčky"
+            },
+            "beginners/hello-world": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "hello-world/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/hello-world/index.md",
+                        "title": "První program",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/hello-world/info.yml",
+                "static_files": {},
+                "title": "První program"
+            },
+            "beginners/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/index.md",
+                        "title": "Instalace Pythonu",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "linux": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/linux.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "linux",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/linux.md",
+                        "subtitle": "Linux",
+                        "title": "Instalace Pythonu – Linux",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "macos": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/macos.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "macos",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/macos.md",
+                        "subtitle": "macOS",
+                        "title": "Instalace Pythonu – macOS",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "windows": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "install/windows.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "windows",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install/windows.md",
+                        "subtitle": "Windows",
+                        "title": "Instalace Pythonu – Windows",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/install/info.yml",
+                "static_files": {
+                    "windows_32v64-bit.png": {
+                        "path": "install/windows_32v64-bit.png"
+                    },
+                    "windows_add_python_to_path.png": {
+                        "path": "install/windows_add_python_to_path.png"
+                    }
+                },
+                "title": "Instalace Pythonu"
+            },
+            "beginners/install-editor": {
+                "pages": {
+                    "atom": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Tomáš Roj (2019)"
+                        ],
+                        "content": {
+                            "path": "install-editor/atom.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "atom",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/atom.md",
+                        "subtitle": "Atom",
+                        "title": "Instalace Atomu",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "gedit": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Tomáš Roj (2019)"
+                        ],
+                        "content": {
+                            "path": "install-editor/gedit.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "gedit",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/gedit.md",
+                        "subtitle": "Gedit",
+                        "title": "Instalace Geditu",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Tomáš Roj (2019)"
+                        ],
+                        "content": {
+                            "path": "install-editor/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/index.md",
+                        "title": "Instalace editoru",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "kate": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Tomáš Roj (2019)"
+                        ],
+                        "content": {
+                            "path": "install-editor/kate.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "kate",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/kate.md",
+                        "subtitle": "Kate",
+                        "title": "Instalace Kate",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "notepad-plus-plus": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Tomáš Roj (2019)"
+                        ],
+                        "content": {
+                            "path": "install-editor/notepad-plus-plus.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "notepad-plus-plus",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/notepad-plus-plus.md",
+                        "subtitle": "Notepad++",
+                        "title": "Instalace Notepadu++",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "others": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Tomáš Roj (2019)"
+                        ],
+                        "content": {
+                            "path": "install-editor/others.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "others",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/others.md",
+                        "title": "Nastavení editoru",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    },
+                    "vscode": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017, Tomáš Roj (2019)"
+                        ],
+                        "content": {
+                            "path": "install-editor/vscode.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "vscode",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/install-editor/vscode.md",
+                        "subtitle": "Visual Studio Code",
+                        "title": "Instalace Visual Studio Code",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/install-editor/info.yml",
+                "static_files": {
+                    "gedit_indent.png": {
+                        "path": "install-editor/gedit_indent.png"
+                    },
+                    "gedit_linenums.png": {
+                        "path": "install-editor/gedit_linenums.png"
+                    },
+                    "gedit_prefs.png": {
+                        "path": "install-editor/gedit_prefs.png"
+                    }
+                },
+                "title": "Instalace editoru"
+            },
+            "beginners/print": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "print/index.html"
+                        },
+                        "css": ".err-lineno {\n    display: inline-block;\n    background-color: #FCC;\n}\n.err-exctype {\n    display: inline-block;\n    background-color: #CFC;\n}\n",
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/print/index.md",
+                        "title": "Print a chybové hlášky",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/print/info.yml",
+                "static_files": {},
+                "title": "Print a chybové hlášky"
+            },
+            "beginners/variables": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "variables/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [
+                            {
+                                "content": "<p>Program, který vypíše správný výsledek, může vypadat třeba takhle:</p>\n<div class=\"highlight\"><pre><span></span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s1\">&#39;Obvod čtverce se stranou 356 cm je&#39;</span><span class=\"p\">,</span> <span class=\"mi\">4</span> <span class=\"o\">*</span> <span class=\"mi\">356</span><span class=\"p\">,</span> <span class=\"s1\">&#39;cm&#39;</span><span class=\"p\">)</span>\n<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s1\">&#39;Obsah čtverce se stranou 356 cm je&#39;</span><span class=\"p\">,</span> <span class=\"mi\">356</span> <span class=\"o\">*</span> <span class=\"mi\">356</span><span class=\"p\">,</span> <span class=\"s1\">&#39;cm2&#39;</span><span class=\"p\">)</span>\n</pre></div>"
+                            },
+                            {
+                                "content": "<div class=\"highlight\"><pre><span></span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s1\">&#39;Obvod čtverce se stranou 123 cm je&#39;</span><span class=\"p\">,</span> <span class=\"mi\">4</span> <span class=\"o\">*</span> <span class=\"mi\">123</span><span class=\"p\">,</span> <span class=\"s1\">&#39;cm&#39;</span><span class=\"p\">)</span>\n<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s1\">&#39;Obsah čtverce se stranou 123 cm je&#39;</span><span class=\"p\">,</span> <span class=\"mi\">123</span> <span class=\"o\">*</span> <span class=\"mi\">123</span><span class=\"p\">,</span> <span class=\"s1\">&#39;cm2&#39;</span><span class=\"p\">)</span>\n</pre></div>"
+                            }
+                        ],
+                        "source_file": "lessons/beginners/variables/index.md",
+                        "title": "Proměnné",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/variables/info.yml",
+                "static_files": {},
+                "title": "Proměnné"
+            },
+            "beginners/venv-setup": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2018."
+                        ],
+                        "content": {
+                            "path": "venv-setup/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/venv-setup/index.md",
+                        "title": "Nastavení prostředí",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/venv-setup/info.yml",
+                "static_files": {
+                    "dirs.png": {
+                        "path": "venv-setup/dirs.png"
+                    }
+                },
+                "title": "Nastavení prostředí"
+            },
+            "git/basics": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "basics/index.html"
+                        },
+                        "css": ".green  {   color:  #0a0;    }\n.red    {   color:  #a00;    }\n.yellow {   color:  #a50;    }\n.strong {   font-weight:  bold;    }\n.blue   {   color:  #0aa;    }\n",
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/basics/index.md",
+                        "title": "Git",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/git/basics/info.yml",
+                "static_files": {
+                    "diagram.svg": {
+                        "path": "basics/diagram.svg"
+                    },
+                    "dropbox.png": {
+                        "path": "basics/dropbox.png"
+                    },
+                    "gitk.png": {
+                        "path": "basics/gitk.png"
+                    }
+                },
+                "title": "Git"
+            },
+            "git/install": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017"
+                        ],
+                        "content": {
+                            "path": "install/index.1.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/git/install/index.md",
+                        "title": "Instalace Gitu",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/git/install/info.yml",
+                "static_files": {},
+                "title": "Instalace Gitu"
+            },
+            "homeworks/hello": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsala Anna Benke, 2020."
+                        ],
+                        "content": {
+                            "path": "hello/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homeworks/hello/index.md",
+                        "title": "Domácí projekty",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/homeworks/hello/info.yml",
+                "static_files": {},
+                "title": "Domácí projekty"
+            }
+        },
+        "long_description": "<p>Tady najdeš všechny materiály k brněnské verzi začátečnického kurzu PyLadies.\nStránky samotných PyLadies jsou na <a href=\"http://pyladies.cz\">http://pyladies.cz</a>.\nJednotlivé lekce jsou určeny naprostým začátečnicím.\nInstrukce jsou uvedeny pro operační systémy Linux, Windows i macOS.</p>",
+        "place": "Brno - Mergado",
+        "sessions": [
+            {
+                "date": "2022-09-14",
+                "materials": [
+                    {
+                        "lesson_slug": "beginners/cmdline",
+                        "title": "Příkazová řádka",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/install",
+                        "title": "Instalace Pythonu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/venv-setup",
+                        "title": "Nastavení prostředí",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/first-steps",
+                        "title": "První krůčky",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/install-editor",
+                        "title": "Instalace editoru",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/install",
+                        "title": "Instalace Gitu",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/first-steps",
+                        "title": "První krůčky",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/hello-world",
+                        "title": "První program",
+                        "type": "lesson"
+                    },
+                    {
+                        "external_url": "https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf",
+                        "title": "Tahák na klávesnici (PDF)",
+                        "type": "cheatsheet"
+                    }
+                ],
+                "serial": "1",
+                "slug": "install",
+                "source_file": "course.yml",
+                "title": "Instalace"
+            },
+            {
+                "date": "2022-09-21",
+                "materials": [
+                    {
+                        "lesson_slug": "beginners/print",
+                        "title": "Print a chybové hlášky",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/variables",
+                        "title": "Proměnné",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/comparisons",
+                        "title": "Porovnávání",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/and-or",
+                        "title": "Nebo anebo a",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "homeworks/hello",
+                        "title": "Domácí projekty",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "git/basics",
+                        "title": "Git",
+                        "type": "lesson"
+                    },
+                    {
+                        "external_url": "http://pyladies.cz/v1/s001-install/handout/handout.pdf",
+                        "title": "Instrukce a domácí projekty (PDF)",
+                        "type": "homework"
+                    },
+                    {
+                        "external_url": "http://pyladies.cz/v1/s002-hello-world/handout/handout2.pdf",
+                        "title": "Domácí projekty (PDF)",
+                        "type": "homework"
+                    },
+                    {
+                        "external_url": "https://pyvec.github.io/cheatsheets/keyboard/keyboard-cs.pdf",
+                        "title": "Tahák na klávesnici (PDF)",
+                        "type": "cheatsheet"
+                    }
+                ],
+                "serial": "2",
+                "slug": "hello",
+                "source_file": "course.yml",
+                "title": "První krůčky"
+            }
+        ],
+        "source_file": "course.yml",
+        "time_description": "středa 18:00–20:00",
+        "timezone": "Europe/Prague",
+        "title": "Začátečnický kurz Pyladies (Mergado)",
+        "vars": {
+            "coach-present": true,
+            "pyladies": true
+        }
+    }
+}
