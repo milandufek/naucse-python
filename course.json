@@ -13,6 +13,9 @@
             "branch": "main",
             "url": "https://github.com/milandufek/naucse-python"
         },
+        "extra_lessons": [
+            "beginners/exceptions"
+        ],
         "lessons": {
             "beginners/and-or": {
                 "pages": {
@@ -103,6 +106,30 @@
                 "source_file": "lessons/beginners/comparisons/info.yml",
                 "static_files": {},
                 "title": "Porovnávání"
+            },
+            "beginners/exceptions": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "exceptions/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/exceptions/index.md",
+                        "title": "Výjimky",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/exceptions/info.yml",
+                "static_files": {},
+                "title": "Výjimky"
             },
             "beginners/first-steps": {
                 "pages": {
