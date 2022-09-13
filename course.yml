@@ -192,3 +192,6 @@ sessions:
 #   date: 2023-01-11
 #   materials:
 #   - lesson: homeworks/own_project
+
+extra_lessons:
+  - beginners/exceptions
