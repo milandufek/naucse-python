@@ -1,4 +1,4 @@
-# Zápis řetězců
+# Zápis řetězců (strings)
 
 Teď se podíváme na zoubek řetězcům.
 Už s nimi trochu umíš, tak začneme rekapitulací.

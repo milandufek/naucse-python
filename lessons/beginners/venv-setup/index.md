@@ -145,7 +145,7 @@ Na každém systému jinak!
 * **Windows**:
 
    ```doscon
-   > py -3 -m venv venv
+   > python3 -m venv venv
    ```
 
 Tím se ti vytvořil adresář `venv`, který virtuální prostředí obsahuje.
