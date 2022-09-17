@@ -1,0 +1,106 @@
+<h1 id="zapis_retezcu_strings">Zápis řetězců (strings)
+<a href="#header-zapis_retezcu_strings" class="header-link">#</a>
+</h1>
+<p>Teď se podíváme na zoubek řetězcům.
+Už s nimi trochu umíš, tak začneme rekapitulací.</p>
+<p>Textový <em>řetězec</em> (angl. <em>string</em>) je datový typ (druh <em>hodnot</em>),
+který obsahuje text – třeba slovo nebo větu.</p>
+<p>Když řetězec zadáváš do programu, musíš ho označit – uzavřít do
+<em>uvozovek</em>, buď jednoduchých nebo dvojitých:</p>
+<div class="highlight"><pre><span></span><span class="s1">&#39;tohle je řetězec&#39;</span>
+<span class="s2">&quot;tohle taky&quot;</span>
+</pre></div><p>Je velký rozdíl mezi <code>print('cislo')</code> – vypiš slovo „cislo“ –
+a <code>print(cislo)</code> – vypiš hodnotu výrazu <code>cislo</code>.
+Jednou je <code>cislo</code> pět konkrétních písmen; podruhé <em>instrukce</em> k použití
+proměnné.
+Počítač, na rozdíl od lidí, rozdíl mezi textem a instrukcí nepozná z kontextu,
+a tak je uvozovky potřeba používat důsledně.</p>
+<p><span class="figure"><a href="naucse:static?filename=quote-comic.svg"><img src="naucse:static?filename=quote-comic.svg" alt="(Ilustrační komiks. Člověk říká robotovi: &#34;Řekni Pavlovi, ať mi zavolá!&#34;. Robot odpoví: &#34;PAVLOVI AŤ MI ZAVOLÁ!&#34;)"></a></span></p>
+<h2 id="znaky">Znaky
+<a href="#header-znaky" class="header-link">#</a>
+</h2>
+<p>Texty sestávají z jednotlivých písmenek.
+Řetězce víceméně taky, ale aby bylo jasné, co přesně tím <em>písmenkem</em>
+myslíme, říkáme, že řetězce sestávají ze <em>znaků</em> (angl. <em>characters</em>).</p>
+<p>Takový znak může být písmenko (např. <code>A</code>) nebo číslice (<code>3</code>),
+ale i jiný symbol (<code>!</code>).</p>
+<p>Každý řetězec má určitý počet znaků.
+Kolik, to zjistíš pomocí funkce <code>len()</code>.
+Třeba řetězec <code>Ahoj!</code> má znaků pět:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Ahoj!&#39;</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div><p>Jeden ze zajímavějších znaků je <em>mezera</em>.
+Je to taky znak. V řetězci se tedy chová stejně jako písmenko:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;K ní&#39;</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;3 + 2&#39;</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div><p>Sekvence <code>\\</code> znamená „jedno zpětné lomítko“.</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">PyLadies</span><span class="se">\\</span><span class="s1">Nový adresář&#39;</span><span class="p">)</span>
+</pre></div><p>Podobně jako <code>\"</code> je zápis pro uvozovku a <code>\'</code> pro apostrof, sekvence <code>\\</code>
+je zápis pro jedno zpětné lomítko.</p>
+<h3 id="novy_radek">Nový řádek
+<a href="#header-novy_radek" class="header-link">#</a>
+</h3>
+<p>Někdy potřebuješ řetězce, které obsahují více řádků.
+Pythonní řetězce ale můžeš normálně napsat jen na <em>jeden</em> řádek.
+(Python se tak snaží ulehčit hledání chyby, kdybys koncovou uvozovku
+zapoměl/a.)</p>
+<p>Můžeš ale do řetězce znak pro nový řádek vložit pomocí sekvence <code>\n</code>:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Haló haló!</span><span class="se">\n</span><span class="s1">Co se stalo?&#39;</span><span class="p">)</span>
+<span class="go">Haló haló!</span>
+<span class="go">Co se stalo?</span>
+</pre></div><p>Ono <code>\n</code> do řetězce vloží znak nového řádku.
+Ten při výpisu ukončí stávající řádek a přejde na nový – ale jinak se chová
+jako jakýkoli jiný znak:</p>
+<div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="se">\n</span><span class="s1">-&#39;</span><span class="p">)</span>
+<span class="go">-</span>
+<span class="go">-</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;-</span><span class="se">\n</span><span class="s1">-&#39;</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div><h2 id="trojite_uvozovky">Trojité uvozovky
+<a href="#header-trojite_uvozovky" class="header-link">#</a>
+</h2>
+<p>Kromě <code>\n</code> je i druhý způsob, jak zadat řetězec se znakem nového řádku:
+ohraničit ho <em>třemi</em> uvozovkami (jednoduchými nebo dvojitými)
+na každé straně.
+Dají se tak zadávat delší víceřádkové řetězce:</p>
+<div class="highlight"><pre><span></span><span class="n">basen</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Haló haló!</span>
+<span class="s1">Co se stalo?</span>
+<span class="s1">Prase kozu potrkalo!&#39;&#39;&#39;</span>
+</pre></div><p>Pozor na to, že pokud je tenhle řetězec
+v odsazeném kódu, každý jeho řádek bude začínat
+několika mezerami.
+(V dokumentačních řetězcích tohle nevadí, tam se s odsazením počítá.)</p>
+<div class="highlight"><pre><span></span><span class="n">cislo</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">if</span> <span class="n">cislo</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        Výsledek porovnání:</span>
+
+<span class="s2">        Číslo je kladné.</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div><h2 id="cviceni">Cvičení
+<a href="#header-cviceni" class="header-link">#</a>
+</h2>
+<p>Zkus napsat program, který vymění znak na dané pozici řetězce za jiný.
+Od uživatele vyžádá řetězec, pozici, na které se má provést výměna
+a znak, který se má na pozici zadat. Pozor na to, že řetězce v Pythonu nelze měnit.
+Musíš vytvořit nový řetězec poskládaný z částí toho starého.</p>
+<div class="solution" id="solution-0">
+    <h3>Řešení</h3>
+    <div class="solution-cover">
+        <a href="naucse:solution?solution=0"><span class="link-text">Ukázat řešení</span></a>
+    </div>
+    <div class="solution-body" aria-hidden="true">
+        <div class="highlight"><pre><span></span><span class="n">retezec</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Zadej původní řetězec: &#39;</span><span class="p">)</span>
+<span class="n">pozice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Na jaké pozici provedeme výměnu? &#39;</span><span class="p">))</span>
+<span class="n">znak</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Jaký znak tam dáme? &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Po výměně to vypadá takto:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retezec</span><span class="p">[:</span><span class="n">pozice</span><span class="p">]</span> <span class="o">+</span> <span class="n">znak</span> <span class="o">+</span> <span class="n">retezec</span><span class="p">[</span><span class="n">pozice</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])</span>
+</pre></div>
+    </div>
+</div>
