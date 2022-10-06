@@ -1,6 +1,6 @@
 # Domácí projekty
 
-Odevzdejte svému kouči řešení úkolu 13 a řešení Oko bere.
+Odevzdejte svému kouči řešení úkolu 13, [poslední cvičení ze stringů](https://naucse.python.cz/2022/brno-mergado/beginners/str/#header-cviceni/) a řešení Oko bere.
 
 ## Oko bere
 
@@ -16,7 +16,7 @@ Odevzdejte svému kouči řešení úkolu 13 a řešení Oko bere.
 
 Až doděláš všechny úkoly, přejdi v terminálu do složky `pyladies` a napiš následující příkazy:
   - `git add .`
-  - `git commit -m "Pyladies lesson"`
+  - `git commit -m "Pyladies homework 03"`
   - `git push origin master`
 
 # Bonusy
