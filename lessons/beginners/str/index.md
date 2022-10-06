@@ -185,7 +185,7 @@ Volá se tak, že se za objekt napíše tečka,
 za ní jméno metody a za to celé se, jako u funkcí, připojí závorky
 s případnými argumenty.
 
-Řetězcové metody `upper()` a `lower()`
+Řetězcové metody `upper()`, `lower()` nebo `title()`
 převádí text na velká, respektive malá písmena.
 
 ```python
@@ -202,6 +202,17 @@ print(retezec)
 > To je obecná vlastnost řetězců v Pythonu: jednou existující řetězec se už
 > nedá změnit, dá se jen vytvořit nějaký odvozený.
 
+Máme i jiné metody co naopak něco zjištují např. `islower()`, `isupport()` nebo `istitle()`.
+Vrací `True` nebo `False.
+
+```python
+retezec = 'Ahoj'
+print(retezec.islower())
+print(retezec.istitle())
+```
+
+> [note]
+> Metod je u řetězců mnohem více. Pro výpis všech můžeš použít funkci `dir('Ahoj')`.
 
 ### Iniciály
 
