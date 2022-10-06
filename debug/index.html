@@ -1,0 +1,110 @@
+<h1 id="debugovani">Debugování
+<a href="#header-debugovani" class="header-link">#</a>
+</h1>
+<p>Při vývoji software se často dostaneme do situace,
+kdy si chceme projít kód krok za krokem a zjistit
+například to, jaké jsou aktuální hodnoty proměnných,
+jestli se správně vyhodnocují podmínky atd.
+Tomuto procesu se česky říká <em>ladění</em>, často se ale
+setkáte s anglickým výrazem <em>debugging</em>. Obvykle
+ho provádíme ve chvíli, kdy se program nechová
+podle očekávání, tedy jsme narazili na chybu (bug).</p>
+<p>Možná jste byly zvyklé si na různá místa v programu
+pomocí funkce <code>print</code> vypisovat aktuální stav programu.
+Zjistíte, že u většího projektu je tento přístup většinou
+nedostatečný a že si chcete program projít krok za krokem.</p>
+<p>Abychom mohli debugovat, potřebujeme k tomu nástroj zvaný
+<em>debugger</em>. VSCode spolu s <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">rozšířením pro Python</a> ho má zabudovaný.
+Ve zbytku této lekce si ukážeme, jak ho používat.</p>
+<h2 id="ovladani_debuggeru">Ovládání debuggeru
+<a href="#header-ovladani_debuggeru" class="header-link">#</a>
+</h2>
+<p>Do debuggeru se přepneme kliknutím na tlačítko s přeškrtnutým broukem,
+které vidíte na obrázku níže.</p>
+<p><span class="figure"><a href="naucse:static?filename=debug.png"><img src="naucse:static?filename=debug.png" alt="(Menu debuggeru)"></a></span></p>
+<p>Zajímají nás především:</p>
+<ul>
+<li>tlačítko pro spuštění debugování (zelený trojúhelník)</li>
+<li>panel s výpisem aktuálních hodnot proměnných - <em>Variables</em></li>
+<li>panel pro ovládání debuggeru</li>
+</ul>
+<p><strong>Panel pro ovládání debuggeru</strong> se zobrazí až po spuštění debuggeru.
+Po spuštění je možné debugger restartovat (spustit od začátku)
+kliknutím na zelenou šipku ve tvaru kruhu
+nebo ho zastavit kliknutím na červený čtvereček.</p>
+<p>Program se chová stejně, jako by debugger nebyl zaplý.
+Např., pokud se podmínka vyhodnotí jako <code>False</code>, tak do jejího těla debugger nevstoupí.
+Stejně tak debugger bude procházet cyklem tolikrát, jako za normálního
+běhu programu.</p>
+<h3 id="breakpoint">Breakpoint
+<a href="#header-breakpoint" class="header-link">#</a>
+</h3>
+<p>Klíčovou roli při debugování hraje zarážka - angl. <em>breakpoint</em>.
+Když debuger narazí na zarážku, tak zastaví vykonávání programu
+a předá kontrolu uživateli. Ten poté může zjistit hodnoty proměnných,
+pokračovat na další krok nebo třeba vejít do funkce, která se na řádku volá.
+Breakpoint umístíme kliknutím vlevo od řádku, kde chceme, aby se debugger zastavil:</p>
+<p><span class="figure"><a href="naucse:static?filename=breakpoint.png"><img src="naucse:static?filename=breakpoint.png" alt="(Umístění breakpointu)"></a></span></p>
+<p>Pokud klikneme na tlačítko <em>Continue</em> (modrý trojúhelník nebo <kbd>F5</kbd>),
+tak bude debugger pokračovat až do dalšího breakpointu,
+případně na konec programu.</p>
+<h3 id="step_over_into_out">Step over, into, out
+<a href="#header-step_over_into_out" class="header-link">#</a>
+</h3>
+<p>Často budeme chtít pokračovat na další řádek kódu. Docílíme toho pomocí
+klávesy <kbd>F10</kbd>, případně kliknutím na <em>Step over</em>.</p>
+<p>Pokud bychom chtěli vstoupit do funkce, která je volaná na aktualním řádku,
+tak toho docílíme pomocí <kbd>F11</kbd> - <em>Step into</em>.</p>
+<p>Pro vystoupení z aktuální funkce se používá
+<kbd>Shift</kbd> + <kbd>F11</kbd>.
+Program pokračuje až do chvíle, než se vrátí do funkce, která volala
+funkci, ze které jsme chtěli vystoupit.</p>
+<h2 id="debug_testu">Debug testů
+<a href="#header-debug_testu" class="header-link">#</a>
+</h2>
+<p>Často zjistíme, že nám neprocházejí testy.
+Může se jednat o chybu v testu, nebo o chybu v programu.
+Ideální je si test prodebugovat, a to například tak,
+že dáme breakpoint na začátek testu a pak se kombinací
+<em>Step over / into / out</em> dostaneme na problémové místo programu.
+Budeme sledovat, jak se vyhodnocují jednotlivé podmínky,
+jaké argumenty se předávají do funkcí atd.
+Často se nám tímto způsobem podaří chybu najít.</p>
+<p>Pokud máme správně nastavený VSCode, tak by se nad testovacími
+funkcemi měly objevit možnosti <em>Run Test</em> a <em>Debug Test</em>
+(jako na obrázku níže).</p>
+<p><span class="figure"><a href="naucse:static?filename=test_debug.png"><img src="naucse:static?filename=test_debug.png" alt="(Debug testu)"></a></span></p>
+<p>Jestli ve svém editoru tyto možnosti nemáš, tak zkus:</p>
+<ul>
+<li>zkontrolovat, že máš nastavený interpreter<ul>
+<li>v levém dolním rohu VSCode by jsi kromě verze Pythonu
+měla vidět jméno virtuálního prostředí (např. Python 3.6 (venv))<ul>
+<li>pokud jméno virtuálního prostředí nevidíš, tak stiskni
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>,
+vyber <em>Select Python Interpreter</em> a zvol své virtuální prostředí
+(pravděpodobně <em>venv</em>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stisknout <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> a vybrat <em>Discover Unit Tests</em></li>
+</ul>
+<p>Po kliknutí na <em>Debug test</em> se spustí debugger.</p>
+<h2 id="debug_console">Debug console
+<a href="#header-debug_console" class="header-link">#</a>
+</h2>
+<p>Po spuštění debugeru je možné používat debugovací konzoli.
+Najdete ji ve spodním panelu v záložce vedle integrovaného terminálu.</p>
+<p><span class="figure"><a href="naucse:static?filename=debug_console.png"><img src="naucse:static?filename=debug_console.png" alt="(Debug konzole)"></a></span></p>
+<p>Představ si, že jsi spustila Python z příkazové řádky
+a poté zadala stejný kód, kterým debugger prošel, než se dostal na breakpoint.
+V tu chvíli tedy máte k dispozici všechny inicializované globální proměnné,
+můžete volat funkce nebo pracovat s proměnným úplně stejně,
+jak jsme to dělali v lekcích na začátku kurzu.</p>
+<p>Pokud například víte, že na dalším řádku vzniká <code>IndexError</code>, ale nevíte proč,
+tak můžete zjistit, na jaký index se přistupuje, jaké hodnoty jsou v
+seznamu nebo slovníku obsažené a co by se stalo, kdybyste použily jiný index.</p>
+<p>Do debug konzole se také vypisují <code>printy</code>, pokud je v programu používáte.</p>
+<p>Jen pozor - pokud upravíte hodnoty proměnných,
+tak se změny promítnout do zbytku programu, takže je někdy nutné
+debugger restartovat.</p>
