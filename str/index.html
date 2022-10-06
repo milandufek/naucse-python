@@ -138,7 +138,7 @@ Na rozdíl od funkce je svázaná s nějakým <em>objektem</em> (hodnotou).
 Volá se tak, že se za objekt napíše tečka,
 za ní jméno metody a za to celé se, jako u funkcí, připojí závorky
 s případnými argumenty.</p>
-<p>Řetězcové metody <code>upper()</code> a <code>lower()</code>
+<p>Řetězcové metody <code>upper()</code>, <code>lower()</code> nebo <code>title()</code>
 převádí text na velká, respektive malá písmena.</p>
 <div class="highlight"><pre><span></span><span class="n">retezec</span> <span class="o">=</span> <span class="s1">&#39;Ahoj&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">retezec</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
@@ -148,6 +148,12 @@ převádí text na velká, respektive malá písmena.</p>
 starý zůstává.</p>
 <p>To je obecná vlastnost řetězců v Pythonu: jednou existující řetězec se už
 nedá změnit, dá se jen vytvořit nějaký odvozený.</p>
+</div><p>Máme i jiné metody co naopak něco zjištují např. <code>islower()</code>, <code>isupport()</code> nebo <code>istitle()</code>.
+Vrací <code>True</code> nebo `False.</p>
+<div class="highlight"><pre><span></span><span class="n">retezec</span> <span class="o">=</span> <span class="s1">&#39;Ahoj&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retezec</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retezec</span><span class="o">.</span><span class="n">istitle</span><span class="p">())</span>
+</pre></div><div class="admonition note"><p>Metod je u řetězců mnohem více. Pro výpis všech můžeš použít funkci <code>dir('Ahoj')</code>.</p>
 </div><h3 id="inicialy">Iniciály
 <a href="#header-inicialy" class="header-link">#</a>
 </h3>
