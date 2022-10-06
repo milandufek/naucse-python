@@ -80,51 +80,51 @@ sessions:
     url: https://pyvec.github.io/cheatsheets/basic-git/basic-git-cs.pdf
     type: cheatsheet
 
-# - title: Datové typy
-#   slug: var-if
-#   date: 2022-10-19
-#   materials:
-#   - lesson: beginners/list
-#   - lesson: beginners/tuple
-#   - lesson: beginners/dict
-#   - lesson: homeworks/data_types
-#   - title: Domácí projekty (PDF)
-#     url: https://www.mergado.cz/sites/default/files/users/documents/PyLadies/handout4.pdf
-#     type: homework
-#   - title: Tahák na seznamy
-#     url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
-#     type: cheatsheet
+- title: Datové typy
+  slug: var-if
+  date: 2022-10-19
+  materials:
+  - lesson: beginners/list
+  - lesson: beginners/tuple
+  - lesson: beginners/dict
+  - lesson: homeworks/data_types
+  - title: Domácí projekty (PDF)
+    url: https://www.mergado.cz/sites/default/files/users/documents/PyLadies/handout4.pdf
+    type: homework
+  - title: Tahák na seznamy
+    url: https://pyvec.github.io/cheatsheets/lists/lists-cs.pdf
+    type: cheatsheet
 
-# - title: Funkce a vlastní funkce
-#   slug: def
-#   date: 2022-10-26
-#   materials:
-#   - lesson: beginners/functions
-#   - lesson: beginners/def
-#   - lesson: homeworks/def
-#   - title: Domácí projekty (PDF)
-#     url: http://pyladies.cz/v1/s004-strings/handout/handout4.pdf
-#     type: homework
-#   - title: Tahák s užitečnými funkcemi
-#     url: https://pyvec.github.io/cheatsheets/basic-functions/basic-functions-cs.pdf
-#     type: cheatsheet
+- title: Funkce a vlastní funkce
+  slug: def
+  date: 2022-10-26
+  materials:
+  - lesson: beginners/functions
+  - lesson: beginners/def
+  - lesson: homeworks/def
+  - title: Domácí projekty (PDF)
+    url: http://pyladies.cz/v1/s004-strings/handout/handout4.pdf
+    type: homework
+  - title: Tahák s užitečnými funkcemi
+    url: https://pyvec.github.io/cheatsheets/basic-functions/basic-functions-cs.pdf
+    type: cheatsheet
 
-# - title: Testování
-#   slug: tests
-#   date: 2022-11-02
-#   materials:
-#   - lesson: beginners/modules
-#   - lesson: beginners/circular-imports
-#   - lesson: beginners/exceptions
-#   - lesson: beginners/testing
-#   - lesson: beginners/debug
-#   - lesson: homeworks/test
-#   - title: Domácí projekty (PDF)
-#     url: https://pyladies.cz/v1/s005-modules/handout/handout5.pdf
-#     type: homework
-#   - title: Výjimkový tahák
-#     url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
-#     type: cheatsheet
+- title: Testování
+  slug: tests
+  date: 2022-11-02
+  materials:
+  - lesson: beginners/modules
+  - lesson: beginners/circular-imports
+  - lesson: beginners/exceptions
+  - lesson: beginners/testing
+  - lesson: beginners/debug
+  - lesson: homeworks/test
+  - title: Domácí projekty (PDF)
+    url: https://pyladies.cz/v1/s005-modules/handout/handout5.pdf
+    type: homework
+  - title: Výjimkový tahák
+    url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
+    type: cheatsheet
 
 # - title: Třídy
 #   slug: class
