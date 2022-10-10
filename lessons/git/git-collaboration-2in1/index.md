@@ -318,7 +318,7 @@ Hotovo; teď je na autorech projektu, aby se na změny podívali a přijali ‒ 
 Když budou změny od všech účastníků začleněné, můžeme si aktualizovat repozitář, který máme u sebe na počítači. Příkaz
 
 ```console
-$ git pull origin master
+$ git pull origin main
 ```
 
 stáhne změny z větve „master” z adresy pod zkratkou „origin”.

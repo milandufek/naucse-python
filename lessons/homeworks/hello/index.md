@@ -5,7 +5,7 @@ Odevzdejte svému kouči řešení úkolů 13, 17 a 18 z PDF [Domácí projekty 
 Až doděláš všechny úkoly, přejdi v terminálu do složky `pyladies/projekty` a napiš následující příkazy:
   - `git add .`
   - `git commit -m "Pyladies lesson 02, homework."`
-  - `git push origin master`
+  - `git push origin main`
 
 # Bonusy
 

@@ -30,7 +30,7 @@ Uvidíš stránku s velkým množství různých příkazů. Nás zajímá druh�
 
 Zkopíruj si příkaz začínající na `git remote add origin ...` a vlož ho do příkazové řádky tak, kde máš svůj gitový repozitář, který jsme si společně nastavily. Po stisknutí `enter` ti příkazová řádka nic nevypíše, což je signál, že všechno proběhlo v pořádku.
 
-Stejným způsobem si zkopíruj a vlož k sobě do terminálu příkaz `git push -u origin master`. Github se tě zeptá na tvé přihlašovací údaje. Vlož je (pozor, když budeš psát heslo, tak to bude vypadat, že vůbec nepíšeš, to je však jen z důvodu bezpečnosti, klávesnice ti funguje v pořádku) a pak už by si měla vidět `Branch 'master' set up to track remote branch 'master' from 'origin'.`
+Stejným způsobem si zkopíruj a vlož k sobě do terminálu příkaz `git push -u origin main`. Github se tě zeptá na tvé přihlašovací údaje. Vlož je (pozor, když budeš psát heslo, tak to bude vypadat, že vůbec nepíšeš, to je však jen z důvodu bezpečnosti, klávesnice ti funguje v pořádku) a pak už by si měla vidět `Branch 'master' set up to track remote branch 'master' from 'origin'.`
 
 To znamená, že tvůj lokální repozitář se právě nahrál na tzv. remote repozitář. Repozitář jsme označili jménem *origin*. Když se proklikneš do svého nového repozitáře na Githubu (`https://github.com/tvoje_jmeno/nazev_repozitare`), uvidíš tu přesnou kopii tvé složky s lekcemi.
 
@@ -69,14 +69,14 @@ Co když uděláš nějaké změny, například vypracuješ domácí úkol na sv
 
 Pamatuješ ještě na básničku, kterou jsme psali, když jsme se učili s Gitem? Napiš si jí ještě jednou, ať jí neztratíme. Přepni se do složky aktuální lekce, vytvoř soubor `basnicka.txt` a napiš do něj nějakou básničku. Přidej jí do Gitu (pomocí příkazů `git add` a `git commit`). Nezapomeň, že je třeba mít na obou počítačích nainstalovaný a nastavený Git. 
 
-Pomocí příkazu `git push origin master` nahraješ nové změny na Github.
+Pomocí příkazu `git push origin main` nahraješ nové změny na Github.
 
 
 ## Stažení změn <small>(<code>git pull</code>)</small>
 
 Máš zase svůj oblíbený počítač, kde máš všechny materiály, ale chybí ti tam úkol, který si vypracovala na svém druhém počítači a nahrála na Github?
 
-Přepni se do složky s materiály, kde máš svůj Gitový repozitář a napiš `git pull origin master`.
+Přepni se do složky s materiály, kde máš svůj Gitový repozitář a napiš `git pull origin main`.
 Všechny změny by se ti měly stáhnout do tvého lokálního repozitáře.
 
 
@@ -86,13 +86,13 @@ Pull requesty se používají, když chceš začlenit nějaké změny do projekt
 
 My budeme využívat pull requesty k efektivní kontrole domácích projektů. Vytvoř si teď pro demonstraci novou větev, ve které upravíme naší básničku `git branch uprava_basnicky` a přepni se do ní `git checkout uprava_basnicky`. Teď udělej nějaké změny v básničce, přidej autora, další sloku, cokoliv tě napadne.
 
-Přijde úpravy do Git jako novou revizi pomocí příkazů `git add` a `git commit`. Pak pomocí příkazu `git push origin uprava_basnicky` nahraj změny na Github. Vidíš, že v tomhle případě *nepíšeme* `git push origin master`, protože teď nechceme zveřenovat změny ve větvi master, ale ve větvi, kde jsme upravili naší básničku.
+Přijde úpravy do Git jako novou revizi pomocí příkazů `git add` a `git commit`. Pak pomocí příkazu `git push origin uprava_basnicky` nahraj změny na Github. Vidíš, že v tomhle případě *nepíšeme* `git push origin main`, protože teď nechceme zveřenovat změny ve větvi master, ale ve větvi, kde jsme upravili naší básničku.
 
 Jdi do svého repozitáře na Github a klikni na sekci `Pull requests`. Uvidíš velké zelené tlačítko `New pull request`. Po kliknutí uvidíš stránku nadepsanou `Compare changes`. Tady musíš nastavit, co kam chceš vlastně začlenit. Jako `base` nech větev master a do `compare` zvol větev `uprava_basnicky`.
 
 Github ti ukáže všechny změny, které si na té větvi udělala, pak už stačí jen kliknout na `Create new pull request`. V sekci `Pull requests` najednou uvidíš v závorce (1). To znamená, že si vytvořila pull request.
 
-Pošli odkaz na pull request svému kouči, který ti domácí úkol opraví. Díky Githubu ti může napsat komentáře přímo do kódu a nebude tak muset vypisovat čísla řádků a do je na nich špatně. Až ti kouč úkol schválí, můžeš změny sloučit do master větve pomocí tlačítka `Merge pull request`. Pak se ti správný a schválený úkol nahraje do tvé master větve. Aby si ho měla v master větvi i ve svém počítači, použij náš známý příkaz `git pull origin master`.
+Pošli odkaz na pull request svému kouči, který ti domácí úkol opraví. Díky Githubu ti může napsat komentáře přímo do kódu a nebude tak muset vypisovat čísla řádků a do je na nich špatně. Až ti kouč úkol schválí, můžeš změny sloučit do master větve pomocí tlačítka `Merge pull request`. Pak se ti správný a schválený úkol nahraje do tvé master větve. Aby si ho měla v master větvi i ve svém počítači, použij náš známý příkaz `git pull origin main`.
 
 U přidání jména do prezenčky se to asi nestane, ale kdybys potřeboval{{a}}
 na změně před začleněním ještě trochu zapracovat (třeba i po
@@ -130,5 +130,5 @@ a můžeš psát, kdy chyba nastává, co program dělá
 * Udělej nový pull request. Návod v sekci Žádost o začlenění (pull request)
 * Pošli koučovi odkaz na pull request do slacku.
 * Potom, co ti kouč úkol schválí, udělej merge do master větve. Na stránce pull requestu v dolní části je zelené tlačíko `Merge pull request`. 
-* Stáhni si změny do lokálního repozitáře (ve tvém počítači) do větve master. `git checkout master`, `git pull origin master`
+* Stáhni si změny do lokálního repozitáře (ve tvém počítači) do větve master. `git checkout master`, `git pull origin main`
 * Pokud budeš v průběhu práce na domácích úkolu dělat změny v jiných souborech, přepni se nejdřív na větev master, udělej změny a commitni je a pak se vrať do větve s domácím úkolem.

@@ -17,7 +17,7 @@ Odevzdejte svému kouči řešení úkolu 13, [poslední cvičení ze stringů](
 Až doděláš všechny úkoly, přejdi v terminálu do složky `pyladies` a napiš následující příkazy:
   - `git add .`
   - `git commit -m "Pyladies homework 03"`
-  - `git push origin master`
+  - `git push origin main`
 
 # Bonusy
 

@@ -108,7 +108,7 @@ Kdyby ses přece jen zasekla, napiš koučovi.
 * Udělej nový pull request. Návod v sekci Žádost o začlenění (pull request)
 * Pošli koučovi odkaz na pull request do slacku.
 * Potom, co ti kouč úkol schválí, udělej merge do master větve. Na stránce pull requestu v dolní části je zelené tlačíko `Merge pull request`. 
-* Stáhni si změny do lokálního repozitáře (ve tvém počítači) do větve master. `git checkout master`, `git pull origin master`
+* Stáhni si změny do lokálního repozitáře (ve tvém počítači) do větve master. `git checkout master`, `git pull origin main`
 * Pokud budeš v průběhu práce na domácích úkolu dělat změny v jiných souborech, přepni se nejdřív na větev master, udělej změny a commitni je a pak se vrať do větve s domácím úkolem.
 
 # Bonusy
