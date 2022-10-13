@@ -8,7 +8,7 @@ Tak vzhůru do toho.</p>
 <a href="#header-cesarova_sifra" class="header-link">#</a>
 </h1>
 <p>Et tu?</p>
-<p>César (ano, ten César) údajně používal k předávání tajných zpráv jednoduchou šifru. Posouval jednotlivé písmenka o několik pozic v abecedě. Například zapisoval A jako B, B jako C, C jako D, atd. až k Z jako A. Takže, kdyby chtěl poslat někomu anglický pozdrav, napsal by HELLO jako IFMMP. Příjemce takové zprávy musel znát "klíč" (v tomto případě číslo, o kolik se mají písmenka posunout), aby zprávu mohl dešifrovat a přečíst.</p>
+<p>César (ano, ten César) údajně používal k předávání tajných zpráv jednoduchou šifru. Posouval jednotlivá písmenka o několik pozic v abecedě. Například zapisoval A jako B, B jako C, C jako D, atd. až k Z jako A. Takže, kdyby chtěl poslat někomu anglický pozdrav, napsal by HELLO jako IFMMP. Příjemce takové zprávy musel znát "klíč" (v tomto případě číslo, o kolik se mají písmenka posunout), aby zprávu mohl dešifrovat a přečíst.</p>
 <p>Tajemství tohoto systému záviselo na tom, že César a příjemci zprávy znali ono tajné číslo - počet míst v abacedě, o které se musí písmena ve zprávě posunout. Podle moderních standardů to není moc bezpečné, ale v jeho době to pochopitelně bylo terno.</p>
 <p>Nezašifrovaný text se většinou jmenuje <code>plaintext</code>, zašifrovaný text <code>ciphertext</code> a tajné číslo <code>key</code>.</p>
 <p>Aby to bylo opravdu jasné, ještě to znázorníme na příkladu HELLO (key 1) = IFMMP:</p>
@@ -46,7 +46,7 @@ Tak vzhůru do toho.</p>
 <div class="highlight"><pre><span></span><span class="nv">ci</span> <span class="o">=</span> <span class="o">(</span>pi + k<span class="o">)</span> % <span class="m">26</span>
 </pre></div><p>Zápis % 26 je operátor <code>modulo</code> (vzpomínáš na operátory v Pythonu?) a znamená <strong>zbytek po dělení 26</strong>. Tato rovnice možná udělá ze šifry něco mnohem složitějšího, ale je to opravdu přesného vyjádření našeho algoritmu. (O tom, že vše je algoritmus jsme mluvili.)</p>
 <p>Pojďme na psaní programu, který bude šifrovat jednoduchý text Césarovou šifrou.
-Po spuštěníby se měl program zeptat, jaký klíč použít a jaký text zašifrovat. (Počítej s tím, že klíč má být pozitivní celé číslo)</p>
+Po spuštění by se měl program zeptat, jaký klíč použít a jaký text zašifrovat. (Počítej s tím, že klíč má být pozitivní celé číslo)</p>
 <p>Například:</p>
 <div class="highlight"><pre><span></span>$ python caesar.py
 key: <span class="m">1</span>
@@ -56,7 +56,7 @@ ciphertext: IFMMP
 key: <span class="m">13</span>
 plaintext:  hello, world
 ciphertext: uryyb, jbeyq
-</pre></div><p>Všimni si, že se posunuly pouze písmena a ne mezery a další znaky.</p>
+</pre></div><p>Všimni si, že se posunula pouze písmena a ne mezery a další znaky.</p>
 <p>Pokud uživatel nebude spolupracovat a bude psát věci, které nemá, měl by se ho program zeptat znovu. Například, když jako <code>key</code> zkusí zadat řetězec.</p>
 <h2 id="jak_zacit">Jak začít
 <a href="#header-jak_zacit" class="header-link">#</a>
@@ -65,7 +65,7 @@ ciphertext: uryyb, jbeyq
 <h3 id="pseudocode">Pseudocode
 <a href="#header-pseudocode" class="header-link">#</a>
 </h3>
-<p>Určitě je dobrá praxe pseudokód psát. Ukazovali jsme si ho na úplně první lekci (když jsme hledali jméno v telefonním seznamu). Je to jen logické uspořádání myšlenek, které pak přepíšeš pomocí Pythonu, aby tomu počítač rozumněl. Krátké věty nebo body jsou uplně dostačující.</p>
+<p>Určitě je dobrá praxe pseudokód psát. Ukazovali jsme si ho na úplně první lekci (když jsme hledali jméno v telefonním seznamu). Je to jen logické uspořádání myšlenek, které pak přepíšeš pomocí Pythonu, aby tomu počítač rozuměl. Krátké věty nebo body jsou úplně dostačující.</p>
 <h3 id="ascii">ASCII
 <a href="#header-ascii" class="header-link">#</a>
 </h3>
@@ -87,23 +87,24 @@ ciphertext: uryyb, jbeyq
 <h3 id="a_ted_je_rada_na_tobe">A teď je řada na tobě
 <a href="#header-a_ted_je_rada_na_tobe" class="header-link">#</a>
 </h3>
-<p>Už bylo zmíněno, že tento úkol bude vyžadovat větší úsílí. Nějaké samostudium, hodně práce a přemýšlení. Ale ten pocit, když ho dokončíš bude pozvnášející!
+<p>Už bylo zmíněno, že tento úkol bude vyžadovat větší úsilí. Nějaké samostudium, hodně práce a přemýšlení. Ale ten pocit, když ho dokončíš bude povznášející!
 Kdyby ses přece jen zasekla, napiš koučovi.</p>
 <h1 id="navod_na_odevzdani_domaciho_ukolu">Návod na odevzdání domácího úkolu
 <a href="#header-navod_na_odevzdani_domaciho_ukolu" class="header-link">#</a>
 </h1>
 <ul>
-<li>Přepni se na větev master <code>git checkout master</code></li>
-<li>Vytvoř si novou větev, kterou si pojmenuj nějak unikátně (např. piskvorky). Je lepší nepoužívat diakritiku a jako oddělovač používat podtržítko. <code>git branch piskvorky</code></li>
-<li>Přepni se do nové větve. <code>git checkout piskvorky</code></li>
+<li>Přepni se na větev main - <code>git checkout main</code>.</li>
+<li>Pullni aktuální změny z GitHubu - <code>git pull origin main</code>.</li>
+<li>Vytvoř si novou větev, kterou si pojmenuj nějak unikátně (např. <code>caesar_cipher</code>). Je lepší nepoužívat diakritiku a jako oddělovač používat podtržítko - <code>git branch caesar_cipher</code>.</li>
+<li>Přepni se do nové větve - <code>git checkout caesar_cipher</code>.</li>
 <li>Napiš úkol.</li>
-<li>Přidej změny do stage a pak udělej commit. <code>git add piskvorky.py</code>,  <code>git commit -m 'Home work - game piskvorky.'</code></li>
-<li>Pushni větev do repozitáře na githubu. <code>git push origin piskvorky</code></li>
+<li>Přidej změny do stage a pak udělej commit. <code>git add caesar_cipher.py</code>,  <code>git commit -m 'Home work - Ceasar cipher.'</code></li>
+<li>Pushni větev do repozitáře na githubu - <code>git push origin caesar_cipher</code>.</li>
 <li>Udělej nový pull request. Návod v sekci Žádost o začlenění (pull request)</li>
 <li>Pošli koučovi odkaz na pull request do slacku.</li>
-<li>Potom, co ti kouč úkol schválí, udělej merge do master větve. Na stránce pull requestu v dolní části je zelené tlačíko <code>Merge pull request</code>. </li>
-<li>Stáhni si změny do lokálního repozitáře (ve tvém počítači) do větve master. <code>git checkout master</code>, <code>git pull origin main</code></li>
-<li>Pokud budeš v průběhu práce na domácích úkolu dělat změny v jiných souborech, přepni se nejdřív na větev master, udělej změny a commitni je a pak se vrať do větve s domácím úkolem.</li>
+<li>Potom, co ti kouč úkol schválí, udělej merge do main větve. Na stránce pull requestu v dolní části je zelené tlačíko <code>Merge pull request</code>.</li>
+<li>Stáhni si změny do lokálního repozitáře (ve tvém počítači) do větve main. <code>git checkout main</code>, <code>git pull origin main</code>.</li>
+<li>Pokud budeš v průběhu práce na domácích úkolu dělat změny v jiných souborech, přepni se nejdřív na větev main, udělej změny a commitni je a pak se vrať do větve s domácím úkolem.</li>
 </ul>
 <h1 id="bonusy">Bonusy
 <a href="#header-bonusy" class="header-link">#</a>
