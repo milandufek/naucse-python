@@ -24,7 +24,7 @@ tam a založ si ho.</p>
 <p>Na úvodní stránce Githubu po založení účtu uvidíš na úvodní stránce <code>Learn Git and GitHub without any code!</code> a pod ním najdeš tlačítko <code>Start a project</code>. Zvol si jméno pro svůj nový repozitář, třeba <code>pyladies</code> a zbytek nastavení nech tak, jak je a klikni na <code>Create repository</code>.</p>
 <p>Uvidíš stránku s velkým množství různých příkazů. Nás zajímá druhá sekce <code>…or push an existing repository from the command line</code>.</p>
 <p>Zkopíruj si příkaz začínající na <code>git remote add origin ...</code> a vlož ho do příkazové řádky tak, kde máš svůj gitový repozitář, který jsme si společně nastavily. Po stisknutí <code>enter</code> ti příkazová řádka nic nevypíše, což je signál, že všechno proběhlo v pořádku.</p>
-<p>Stejným způsobem si zkopíruj a vlož k sobě do terminálu příkaz <code>git push -u origin main</code>. Github se tě zeptá na tvé přihlašovací údaje. Vlož je (pozor, když budeš psát heslo, tak to bude vypadat, že vůbec nepíšeš, to je však jen z důvodu bezpečnosti, klávesnice ti funguje v pořádku) a pak už by si měla vidět <code>Branch 'master' set up to track remote branch 'master' from 'origin'.</code></p>
+<p>Stejným způsobem si zkopíruj a vlož k sobě do terminálu příkaz <code>git push -u origin main</code>. Github se tě zeptá na tvé přihlašovací údaje. Vlož je (pozor, když budeš psát heslo, tak to bude vypadat, že vůbec nepíšeš, to je však jen z důvodu bezpečnosti, klávesnice ti funguje v pořádku) a pak už by si měla vidět <code>Branch 'main' set up to track remote branch 'main' from 'origin'.</code></p>
 <p>To znamená, že tvůj lokální repozitář se právě nahrál na tzv. remote repozitář. Repozitář jsme označili jménem <em>origin</em>. Když se proklikneš do svého nového repozitáře na Githubu (<code>https://github.com/tvoje_jmeno/nazev_repozitare</code>), uvidíš tu přesnou kopii tvé složky s lekcemi.</p>
 <p>Jak už napovídá název repozitáře, tvůj příspěvek do tohoto projektu bude
 zápis do prezenčky: konkrétně přidání souboru s tvým jménem.
@@ -41,7 +41,7 @@ přezdívku, oblíbené jídlo nebo pár náhodných písmen. Ale:</p>
 <a href="#header-vytvoreni_vetve" class="header-link">#</a>
 </h2>
 <p>Pomocí <code>git branch</code> zjisti, na jaké jsi aktuálně větvi.
-Měla by to být větev <code>master</code>.</p>
+Měla by to být větev <code>main</code>.</p>
 <p>Tuhle „základní“ větev je dobré používat jen na revize, na kterých se už
 shodl celý tým.
 Proto když chceš do projektu přispět, jako první krok si pro svůj příspěvek
@@ -64,12 +64,12 @@ Všechny změny by se ti měly stáhnout do tvého lokálního repozitáře.</p>
 <h2 id="zadost_o_zacleneni_smallempull_requestemsmall">Žádost o začlenění <small>(<em>pull request</em>)</small>
 <a href="#header-zadost_o_zacleneni_smallempull_requestemsmall" class="header-link">#</a>
 </h2>
-<p>Pull requesty se používají, když chceš začlenit nějaké změny do projektu, na kterém pracuješ. Ve větvi <code>master</code> by měl být funkční a hotový kód, na různé pokusy slouží větve <code>branch</code>, o kterých jsme mluvili v minulé sekci.</p>
+<p>Pull requesty se používají, když chceš začlenit nějaké změny do projektu, na kterém pracuješ. Ve větvi <code>main</code> by měl být funkční a hotový kód, na různé pokusy slouží větve <code>branch</code>, o kterých jsme mluvili v minulé sekci.</p>
 <p>My budeme využívat pull requesty k efektivní kontrole domácích projektů. Vytvoř si teď pro demonstraci novou větev, ve které upravíme naší básničku <code>git branch uprava_basnicky</code> a přepni se do ní <code>git checkout uprava_basnicky</code>. Teď udělej nějaké změny v básničce, přidej autora, další sloku, cokoliv tě napadne.</p>
-<p>Přijde úpravy do Git jako novou revizi pomocí příkazů <code>git add</code> a <code>git commit</code>. Pak pomocí příkazu <code>git push origin uprava_basnicky</code> nahraj změny na Github. Vidíš, že v tomhle případě <em>nepíšeme</em> <code>git push origin main</code>, protože teď nechceme zveřenovat změny ve větvi master, ale ve větvi, kde jsme upravili naší básničku.</p>
-<p>Jdi do svého repozitáře na Github a klikni na sekci <code>Pull requests</code>. Uvidíš velké zelené tlačítko <code>New pull request</code>. Po kliknutí uvidíš stránku nadepsanou <code>Compare changes</code>. Tady musíš nastavit, co kam chceš vlastně začlenit. Jako <code>base</code> nech větev master a do <code>compare</code> zvol větev <code>uprava_basnicky</code>.</p>
+<p>Přijde úpravy do Git jako novou revizi pomocí příkazů <code>git add</code> a <code>git commit</code>. Pak pomocí příkazu <code>git push origin uprava_basnicky</code> nahraj změny na Github. Vidíš, že v tomhle případě <em>nepíšeme</em> <code>git push origin main</code>, protože teď nechceme zveřenovat změny ve větvi main, ale ve větvi, kde jsme upravili naší básničku.</p>
+<p>Jdi do svého repozitáře na Github a klikni na sekci <code>Pull requests</code>. Uvidíš velké zelené tlačítko <code>New pull request</code>. Po kliknutí uvidíš stránku nadepsanou <code>Compare changes</code>. Tady musíš nastavit, co kam chceš vlastně začlenit. Jako <code>base</code> nech větev main a do <code>compare</code> zvol větev <code>uprava_basnicky</code>.</p>
 <p>Github ti ukáže všechny změny, které si na té větvi udělala, pak už stačí jen kliknout na <code>Create new pull request</code>. V sekci <code>Pull requests</code> najednou uvidíš v závorce (1). To znamená, že si vytvořila pull request.</p>
-<p>Pošli odkaz na pull request svému kouči, který ti domácí úkol opraví. Díky Githubu ti může napsat komentáře přímo do kódu a nebude tak muset vypisovat čísla řádků a do je na nich špatně. Až ti kouč úkol schválí, můžeš změny sloučit do master větve pomocí tlačítka <code>Merge pull request</code>. Pak se ti správný a schválený úkol nahraje do tvé master větve. Aby si ho měla v master větvi i ve svém počítači, použij náš známý příkaz <code>git pull origin main</code>.</p>
+<p>Pošli odkaz na pull request svému kouči, který ti domácí úkol opraví. Díky Githubu ti může napsat komentáře přímo do kódu a nebude tak muset vypisovat čísla řádků a do je na nich špatně. Až ti kouč úkol schválí, můžeš změny sloučit do main větve pomocí tlačítka <code>Merge pull request</code>. Pak se ti správný a schválený úkol nahraje do tvé main větve. Aby si ho měla v main větvi i ve svém počítači, použij náš známý příkaz <code>git pull origin main</code>.</p>
 <p>U přidání jména do prezenčky se to asi nestane, ale kdybys potřeboval/a
 na změně před začleněním ještě trochu zapracovat (třeba i po
 pár dnech diskuse), nebyl by to problém.
@@ -95,7 +95,7 @@ a můžeš psát, kdy chyba nastává, co program dělá
 <a href="#header-navod_na_odevzdani_domaciho_ukolu" class="header-link">#</a>
 </h2>
 <ul>
-<li>Přepni se na větev master <code>git checkout master</code></li>
+<li>Přepni se na větev main <code>git checkout main</code></li>
 <li>Vytvoř si novou větev, kterou si pojmenuj nějak unikátně (např. piskvorky). Je lepší nepoužívat diakritiku a jako oddělovač používat podtržítko. <code>git branch piskvorky</code></li>
 <li>Přepni se do nové větve. <code>git checkout piskvorky</code></li>
 <li>Napiš úkol.</li>
@@ -103,7 +103,7 @@ a můžeš psát, kdy chyba nastává, co program dělá
 <li>Pushni větev do repozitáře na githubu. <code>git push origin piskvorky</code></li>
 <li>Udělej nový pull request. Návod v sekci Žádost o začlenění (pull request)</li>
 <li>Pošli koučovi odkaz na pull request do slacku.</li>
-<li>Potom, co ti kouč úkol schválí, udělej merge do master větve. Na stránce pull requestu v dolní části je zelené tlačíko <code>Merge pull request</code>. </li>
-<li>Stáhni si změny do lokálního repozitáře (ve tvém počítači) do větve master. <code>git checkout master</code>, <code>git pull origin main</code></li>
-<li>Pokud budeš v průběhu práce na domácích úkolu dělat změny v jiných souborech, přepni se nejdřív na větev master, udělej změny a commitni je a pak se vrať do větve s domácím úkolem.</li>
+<li>Potom, co ti kouč úkol schválí, udělej merge do main větve. Na stránce pull requestu v dolní části je zelené tlačíko <code>Merge pull request</code>. </li>
+<li>Stáhni si změny do lokálního repozitáře (ve tvém počítači) do větve main. <code>git checkout main</code>, <code>git pull origin main</code></li>
+<li>Pokud budeš v průběhu práce na domácích úkolu dělat změny v jiných souborech, přepni se nejdřív na větev main, udělej změny a commitni je a pak se vrať do větve s domácím úkolem.</li>
 </ul>

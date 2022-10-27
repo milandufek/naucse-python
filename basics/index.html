@@ -53,11 +53,11 @@ ho spravuje Git a ty bys v něm neměl/a nic měnit.</p>
 Zkus to ověřit příkazem <code>git status</code>, který
 vypisuje informace o stavu repozitáře:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 No commits yet
 
-nothing to commit (create/copy files and use "git add" to track)</code></pre></div><p><em>„On branch master”</em> říká něco o větvích, k tomu se vrátíme později.
+nothing to commit (create/copy files and use "git add" to track)</code></pre></div><p><em>„On branch main”</em> říká něco o větvích, k tomu se vrátíme později.
 <em>„No commits yet”</em> říká, že zatím nemáš uloženou žádnou revizi.
 A <em>„nothing to commit”</em> říká, že je adresář
 prázdný – nejsou tu žádné soubory k verzování.</p>
@@ -73,7 +73,7 @@ Pak zkus znovu <code>git status</code>: Git oznámí,
 <!-- XXX: Color coding! -->
 
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -86,7 +86,7 @@ chceme jeho obsah sledovat.
 Proveď to se svojí básničkou:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add basnicka.txt</code></pre></div><p>a znovu zkontroluj stav repozitáře:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -97,7 +97,7 @@ se přidá do další <em>revize</em> (angl. <em>commit</em>),
 kterou vytvoříš.
 Pojď tedy vytvořit revizi:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git commit
-[master (root-commit) eb0fcd9] První revize
+[main (root-commit) eb0fcd9] První revize
  1 file changed, 6 insertions(+)
  create mode 100644 basnicka.txt</code></pre></div><p>Po zadání tohoto příkazu se otevře editor,
 do kterého musíš napsat nějaký popisek,
@@ -128,7 +128,7 @@ a potvrď pomocí <kbd>Enter</kbd>.
 Pak si nastav Git a zkus <code>git commit</code> znovu.</p>
 </div><p>Znovu zkus vypsat stav repozitáře:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 nothing to commit, working tree clean</code></pre></div><p>Tenhle krátký výstup znamená, že od poslední revize
 se nic nezměnilo.
 Což dává smysl – poslední revizi jsi právě vytvořil/a!</p>
@@ -175,7 +175,7 @@ s příkazovou řádkou, bude ho potřeba zadat znovu.</p>
 uprav interpunkci nebo přidej sloku.
 Pak se opět zeptej Gitu na stav repozitáře.</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add &lt;file&gt;..." to update what will be committed)
   (use "git restore &lt;file&gt;..." to discard changes in working directory)
@@ -222,7 +222,7 @@ použije v další revizi:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add basnicka.txt</code></pre></div><p>A pro úplnost se znovu koukni, co říká
 <code>status</code> – co je zelené, přidá se do další
 revize.</p>
-<div class="highlight"><pre><code>On branch master
+<div class="highlight"><pre><code>On branch main
 Changes to be committed:
   (use "git restore --staged &lt;file&gt;..." to unstage)
     <span style="color: #00aa00">modified:   basnicka.txt</span></code></pre></div><p>Než uděláš druhou revizi, ještě řeknu něco o tom,

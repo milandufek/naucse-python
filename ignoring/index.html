@@ -66,7 +66,7 @@ Mělo by se na chvíli ukázat okno s želvou a měl by vzniknout nový soubor
 zvládají i PDF, případně v <a href="https://inkscape.org/">Inkscape</a>.</p>
 </div><p>Jak se na to dívá Git?</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -96,7 +96,7 @@ doporučuji soubor vytvořit v programátorském editoru.)
 Do něj napiš:</p>
 <div class="highlight"><pre><code>obrazek.ps</code></pre></div><p>Pak se podívej na <code>git status</code>. Obrázek už by ve výpisu neměl být!</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -110,7 +110,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)</code></pre></div><p>Nový soubor <code>.gitignore</code> přidej do repozitáře společně se samotným programem:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git add .gitignore obrazek.py
 <span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -141,7 +141,7 @@ o historii projektu.
 Ale <code>exclude</code> je výjimka. Napiš na konec tohoto souboru:</p>
 <div class="highlight"><pre><code>poznamky.txt</code></pre></div><p>A po uložení budou poznámky ignorovány!</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -174,7 +174,7 @@ adresáře.</p>
 <div class="highlight"><pre><code>Autofile.tmp</code></pre></div><p>Potom řekni Gitu, kde tento soubor najít:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git config --global core.excludesfile /tmp/tmp.1spGPvBL5W/.gitignore_global</code></pre></div><p>A měl by být ignorován:</p>
 <div class="highlight"><pre><code><span style="color: #00aaaa">$</span> git status
-On branch master
+On branch main
 
 No commits yet
 
