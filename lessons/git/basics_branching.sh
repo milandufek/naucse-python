@@ -73,7 +73,7 @@ GIT_EDITOR='echo "Doplnění autora" >' git commit
 
 take_screenshot $OUTFILE.branch1.png gitk --all
 
-git checkout master
+git checkout main
 git branch doplneni-jmena
 git checkout doplneni-jmena
 git branch
@@ -97,7 +97,7 @@ GIT_EDITOR='echo "Doplnění jména" >' git commit
 
 take_screenshot $OUTFILE.branches.png gitk --all
 
-git checkout master
+git checkout main
 git merge doplneni-jmena
 git merge doplneni-autora
 git status

@@ -84,7 +84,7 @@ Jak se na to dívá Git?
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -126,7 +126,7 @@ Pak se podívej na `git status`. Obrázek už by ve výpisu neměl být!
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -145,7 +145,7 @@ Nový soubor `.gitignore` přidej do repozitáře společně se samotným progra
 ```ansi
 ␛[36m$␛[0m git add .gitignore obrazek.py
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -190,7 +190,7 @@ A po uložení budou poznámky ignorovány!
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -242,7 +242,7 @@ A měl by být ignorován:
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 No commits yet
 

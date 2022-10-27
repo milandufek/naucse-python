@@ -72,14 +72,14 @@ vypisuje informace o stavu repozitáře:
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 No commits yet
 
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-*„On branch master”* říká něco o větvích, k tomu se vrátíme později.
+*„On branch main”* říká něco o větvích, k tomu se vrátíme později.
 *„No commits yet”* říká, že zatím nemáš uloženou žádnou revizi.
 A *„nothing to commit”* říká, že je adresář
 prázdný – nejsou tu žádné soubory k verzování.
@@ -99,7 +99,7 @@ Pak zkus znovu `git status`: Git oznámí,
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -122,7 +122,7 @@ a znovu zkontroluj stav repozitáře:
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 
 No commits yet
 
@@ -139,7 +139,7 @@ Pojď tedy vytvořit revizi:
 
 ```ansi
 ␛[36m$␛[0m git commit
-[master (root-commit) eb0fcd9] První revize
+[main (root-commit) eb0fcd9] První revize
  1 file changed, 6 insertions(+)
  create mode 100644 basnicka.txt
 ```
@@ -181,7 +181,7 @@ Znovu zkus vypsat stav repozitáře:
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 nothing to commit, working tree clean
 ```
 
@@ -247,7 +247,7 @@ Pak se opět zeptej Gitu na stav repozitáře.
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
@@ -315,7 +315,7 @@ A pro úplnost se znovu koukni, co říká
 revize.
 
 ```ansi
-On branch master
+On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
 	␛[32mmodified:   basnicka.txt␛[m

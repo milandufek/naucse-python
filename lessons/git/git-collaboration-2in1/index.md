@@ -80,15 +80,15 @@ Velmi často potřebujeme zjistit současný stav repozitáře. Navigujte v př�
 
 ```console
 $ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
+On branch main
+Your branch is up-to-date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
 Git nám v tuto chvíli poskytl 3 informace:
 
-1. Že jsme na větvi `master`. Git umožňuje pracovat na více věcích současně pomocí tzv. *větví* mezi kterými můžeme přepínat. Pak se na na disku „objeví” verze souborů v dané větvi. My si dnes vystačíme s jednou hlavní větví, která se tradičně jmenuje `master`.
-2. Že naše větev `master` je aktuální vůči větvi na vzdáleném repozitáři (origin) na GitHubu.
+1. Že jsme na větvi `main`. Git umožňuje pracovat na více věcích současně pomocí tzv. *větví* mezi kterými můžeme přepínat. Pak se na na disku „objeví” verze souborů v dané větvi. My si dnes vystačíme s jednou hlavní větví, která se tradičně jmenuje `main`.
+2. Že naše větev `main` je aktuální vůči větvi na vzdáleném repozitáři (origin) na GitHubu.
 3. Že jsme neudělali žádné změny oproti poslední verzi souborů, což je pravda.
 
 #### První revize (`git commit`)
@@ -103,8 +103,8 @@ Zkontrolujte současný stav repozitáře pomocí `git status`: Git oznámí, ž
 
 ```console
 $ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
+On branch main
+Your branch is up-to-date with 'origin/main'.
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
@@ -123,8 +123,8 @@ a znovu zkontrolujte stav repozitáře:
 
 ```console
 $ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
+On branch main
+Your branch is up-to-date with 'origin/main'.
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
@@ -145,8 +145,8 @@ Pak soubor uložíme a zavřeme editor.
 
 ```console
 $ git status
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
   (use "git push" to publish your local commits)
 nothing to commit, working tree clean
 ```
@@ -173,7 +173,7 @@ Merge: effa89b 175f4cc
 Author: Oskar Hollmann <oskar@hollmann.me>
 Date:   Tue Nov 8 20:17:00 2016 +0100
 
-    Merge pull request #1 from muzikovam/master
+    Merge pull request #1 from muzikovam/main
 
     Tady mas jmeno
 ```
@@ -288,10 +288,10 @@ tvojejmeno  https://github.com/tvojejmeno/prezencka (push)
 Tolik k nastavení ‒ `git remote add` stačí udělat jednou pro každý repozitář. Pak už můžeme změny nahrávat pomocí: 
 
 ```console
-$ git push tvojejmeno master
+$ git push tvojejmeno main
 ```
 
-což znamená: pošli na adresu uloženou pod zkratkou `tvojejmeno` větev `master`.
+což znamená: pošli na adresu uloženou pod zkratkou `tvojejmeno` větev `main`.
 
 Funguje? Můžeme se podívat na `https://github.com/tvojejmeno/prezencka` v prohlížeči a ujistit se, že tam změny jsou.
 
@@ -321,7 +321,7 @@ Když budou změny od všech účastníků začleněné, můžeme si aktualizova
 $ git pull origin main
 ```
 
-stáhne změny z větve „master” z adresy pod zkratkou „origin”.
+stáhne změny z větve „main” z adresy pod zkratkou „origin”.
 Pomocí `git log` se můžeme podívat, jak se projekt mezitím vyvinul.
 
 Kruh se uzavřel, jsme schopni začlenit do projektu vlastní změny a naopak si stáhnout změny od ostatních. 

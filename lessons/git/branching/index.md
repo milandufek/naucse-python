@@ -32,7 +32,7 @@ K tomu slouží příkaz `git branch`:
 * ␛[32mmaster␛[m
 ```
 
-Je tam jenom jedna a jmenuje se `master`
+Je tam jenom jedna a jmenuje se `main`
 – to je tradičně jméno „hlavní” větve.
 
 K vytvoření nové větve znovu použiješ
@@ -51,7 +51,7 @@ tak větev pojmenuješ `doplneni-autora`.
 Tenhle příkaz sice udělal novou větev,
 ale nepřepnul do ní.
 Hvězdička ve výstupu z `git branch` ukazuje,
-že stále pracuješ v `master`.
+že stále pracuješ v `main`.
 Na přepnutí budeš potřebovat další příkaz:
 
 ```ansi
@@ -59,7 +59,7 @@ Na přepnutí budeš potřebovat další příkaz:
 Switched to branch 'doplneni-autora'
 ␛[36m$␛[0m git branch
 * ␛[32mdoplneni-autora␛[m
-  master␛[m
+  main␛[m
 ```
 
 Tak. Teď jsi „ve” větvi `doplneni-autora`.
@@ -73,24 +73,24 @@ Pak koukni na `gitk --all`, jak to vypadá:
 ) }}
 
 Aktuální větev – `doplneni-autora` – je
-zvýrazněná tučně a starší `master` je stále
+zvýrazněná tučně a starší `main` je stále
 na původní revizi.
 
 Opusťme teď na chvíli práci na doplňování autora.
-Vrať se do větve `master` a vytvoř z ní
+Vrať se do větve `main` a vytvoř z ní
 větev `doplneni-jmena`.
 Pak se na tuhle novou větev přepni.
 
 ```ansi
-␛[36m$␛[0m git checkout master
-Switched to branch 'master'
+␛[36m$␛[0m git checkout main
+Switched to branch 'main'
 ␛[36m$␛[0m git branch doplneni-jmena
 ␛[36m$␛[0m git checkout doplneni-jmena
 Switched to branch 'doplneni-jmena'
 ␛[36m$␛[0m git branch
   doplneni-autora␛[m
 * ␛[32mdoplneni-jmena␛[m
-  master␛[m
+  main␛[m
 ```
 
 Doplň jméno básně na začátek souboru (tedy na stejné místo,
@@ -106,7 +106,7 @@ Všechno zkontroluj přes `gitk --all`.
 
 Takhle nějak se dá postupovat v situaci popsané v úvodu:
 opuštění rozpracované verze, přechod na „stabilní”
-verzi `master` a začátek práce v jiné
+verzi `main` a začátek práce v jiné
 části projektu.
 
 Mezi jednotlivými větvemi se dá podle libosti přepínat,
@@ -116,10 +116,10 @@ uložené v Gitu.
 
 Na stejném principu funguje i spolupráce několika lidí
 na jednom projektu: je nějaký společný základ
-(`master`) a každý dělá na vlastní větvi, dokud není se svými změnami spokojený.
+(`main`) a každý dělá na vlastní větvi, dokud není se svými změnami spokojený.
 
 A až je některá větev hotová, může se začlenit
-zpátky do `master`. Podívejme se jak na to.
+zpátky do `main`. Podívejme se jak na to.
 
 
 ## Sloučení
@@ -129,14 +129,14 @@ kdyby pak jednotlivé větve nešly zase sloučit dohromady.
 V Gitu je většinou slučování poměrně jednoduché, ale tento příklad schválně
 ukazuje nejsložitější variantu, která může nastat.
 
-Přepni se zpátky na `master`
+Přepni se zpátky na `main`
 a použij příkaz `git merge`, který
 sloučí jinou větev s tou aktuální.
 Příkazu musíš dát jméno větve, kterou chceš sloučit.
 
 ```ansi
-␛[36m$␛[0m git checkout master
-Switched to branch 'master'
+␛[36m$␛[0m git checkout main
+Switched to branch 'main'
 ␛[36m$␛[0m git merge doplneni-jmena
 Updating 1fcd654..5c9bf93
 Fast-forward
@@ -146,7 +146,7 @@ Fast-forward
 
 Sloučeno! Ono „`Fast-forward`” znamená, že
 vlastně nebylo co slučovat – jen se do větve
-`master` přidaly nové změny.
+`main` přidaly nové změny.
 Zkontroluj v `gitk --all`, jak to vypadá.
 
 A pak zkus sloučit i druhou větev: `git merge doplneni-autora`.
@@ -180,7 +180,7 @@ změněný v obou slučovaných větvích:
 
 ```ansi
 ␛[36m$␛[0m git status
-On branch master
+On branch main
 You have unmerged paths.
   (fix conflicts and run "git commit")
   (use "git merge --abort" to abort the merge)
@@ -234,18 +234,18 @@ Tentokrát je popisek už předvyplněný; chceš-li nějaký jiný, nahraď ho.
 ```ansi
 ␛[36m$␛[0m git add basnicka.txt
 ␛[36m$␛[0m git commit
-[master 884b30a] Merge branch 'doplneni-autora'
+[main 884b30a] Merge branch 'doplneni-autora'
 ```
 
 Povedlo se?
 
 {{ figure(
     img=static('merge.png'),
-    alt="Výstup programu `gitk` s větvemi doplneni-autora a doplneni-nazvu sloučenými do master",
+    alt="Výstup programu `gitk` s větvemi doplneni-autora a doplneni-nazvu sloučenými do main",
 ) }}
 
 Pokud ano, můžeš staré větve vymazat – všechny jejich
-změny jsou v `master` a nemá na nich cenu
+změny jsou v `main` a nemá na nich cenu
 pracovat dál.
 
 ```ansi
