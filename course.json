@@ -66,6 +66,34 @@
                 "static_files": {},
                 "title": "Cyklické importy"
             },
+            "beginners/class": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "class/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [
+                            {
+                                "content": "<div class=\"highlight\"><pre><span></span><span class=\"k\">class</span> <span class=\"nc\">Cat</span><span class=\"p\">:</span>\n    <span class=\"k\">def</span> <span class=\"fm\">__init__</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>         <span class=\"c1\"># Init funkce nemusi brat jako parametr</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">number_of_lives</span> <span class=\"o\">=</span> <span class=\"mi\">9</span>   <span class=\"c1\"># pocet zivotu, ten je pokazde 9.</span>\n\n    <span class=\"k\">def</span> <span class=\"nf\">meow</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n        <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;Moew, moew, meooooow!&quot;</span><span class=\"p\">)</span>\n\n    <span class=\"k\">def</span> <span class=\"nf\">is_alive</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n        <span class=\"k\">return</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">number_of_lives</span> <span class=\"o\">&gt;</span> <span class=\"mi\">0</span>\n\n    <span class=\"k\">def</span> <span class=\"nf\">lose_life</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n        <span class=\"k\">if</span> <span class=\"ow\">not</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">is_alive</span><span class=\"p\">():</span>\n            <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;Cannot kill dead cat!&quot;</span><span class=\"p\">)</span>\n        <span class=\"k\">else</span><span class=\"p\">:</span>\n            <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">number_of_lives</span> <span class=\"o\">-=</span> <span class=\"mi\">1</span>\n\n    <span class=\"k\">def</span> <span class=\"nf\">eat</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">food</span><span class=\"p\">):</span>\n        <span class=\"k\">if</span> <span class=\"ow\">not</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">is_alive</span><span class=\"p\">():</span>\n            <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;It is pointless to feed dead cat!&quot;</span><span class=\"p\">)</span>\n        <span class=\"k\">if</span> <span class=\"n\">food</span> <span class=\"o\">==</span> <span class=\"s2\">&quot;fish&quot;</span> <span class=\"ow\">and</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">number_of_lives</span> <span class=\"o\">&lt;</span> <span class=\"mi\">9</span><span class=\"p\">:</span>\n            <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">number_of_lives</span> <span class=\"o\">+=</span> <span class=\"mi\">1</span>\n            <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;Cat ate fish and gained one life.&quot;</span><span class=\"p\">)</span>\n        <span class=\"k\">else</span><span class=\"p\">:</span>\n            <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"s2\">&quot;Cat is eating.&quot;</span><span class=\"p\">)</span>\n</pre></div>"
+                            }
+                        ],
+                        "source_file": "lessons/beginners/class/index.md",
+                        "title": "Třídy",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/class/info.yml",
+                "static_files": {},
+                "title": "Třídy"
+            },
             "beginners/cmdline": {
                 "pages": {
                     "index": {
@@ -332,6 +360,30 @@
                 "source_file": "lessons/beginners/hello-world/info.yml",
                 "static_files": {},
                 "title": "První program"
+            },
+            "beginners/inheritance": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "inheritance/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/inheritance/index.md",
+                        "title": "Dědičnost",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/inheritance/info.yml",
+                "static_files": {},
+                "title": "Dědičnost"
             },
             "beginners/install": {
                 "pages": {
@@ -1001,6 +1053,30 @@
                 "static_files": {},
                 "title": "Instalace Gitu"
             },
+            "homeworks/classes": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsala Anna Benke, 2020."
+                        ],
+                        "content": {
+                            "path": "classes/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homeworks/classes/index.md",
+                        "title": "Domácí projekty",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/homeworks/classes/info.yml",
+                "static_files": {},
+                "title": "Domácí projekty"
+            },
             "homeworks/data_types": {
                 "pages": {
                     "index": {
@@ -1118,6 +1194,30 @@
                     }
                 },
                 "source_file": "lessons/homeworks/loops/info.yml",
+                "static_files": {},
+                "title": "Domácí projekty"
+            },
+            "homeworks/oop": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsala Anna Benke, 2020."
+                        ],
+                        "content": {
+                            "path": "oop/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homeworks/oop/index.md",
+                        "title": "Domácí projekty",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/homeworks/oop/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
             },
@@ -1522,6 +1622,49 @@
                 "slug": "tests",
                 "source_file": "course.yml",
                 "title": "Testování"
+            },
+            {
+                "date": "2022-11-09",
+                "materials": [
+                    {
+                        "lesson_slug": "beginners/class",
+                        "title": "Třídy",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "homeworks/classes",
+                        "title": "Domácí projekty",
+                        "type": "lesson"
+                    },
+                    {
+                        "external_url": "https://pyvec.github.io/cheatsheets/classes/classes.pdf",
+                        "title": "Tahák na třídy",
+                        "type": "cheatsheet"
+                    }
+                ],
+                "serial": "8",
+                "slug": "class",
+                "source_file": "course.yml",
+                "title": "Třídy"
+            },
+            {
+                "date": "2022-11-16",
+                "materials": [
+                    {
+                        "lesson_slug": "beginners/inheritance",
+                        "title": "Dědičnost",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "homeworks/oop",
+                        "title": "Domácí projekty",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "9",
+                "slug": "inheritance",
+                "source_file": "course.yml",
+                "title": "OOP"
             }
         ],
         "source_file": "course.yml",
