@@ -197,14 +197,7 @@ takto <code>f'Moje jméno je: {my_name}'</code>.</p>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">vypis</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Obdelník o stranách </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">×</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">cm má obvod </span><span class="si">{</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b</span><span class="si">}</span><span class="s1">cm.&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vypis</span><span class="p">)</span>
-</pre></div><p>Alternativní možnost, dnes již méně používá, je formátování pomocí string metody <code>format</code>.
-Podobně jako i F-stringu vytvoříme šablonu, do které můžeme referencovat proměnné.</p>
-<div class="highlight"><pre><span></span><span class="n">vypis</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">×</span><span class="si">{}</span><span class="s1"> je </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vypis</span><span class="p">)</span>
-</pre></div><p>Řetězec <code>'{}×{} je {}'</code> tady funguje jako <em>šablona</em> (angl. <em>template</em>).
-Představ si to jako jako formulář, do kterého Python na vyznačená místa
-vpisuje hodnoty.</p>
-<h2 id="sekani_retezcu">Sekání řetězců
+</pre></div><h2 id="sekani_retezcu">Sekání řetězců
 <a href="#header-sekani_retezcu" class="header-link">#</a>
 </h2>
 <p>Teď se vrátíme k vybírání kousků řetězců.

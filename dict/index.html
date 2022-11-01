@@ -92,7 +92,7 @@ K tomu mají slovníky metodu <code>items</code>, která vrací iterátor dvoji
 Často využiješ možnost každou dvojici přímo rozbalit v cyklu <code>for</code>,
 jako se to dělá se <code>zip</code> nebo <code>enumerate</code>:</p>
 <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">klic</span><span class="p">,</span> <span class="n">hodnota</span> <span class="ow">in</span> <span class="n">slovnik</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">klic</span><span class="p">,</span> <span class="n">hodnota</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">klic</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">hodnota</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="go">Jablko: Apple</span>
 <span class="go">Knoflík: Button</span>
 <span class="go">Myš: Mouse</span>
