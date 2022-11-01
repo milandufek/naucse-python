@@ -269,18 +269,6 @@ vypis = f'Obdelník o stranách {a}×{b}cm má obvod {2 * a + 2 * b}cm.'
 print(vypis)
 ```
 
-Alternativní možnost, dnes již méně používá, je formátování pomocí string metody `format`.
-Podobně jako i F-stringu vytvoříme šablonu, do které můžeme referencovat proměnné.
-
-```python
-vypis = '{}×{} je {}'.format(3, 4, 3 * 4)
-print(vypis)
-```
-
-Řetězec `'{}×{} je {}'` tady funguje jako *šablona* (angl. *template*).
-Představ si to jako jako formulář, do kterého Python na vyznačená místa
-vpisuje hodnoty.
-
 
 ## Sekání řetězců
 

@@ -318,7 +318,7 @@ def fibonacci(limit):
 
 def fib_annotated():
     count = (yield from fibonacci(10))
-    print('LOG: Generated {} numbers'.format(count))
+    print(f'LOG: Generated {count} numbers')
 
 for value in fib_annotated():
     print('Got', value)

@@ -295,7 +295,7 @@ The parrot module
 
    class Parrot:
        def voom(self, voltage):
-           print('This parrot wouldn\'t voom if you put {} volts through it!'.format(voltage))
+           print(f"This parrot wouldn\'t voom if you put {voltage} volts through it!")
 
        def die(self):
            return 'RIP'

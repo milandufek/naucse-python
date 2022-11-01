@@ -121,7 +121,7 @@ Musíte použít [dynamické routy]:
 ```python
 @app.route('/user/<username>/')
 def profile(username):
-    return 'User {}'.format(username)
+    return f'User {username}'
 ```
 
 Proměnnou část cesty ohraničíte lomenými závorkami a použijte jako parametr
@@ -147,7 +147,7 @@ Rout můžete definovat i víc pro jednu funkci.
 @app.route('/hello/')
 @app.route('/hello/<name>/')
 def hello(name='world'):
-    return 'Hello, {}!'.format(name)
+    return f'Hello, {name}!'
 ```
 
 ### Získání URL

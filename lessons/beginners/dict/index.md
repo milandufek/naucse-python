@@ -139,7 +139,7 @@ jako se to dělá se `zip` nebo `enumerate`:
 
 ```pycon
 >>> for klic, hodnota in slovnik.items():
-...     print('{}: {}'.format(klic, hodnota))
+...     print(f'{klic}: {hodnota}')
 Jablko: Apple
 Knoflík: Button
 Myš: Mouse

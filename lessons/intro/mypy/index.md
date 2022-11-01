@@ -64,7 +64,7 @@ informace o typech proměnných a tak nemá `mypy` co kontrolovat.
 
 ```python
 def hello(name):
-    return "Hello {}!".format(name)
+    return f"Hello {name}!"
 
 print(hello("World"))
 ```
@@ -93,7 +93,7 @@ s definovanými typy bude vypadat následovně:
 
 ```python
 def hello(name: str) -> str:
-    return "Hello {}!".format(name)
+    return f"Hello {name}!"
 
 print(hello("World"))
 ```
@@ -121,7 +121,7 @@ typem argumentu?
 
 ```python
 def hello(name: str) -> str:
-    return "Hello {}!".format(name)
+    return f"Hello {name}!"
 
 print(hello("World"))
 print(hello(5))
@@ -133,8 +133,7 @@ Hello World!
 Hello 5!
 ```
 
-Funguje to, protože řetězcová metoda `.format()` si poradí i s argumenty
-jiných typů. Ovšem, co na to `mypy` a typová kontrola?
+Co na to `mypy` a typová kontrola?
 
 ```console
 $ mypy --disallow-untyped-defs program.py
@@ -164,8 +163,7 @@ class Person:
 
 
 def hello(pet: Animal) -> None:
-    print('Hi, I am {}, your pet.'.format(pet.name))
-
+    print(f'Hi, I am {pet.name}, your pet.')
 
 rooster = Animal("Kokrhac")
 guest = Person("Tichoslapek")
@@ -199,7 +197,7 @@ v Pythonu 2, kde je nutné dávat definice typů do komentářů:
 
 ```python
 def hello(name):  # type: (str) -> str
-    return "Hello {}!".format(name)
+    return f'Hello {name}!'
 
 print hello("World")
 print hello(5)
@@ -237,7 +235,7 @@ několikrát.
 ```python
 def say_hello(names):
     for name in names:
-        print("Hello {}!".format(name))
+        print(f'Hello {name}!')
 
 say_hello(["PyLadies", "Ostrava"])
 ```
@@ -262,7 +260,7 @@ from typing import List
 
 def say_hello(names: List) -> None:
     for name in names:
-        print("Hello {}!".format(name))
+        print(f'Hello {name}!')
 
 say_hello(["PyLadies", "Ostrava"])
 ```
@@ -297,7 +295,7 @@ from typing import List, Tuple, Dict, Union, Any
 
 def say_hello(names: Union[List[str], Tuple[str, ...], Dict[str, Any]]) -> None:
     for name in names:
-        print("Hello {}!".format(name))
+        print(f'Hello {name}!')
 
 say_hello(["PyLadies", "Ostrava"])
 say_hello(("Tom", "Peter"))
@@ -327,7 +325,7 @@ from typing import Iterable
 
 def say_hello(names: Iterable[str]) -> None:
     for name in names:
-        print("Hello {}!".format(name))
+        print(f'Hello {name}!')
 
 say_hello(["PyLadies", "Ostrava"])
 say_hello(("Tom", "Peter"))
@@ -377,7 +375,7 @@ def pow(base: int, exp: int = None) -> int:
         return base ** 2
 
 def hello(name: str) -> str:
-    return "Hello {}!".format(name)
+    return f'Hello {name}!'
 
 result = pow(5, 3)
 print(hello(result))

@@ -73,7 +73,7 @@ a chceš je zpracovávat společně:
 osoby = 'máma', 'teta', 'babička', 'vrah'
 vlastnosti = 'hodná', 'milá', 'laskavá', 'zákeřný'
 for osoba, vlastnost in zip(osoby, vlastnosti):
-    print('{} je {}'.format(osoba, vlastnost))
+    print(f'{osoba} je {vlastnost}')
 ```
 
 Když `zip` dostane tři seznamy,
@@ -92,7 +92,7 @@ a tak dále.
 prvocisla = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 
 for i, prvocislo in enumerate(prvocisla):
-    print('Prvočíslo č.{} je {}'.format(i, prvocislo))
+    print(f'Prvočíslo č.{i} je {prvocislo}')
 ```
 
 ## Malé <var>n</var>-tice
