@@ -232,7 +232,7 @@ a dostat se tak ke jménu daného koťátka:
 ```python
 class Kitten:
     def meow(self):
-        print("{}: Meow!".format(self.name))
+        print(f'{self.name}: Meow!')
 
 mourek = Kitten()
 mourek.name = 'Mourek'
@@ -264,7 +264,7 @@ a zbytek argumentů se vezme z volání metody.
 
 ```python
 def eat(self, food):
-    print("{}: Meow meow! I like {}!".format(self.name, food))
+    print(f'{self.name}: Meow meow! I like {food}!')
 
 mourek = Kitten()
 mourek.name = 'Mourek'
@@ -303,10 +303,10 @@ class Kitten:
         self.name = name
 
     def meow(self):
-        print("{}: Meow!".format(self.name))
+        print(f'{self.name}: Meow!')
 
     def eat(self, food):
-        print("{}: Meow meow! I like {}!".format(self.name, food))
+        print(f'{self.name}: Meow meow! I like {food}!')
 
 mourek = Kitten('Mourek')
 mourek.meow()
@@ -335,13 +335,13 @@ class Kitten:
         self.name = name
 
     def __str__(self):
-        return '<Kitten named {}>'.format(self.name)
+        return f'<Kitten named {self.name}>'
 
     def meow(self):
-        print("{}: Meow!".format(self.name))
+        print(f'{self.name}: Meow!')
 
     def eat(self, food):
-        print("{}: Meow meow! I like {}!".format(self.name, food))
+        print(f'{self.name}: Meow meow! I like {food}!')
 
 mourek = Kitten('Mourek')
 print(mourek)

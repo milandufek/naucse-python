@@ -126,22 +126,22 @@ sessions:
     url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
     type: cheatsheet
 
-# - title: Třídy
-#   slug: class
-#   date: 2022-11-09
-#   materials:
-#   - lesson: beginners/class
-#   - lesson: homeworks/classes
-#   - title: Tahák na třídy
-#     url: https://pyvec.github.io/cheatsheets/classes/classes.pdf
-#     type: cheatsheet
+- title: Třídy
+  slug: class
+  date: 2022-11-09
+  materials:
+  - lesson: beginners/class
+  - lesson: homeworks/classes
+  - title: Tahák na třídy
+    url: https://pyvec.github.io/cheatsheets/classes/classes.pdf
+    type: cheatsheet
 
-# - title: OOP
-#   slug: inheritance
-#   date: 2022-11-16
-#   materials:
-#   - lesson: beginners/inheritance
-#   - lesson: homeworks/oop
+- title: OOP
+  slug: inheritance
+  date: 2022-11-16
+  materials:
+  - lesson: beginners/inheritance
+  - lesson: homeworks/oop
 
 # - title: Pokročilé metody programování
 #   slug: while

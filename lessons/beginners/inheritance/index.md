@@ -9,10 +9,10 @@ class Kitten:
         self.name = name
 
     def meow(self):
-        print("{}: Meow!".format(self.name))
+        print(f'{self.name}: Meow!')
 
     def eat(self, food):
-        print("{}: I like {}!".format(self.name, food))
+        print(f'{self.name}: I like {food}!')
 ```
 
 Zkus si udělat podobnou třídu pro štěňátka:
@@ -23,10 +23,10 @@ class Puppy:
         self.name = name
 
     def woof(self):
-        print("{}: Woof!".format(self.name))
+        print(f'{self.name}: Woof!')
 
     def eat(self, food):
-        print("{}: I like {}!".format(self.name, food))
+        print(f'{self.name}: I like {food}!')
 ```
 
 Většina kódu je stejná!
@@ -48,17 +48,17 @@ class Animal:
         self.name = name
 
     def eat(self, food):
-        print("{}: I like {}!".format(self.name, food))
+        print(f'{self.name}: I like {food}!')
 
 
 class Kitten(Animal):
     def meow(self):
-        print("{}: Meow!".format(self.name))
+        print(f'{self.name}: Meow!')
 
 
 class Puppy(Animal):
     def woof(self):
-        print("{}: Woof!".format(self.name))
+        print(f'{self.name}: Woof!')
 
 
 micka = Kitten('Micka')
@@ -101,7 +101,7 @@ podtřídy:
 ```python
 class Kitten(Animal):
     def eat(self, food):
-        print("{}: I really do not like {}!".format(self.name, food))
+        print(f'{self.name}: I really do not like {food}!')
 
 
 micka = Kitten('Micka')
@@ -124,7 +124,7 @@ Třeba takhle:
 ```python
 class Kitten(Animal):
     def eat(self, food):
-        print("({} looks at {}.)".format(self.name, food))
+        print(f'({self.name} looks at {food}.)')
         super().eat(food)
 
 
@@ -172,17 +172,17 @@ class Animal:
         self.name = name
 
     def eat(self, food):
-        print("{}: I like {}!".format(self.name, food))
+        print(f'{self.name}: I like {food}!')
 
 
 class Kitten(Animal):
     def meow(self):
-        print("{}: Meow!".format(self.name))
+        print(f'{self.name}: Meow!')
 
 
 class Puppy(Animal):
     def woof(self):
-        print("{}: Woof!".format(self.name))
+        print(f'{self.name}: Woof!')
 
 animals = [Kitten('Micka'), Puppy('Azorek')]
 
@@ -240,17 +240,17 @@ class Animal:
         self.name = name
 
     def eat(self, food):
-        print("{}: I like {}!".format(self.name, food))
+        print(f'{self.name}: I like {food}!')
 
 
 class Kitten(Animal):
     def make_sound(self):
-        print("{}: Meow!".format(self.name))
+        print(f'{self.name}: Meow!')
 
 
 class Puppy(Animal):
     def make_sound(self):
-        print("{}: Woof!".format(self.name))
+        print(f'{self.name}: Woof!')
 
 
 animals = [Kitten('Micka'), Puppy('Azorek')]
