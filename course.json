@@ -18,6 +18,30 @@
             "beginners/str-index-slice"
         ],
         "lessons": {
+            "advanced/generators": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz MI-PYT na ČVUT napsali Miro Hrončok, Petr Viktorin a další, 2016-2017."
+                        ],
+                        "content": {
+                            "path": "generators/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/advanced/generators/index.md",
+                        "title": "Generátory",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/advanced/generators/info.yml",
+                "static_files": {},
+                "title": "Generátory"
+            },
             "beginners/and-or": {
                 "pages": {
                     "index": {
@@ -1053,19 +1077,19 @@
                 "static_files": {},
                 "title": "Instalace Gitu"
             },
-            "homeworks/classes": {
+            "homeworks/advanced": {
                 "pages": {
                     "index": {
                         "attribution": [
                             "Pro PyLadies Brno napsala Anna Benke, 2020."
                         ],
                         "content": {
-                            "path": "classes/index.html"
+                            "path": "advanced/index.html"
                         },
                         "license": "cc-by-sa-40",
                         "slug": "index",
                         "solutions": [],
-                        "source_file": "lessons/homeworks/classes/index.md",
+                        "source_file": "lessons/homeworks/advanced/index.md",
                         "title": "Domácí projekty",
                         "vars": {
                             "coach-present": true,
@@ -1073,7 +1097,7 @@
                         }
                     }
                 },
-                "source_file": "lessons/homeworks/classes/info.yml",
+                "source_file": "lessons/homeworks/advanced/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
             },
@@ -1624,7 +1648,7 @@
                 "title": "Testování"
             },
             {
-                "date": "2022-11-09",
+                "date": "2022-11-16",
                 "materials": [
                     {
                         "lesson_slug": "beginners/class",
@@ -1632,7 +1656,12 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "homeworks/classes",
+                        "lesson_slug": "beginners/inheritance",
+                        "title": "Dědičnost",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "homeworks/oop",
                         "title": "Domácí projekty",
                         "type": "lesson"
                     },
@@ -1645,18 +1674,18 @@
                 "serial": "8",
                 "slug": "class",
                 "source_file": "course.yml",
-                "title": "Třídy"
+                "title": "Třídy / OPP"
             },
             {
-                "date": "2022-11-16",
+                "date": "2022-11-23",
                 "materials": [
                     {
-                        "lesson_slug": "beginners/inheritance",
-                        "title": "Dědičnost",
+                        "lesson_slug": "advanced/generators",
+                        "title": "Generátory",
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "homeworks/oop",
+                        "lesson_slug": "homeworks/advanced",
                         "title": "Domácí projekty",
                         "type": "lesson"
                     }
@@ -1664,7 +1693,7 @@
                 "serial": "9",
                 "slug": "inheritance",
                 "source_file": "course.yml",
-                "title": "OOP"
+                "title": "OOP / Pokročilé metody programování"
             }
         ],
         "source_file": "course.yml",
