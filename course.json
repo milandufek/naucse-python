@@ -1755,8 +1755,8 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "beginners/inheritance",
-                        "title": "Dědičnost",
+                        "lesson_slug": "homeworks/classes",
+                        "title": "Domácí projekty",
                         "type": "lesson"
                     },
                     {
@@ -1779,8 +1779,8 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "homeworks/classes",
-                        "title": "Domácí projekty",
+                        "lesson_slug": "beginners/inheritance",
+                        "title": "Dědičnost",
                         "type": "lesson"
                     }
                 ],
