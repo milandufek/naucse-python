@@ -126,29 +126,41 @@ sessions:
     url: https://pyvec.github.io/cheatsheets/exceptions/exceptions-cs.pdf
     type: cheatsheet
 
-- title: Třídy / OPP
+- title: Třídy
   slug: class
   date: 2022-11-16
   materials:
   - lesson: beginners/class
   - lesson: beginners/inheritance
-  - lesson: homeworks/oop
-  # - lesson: homeworks/classes
   - title: Tahák na třídy
     url: https://pyvec.github.io/cheatsheets/classes/classes.pdf
     type: cheatsheet
 
-- title: OOP / Pokročilé metody programování
+- title: OOP
   slug: inheritance
   date: 2022-11-23
   materials:
-  - lesson: advanced/generators
-  - lesson: homeworks/advanced
+  - lesson: homeworks/oop
+  - lesson: homeworks/classes
+
+- title: Datová analýza
+  slug: pandas
+  date: 2022-11-30
+  materials:
+  - lesson: intro/notebook
+  - lesson: intro/numpy
+  - lesson: intro/pandas
+  - lesson: homeworks/data_analysis
+  - title: Tahák na numpy
+    url: https://pyvec.github.io/cheatsheets/numpy/numpy-cs.pdf
+    type: cheatsheet
 
 # - title: Pokročilé metody programování
-#   slug: while``
+#   slug: advance-programming
 #   date: 2022-11-30
 #   materials:
+#   - lesson: advanced/generators
+#   - lesson: homeworks/advanced
 
 # - title: Soubory, JSON, API
 #   slug: file
@@ -168,18 +180,6 @@ sessions:
 #   - lesson: intro/flask
 #   - lesson: homeworks/flask_project
 #     type: homework
-
-# - title: Datová analýza
-#   slug: pandas
-#   date: 2022-12-14
-#   materials:
-#   - lesson: intro/notebook
-#   - lesson: intro/numpy
-#   - lesson: intro/pandas
-#   - lesson: homeworks/data_analysis
-#   - title: Tahák na numpy
-#     url: https://pyvec.github.io/cheatsheets/numpy/numpy-cs.pdf
-#     type: cheatsheet
 
 # - title: Databáze
 #   slug: database
