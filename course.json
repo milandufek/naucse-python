@@ -18,30 +18,6 @@
             "beginners/str-index-slice"
         ],
         "lessons": {
-            "advanced/generators": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "Pro kurz MI-PYT na ČVUT napsali Miro Hrončok, Petr Viktorin a další, 2016-2017."
-                        ],
-                        "content": {
-                            "path": "generators/index.html"
-                        },
-                        "license": "cc-by-sa-40",
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/advanced/generators/index.md",
-                        "title": "Generátory",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true
-                        }
-                    }
-                },
-                "source_file": "lessons/advanced/generators/info.yml",
-                "static_files": {},
-                "title": "Generátory"
-            },
             "beginners/and-or": {
                 "pages": {
                     "index": {
@@ -1077,19 +1053,19 @@
                 "static_files": {},
                 "title": "Instalace Gitu"
             },
-            "homeworks/advanced": {
+            "homeworks/classes": {
                 "pages": {
                     "index": {
                         "attribution": [
                             "Pro PyLadies Brno napsala Anna Benke, 2020."
                         ],
                         "content": {
-                            "path": "advanced/index.html"
+                            "path": "classes/index.html"
                         },
                         "license": "cc-by-sa-40",
                         "slug": "index",
                         "solutions": [],
-                        "source_file": "lessons/homeworks/advanced/index.md",
+                        "source_file": "lessons/homeworks/classes/index.md",
                         "title": "Domácí projekty",
                         "vars": {
                             "coach-present": true,
@@ -1097,7 +1073,31 @@
                         }
                     }
                 },
-                "source_file": "lessons/homeworks/advanced/info.yml",
+                "source_file": "lessons/homeworks/classes/info.yml",
+                "static_files": {},
+                "title": "Domácí projekty"
+            },
+            "homeworks/data_analysis": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsala Anna Benke, 2020."
+                        ],
+                        "content": {
+                            "path": "data_analysis/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homeworks/data_analysis/index.md",
+                        "title": "Domácí projekty",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/homeworks/data_analysis/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
             },
@@ -1268,6 +1268,105 @@
                 "source_file": "lessons/homeworks/test/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
+            },
+            "intro/notebook": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz MI-PYT na ČVUT napsali Petr Viktorin, Miro Hrončok a další, 2016-2017."
+                        ],
+                        "content": {
+                            "path": "notebook/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "license_code": "cc0",
+                        "modules": {
+                            "katex": "0.7.1"
+                        },
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/notebook/index.ipynb",
+                        "title": "Notebook",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/intro/notebook/info.yml",
+                "static_files": {},
+                "title": "Notebook"
+            },
+            "intro/numpy": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz MI-PYT na ČVUT napsali Petr Viktorin, Miro Hrončok a další, 2016-2017."
+                        ],
+                        "content": {
+                            "path": "numpy/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "modules": {
+                            "katex": "0.7.1"
+                        },
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/numpy/index.ipynb",
+                        "title": "NumPy",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/intro/numpy/info.yml",
+                "static_files": {
+                    "python.jpg": {
+                        "path": "numpy/python.jpg"
+                    },
+                    "sample.wav": {
+                        "path": "numpy/sample.wav"
+                    },
+                    "secret.png": {
+                        "path": "numpy/secret.png"
+                    }
+                },
+                "title": "NumPy"
+            },
+            "intro/pandas": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz MI-PYT na ČVUT napsali Petr Viktorin, Miro Hrončok a další, 2016-2017."
+                        ],
+                        "content": {
+                            "path": "pandas/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/pandas/index.ipynb",
+                        "title": "Pandas",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/intro/pandas/info.yml",
+                "static_files": {
+                    "actors.csv": {
+                        "path": "pandas/actors.csv"
+                    },
+                    "spouses.csv": {
+                        "path": "pandas/spouses.csv"
+                    },
+                    "style-table.css": {
+                        "path": "pandas/style-table.css"
+                    }
+                },
+                "title": "Pandas"
             },
             "intro/turtle": {
                 "pages": {
@@ -1661,11 +1760,6 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "homeworks/oop",
-                        "title": "Domácí projekty",
-                        "type": "lesson"
-                    },
-                    {
                         "external_url": "https://pyvec.github.io/cheatsheets/classes/classes.pdf",
                         "title": "Tahák na třídy",
                         "type": "cheatsheet"
@@ -1674,18 +1768,18 @@
                 "serial": "8",
                 "slug": "class",
                 "source_file": "course.yml",
-                "title": "Třídy / OPP"
+                "title": "Třídy"
             },
             {
                 "date": "2022-11-23",
                 "materials": [
                     {
-                        "lesson_slug": "advanced/generators",
-                        "title": "Generátory",
+                        "lesson_slug": "homeworks/oop",
+                        "title": "Domácí projekty",
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "homeworks/advanced",
+                        "lesson_slug": "homeworks/classes",
                         "title": "Domácí projekty",
                         "type": "lesson"
                     }
@@ -1693,7 +1787,41 @@
                 "serial": "9",
                 "slug": "inheritance",
                 "source_file": "course.yml",
-                "title": "OOP / Pokročilé metody programování"
+                "title": "OOP"
+            },
+            {
+                "date": "2022-11-30",
+                "materials": [
+                    {
+                        "lesson_slug": "intro/notebook",
+                        "title": "Notebook",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "intro/numpy",
+                        "title": "NumPy",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "intro/pandas",
+                        "title": "Pandas",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "homeworks/data_analysis",
+                        "title": "Domácí projekty",
+                        "type": "lesson"
+                    },
+                    {
+                        "external_url": "https://pyvec.github.io/cheatsheets/numpy/numpy-cs.pdf",
+                        "title": "Tahák na numpy",
+                        "type": "cheatsheet"
+                    }
+                ],
+                "serial": "10",
+                "slug": "pandas",
+                "source_file": "course.yml",
+                "title": "Datová analýza"
             }
         ],
         "source_file": "course.yml",
