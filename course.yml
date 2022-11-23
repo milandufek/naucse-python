@@ -131,7 +131,7 @@ sessions:
   date: 2022-11-16
   materials:
   - lesson: beginners/class
-  - lesson: beginners/inheritance
+  - lesson: homeworks/classes
   - title: Tahák na třídy
     url: https://pyvec.github.io/cheatsheets/classes/classes.pdf
     type: cheatsheet
@@ -141,7 +141,7 @@ sessions:
   date: 2022-11-23
   materials:
   - lesson: homeworks/oop
-  - lesson: homeworks/classes
+  - lesson: beginners/inheritance
 
 - title: Datová analýza
   slug: pandas
