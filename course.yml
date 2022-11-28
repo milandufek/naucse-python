@@ -140,12 +140,24 @@ sessions:
   slug: inheritance
   date: 2022-11-23
   materials:
-  - lesson: homeworks/oop
   - lesson: beginners/inheritance
+  - lesson: homeworks/oop
+    type: homework
+
+- title: Soubory, HTTP, JSON, API
+  slug: http-api
+  date: 2022-11-30
+  materials:
+  - lesson: beginners/files
+  - lesson: intro/json
+  - lesson: fast-track/http
+  - lesson: projects/github-api
+  - lesson: homeworks/servers
+    type: homework
 
 - title: Datová analýza
   slug: pandas
-  date: 2022-11-30
+  date: 2022-12-07
   materials:
   - lesson: intro/notebook
   - lesson: intro/numpy
@@ -155,44 +167,28 @@ sessions:
     url: https://pyvec.github.io/cheatsheets/numpy/numpy-cs.pdf
     type: cheatsheet
 
-# - title: Pokročilé metody programování
-#   slug: advance-programming
-#   date: 2022-11-30
-#   materials:
-#   - lesson: advanced/generators
-#   - lesson: homeworks/advanced
+- title: Pokročilé metody programování
+  slug: advance-programming
+  materials:
+  - lesson: advanced/generators
+  # - lesson: homeworks/advanced
 
-# - title: Soubory, JSON, API
-#   slug: file
-#   date: 2022-12-07
-#   materials:
-#   - lesson: beginners/files
-#   - lesson: intro/json
-#   - lesson: projects/github-api
-#   - lesson: homeworks/servers
-#     type: homework
+- title: Flask, databáze
+  slug: databases
+  date: 2022-12-14
+  materials:
+  - lesson: intro/flask
+  - lesson: beginners/database
+  - lesson: homeworks/database
+    type: homework
+  - lesson: homeworks/flask_project
+    type: homework
 
-# - title: HTTP, Flask
-#   slug: github-api
-#   date: 2022-12-14
-#   materials:
-#   - lesson: fast-track/http
-#   - lesson: intro/flask
-#   - lesson: homeworks/flask_project
-#     type: homework
-
-# - title: Databáze
-#   slug: database
-#   materials:
-#   - lesson: beginners/database
-#   - lesson: homeworks/database
-#     type: homework
-
-# - title: Závěrečné projekty - prezentace
-#   slug: asteroids
-#   date: 2023-01-11
-#   materials:
-#   - lesson: homeworks/own_project
+- title: Závěrečné projekty - prezentace
+  slug: asteroids
+  date: 2023-01-18
+  materials:
+  - lesson: homeworks/own_project
 
 extra_lessons:
   - beginners/exceptions
