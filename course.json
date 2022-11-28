@@ -18,6 +18,30 @@
             "beginners/str-index-slice"
         ],
         "lessons": {
+            "advanced/generators": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz MI-PYT na ČVUT napsali Miro Hrončok, Petr Viktorin a další, 2016-2017."
+                        ],
+                        "content": {
+                            "path": "generators/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/advanced/generators/index.md",
+                        "title": "Generátory",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/advanced/generators/info.yml",
+                "static_files": {},
+                "title": "Generátory"
+            },
             "beginners/and-or": {
                 "pages": {
                     "index": {
@@ -160,6 +184,34 @@
                 "static_files": {},
                 "title": "Porovnávání"
             },
+            "beginners/database": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Ondřej Beneš, 2019."
+                        ],
+                        "content": {
+                            "path": "database/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/beginners/database/index.md",
+                        "title": "Úvod do Relačních databází",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/database/info.yml",
+                "static_files": {
+                    "fk.png": {
+                        "path": "database/fk.png"
+                    }
+                },
+                "title": "Úvod do Relačních databází"
+            },
             "beginners/debug": {
                 "pages": {
                     "index": {
@@ -277,6 +329,34 @@
                 "source_file": "lessons/beginners/exceptions/info.yml",
                 "static_files": {},
                 "title": "Výjimky"
+            },
+            "beginners/files": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2014-2017."
+                        ],
+                        "content": {
+                            "path": "files/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [
+                            {
+                                "content": "<p>Každý řádek končí znakem nového řádku, <code>'\\n'</code>,\nkterý možná znáš ze <a href=\"naucse:page?lesson=beginners/str\">sekce o řetězcích</a>.\nPři procházení souboru Python tento znak nechává na konci řetězce <code>line</code> ¹.\nFunkce <code>print</code> pak přidá další nový řádek, protože ta na konci\nvýpisu vždycky odřádkovává – pokud nedostane argument <code>end=''</code>.</p>\n<hr>\n<p>¹ Proč to dělá? Kdyby <code>'\\n'</code> na konci řádků nebylo,\nnedalo by se např. dobře rozlišit, jestli poslední řádek\nkončí na <code>'\\n'</code></p>"
+                            }
+                        ],
+                        "source_file": "lessons/beginners/files/index.md",
+                        "title": "Soubory",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/beginners/files/info.yml",
+                "static_files": {},
+                "title": "Soubory"
             },
             "beginners/first-steps": {
                 "pages": {
@@ -908,6 +988,35 @@
                 "static_files": {},
                 "title": "Cyklus While"
             },
+            "fast-track/http": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro naucse.python.cz napsal Petr Viktorin, 2018.",
+                            "Inspirováno tutoriálem <a href=\"https://tutorial.djangogirls.org/en/how_the_internet_works/\">Django Girls</a>"
+                        ],
+                        "content": {
+                            "path": "http/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/fast-track/http/index.md",
+                        "title": "HTTP – Jak funguje Internet",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/fast-track/http/info.yml",
+                "static_files": {
+                    "url-anatomy.svg": {
+                        "path": "http/url-anatomy.svg"
+                    }
+                },
+                "title": "HTTP – Jak funguje Internet"
+            },
             "git/basics": {
                 "pages": {
                     "index": {
@@ -1125,6 +1234,30 @@
                 "static_files": {},
                 "title": "Domácí projekty"
             },
+            "homeworks/database": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsala Anna Benke, 2020."
+                        ],
+                        "content": {
+                            "path": "database/index.1.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homeworks/database/index.md",
+                        "title": "Domácí projekty",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/homeworks/database/info.yml",
+                "static_files": {},
+                "title": "Domácí projekty"
+            },
             "homeworks/def": {
                 "pages": {
                     "index": {
@@ -1146,6 +1279,30 @@
                     }
                 },
                 "source_file": "lessons/homeworks/def/info.yml",
+                "static_files": {},
+                "title": "Domácí projekty"
+            },
+            "homeworks/flask_project": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsala Anna Benke, 2019."
+                        ],
+                        "content": {
+                            "path": "flask_project/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homeworks/flask_project/index.md",
+                        "title": "Domácí projekty",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/homeworks/flask_project/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
             },
@@ -1245,6 +1402,54 @@
                 "static_files": {},
                 "title": "Domácí projekty"
             },
+            "homeworks/own_project": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsala Anna Benke, 2019."
+                        ],
+                        "content": {
+                            "path": "own_project/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homeworks/own_project/index.md",
+                        "title": "Závěrečný projekt",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/homeworks/own_project/info.yml",
+                "static_files": {},
+                "title": "Závěrečný projekt"
+            },
+            "homeworks/servers": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsala Anna Benke, 2020."
+                        ],
+                        "content": {
+                            "path": "servers/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/homeworks/servers/index.md",
+                        "title": "Domácí projekty",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/homeworks/servers/info.yml",
+                "static_files": {},
+                "title": "Domácí projekty"
+            },
             "homeworks/test": {
                 "pages": {
                     "index": {
@@ -1268,6 +1473,54 @@
                 "source_file": "lessons/homeworks/test/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
+            },
+            "intro/flask": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz MI-PYT na ČVUT napsali Miro Hrončok, Petr Viktorin a další, 2016-2017."
+                        ],
+                        "content": {
+                            "path": "flask/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/flask/index.md",
+                        "title": "Flask",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/intro/flask/info.yml",
+                "static_files": {},
+                "title": "Flask"
+            },
+            "intro/json": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "json/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/json/index.md",
+                        "title": "JSON",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/intro/json/info.yml",
+                "static_files": {},
+                "title": "JSON"
             },
             "intro/notebook": {
                 "pages": {
@@ -1438,6 +1691,30 @@
                     }
                 },
                 "title": "Želva a cykly"
+            },
+            "projects/github-api": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
+                        ],
+                        "content": {
+                            "path": "github-api/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/projects/github-api/index.md",
+                        "title": "Github API",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/projects/github-api/info.yml",
+                "static_files": {},
+                "title": "Github API"
             }
         },
         "long_description": "<p>Tady najdeš všechny materiály k brněnské verzi začátečnického kurzu PyLadies.\nStránky samotných PyLadies jsou na <a href=\"http://pyladies.cz\">http://pyladies.cz</a>.\nJednotlivé lekce jsou určeny naprostým začátečnicím.\nInstrukce jsou uvedeny pro operační systémy Linux, Windows i macOS.</p>",
@@ -1774,14 +2051,14 @@
                 "date": "2022-11-23",
                 "materials": [
                     {
-                        "lesson_slug": "homeworks/oop",
-                        "title": "Domácí projekty",
-                        "type": "lesson"
-                    },
-                    {
                         "lesson_slug": "beginners/inheritance",
                         "title": "Dědičnost",
                         "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "homeworks/oop",
+                        "title": "Domácí projekty",
+                        "type": "homework"
                     }
                 ],
                 "serial": "9",
@@ -1791,6 +2068,40 @@
             },
             {
                 "date": "2022-11-30",
+                "materials": [
+                    {
+                        "lesson_slug": "beginners/files",
+                        "title": "Soubory",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "intro/json",
+                        "title": "JSON",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "fast-track/http",
+                        "title": "HTTP – Jak funguje Internet",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "projects/github-api",
+                        "title": "Github API",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "homeworks/servers",
+                        "title": "Domácí projekty",
+                        "type": "homework"
+                    }
+                ],
+                "serial": "10",
+                "slug": "http-api",
+                "source_file": "course.yml",
+                "title": "Soubory, HTTP, JSON, API"
+            },
+            {
+                "date": "2022-12-07",
                 "materials": [
                     {
                         "lesson_slug": "intro/notebook",
@@ -1818,10 +2129,66 @@
                         "type": "cheatsheet"
                     }
                 ],
-                "serial": "10",
+                "serial": "11",
                 "slug": "pandas",
                 "source_file": "course.yml",
                 "title": "Datová analýza"
+            },
+            {
+                "materials": [
+                    {
+                        "lesson_slug": "advanced/generators",
+                        "title": "Generátory",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "12",
+                "slug": "advance-programming",
+                "source_file": "course.yml",
+                "title": "Pokročilé metody programování"
+            },
+            {
+                "date": "2022-12-14",
+                "materials": [
+                    {
+                        "lesson_slug": "intro/flask",
+                        "title": "Flask",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "beginners/database",
+                        "title": "Úvod do Relačních databází",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "homeworks/database",
+                        "title": "Domácí projekty",
+                        "type": "homework"
+                    },
+                    {
+                        "lesson_slug": "homeworks/flask_project",
+                        "title": "Domácí projekty",
+                        "type": "homework"
+                    }
+                ],
+                "serial": "13",
+                "slug": "databases",
+                "source_file": "course.yml",
+                "title": "Flask, databáze"
+            },
+            {
+                "date": "2023-01-18",
+                "materials": [
+                    {
+                        "lesson_slug": "homeworks/own_project",
+                        "title": "Závěrečný projekt",
+                        "type": "lesson"
+                    }
+                ],
+                "serial": "14",
+                "slug": "asteroids",
+                "source_file": "course.yml",
+                "title": "Závěrečné projekty - prezentace"
             }
         ],
         "source_file": "course.yml",

@@ -1,0 +1,39 @@
+<h1 id="domaci_projekty">Domácí projekty
+<a href="#header-domaci_projekty" class="header-link">#</a>
+</h1>
+<p>Naprogramuj jednoduchou webovou aplikaci pomocí frameworku Flask.</p>
+<h1 id="webova_aplikace_ve_flasku">Webová aplikace ve Flasku
+<a href="#header-webova_aplikace_ve_flasku" class="header-link">#</a>
+</h1>
+<p>Aplikace bude mít dva endpointy. První bude home page s uvítáním a návodem, co může uživatel na stránkách najít.
+Druhý bude poskytovat informace podle zadaného klíče.</p>
+<h2 id="data_v_aplikace">Data v aplikace
+<a href="#header-data_v_aplikace" class="header-link">#</a>
+</h2>
+<p>U sebe na počítači si vytvoř textový soubor s příponou <code>.txt</code>, kde bude JSON s daty ve formě klíč: hodnota.
+Můžeš si vymyslet jaká data chceš. Telefonní seznam - jméno: telefonní číslo, knihu básní - autor: báseň nebo třeba seznam vánočních dárků, které chceš koupit - obdarovaný: dárek.
+Můžeš se inspirovat v lekci o JSONu.</p>
+<div class="highlight"><pre><span></span><span class="n">json_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    {</span>
+<span class="s2">      &quot;name&quot;: &quot;Anna&quot;,</span>
+<span class="s2">      &quot;city&quot;: &quot;Brno&quot;,</span>
+<span class="s2">      &quot;language&quot;: [&quot;czech&quot;, &quot;english&quot;, &quot;Python&quot;],</span>
+<span class="s2">      &quot;age&quot;: 26</span>
+<span class="s2">    }</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div><h2 id="poskytovani_dat">Poskytování dat
+<a href="#header-poskytovani_dat" class="header-link">#</a>
+</h2>
+<p>Endpoint, který bude poskytovat data musí mít dynamickou URL. Jak vytvořit takový endpoint najdeš v lekci FLask v sekci <code>Dynamické routy</code>.
+Místo <code>&lt;username&gt;</code> bude tvůj endpoint přijímat argument např. jméno, autor básně, obdarovaný.
+Uvnitř něj si otevřeš a načteš soubor s JSONem. Soubor nezapomeň otevírat pomocí <code>with open(...</code>. Obsah souboru si nahraješ do pythonního slovníku pomocí <code>json.loads</code>. Jak na to najdeš v lekci o JSONu v sekci <code>JSON v Pythonu</code>. Podle zadaného klíče vybereš potřebné hodnoty ze slovníku a vrátíš je.</p>
+<p>Po nahrání JSONu se tvoje data budou chovat jako klasický pythonní slovník a jak vybírat ze slovníku podle klíče už známe.</p>
+<p>Nezapomeň ošetřit situaci, kdy uživatel zadá klíč, který nebude ve slovníku. To můžeš vyřešit nějakou hezkou hláškou. Pokud si troufneš, můžeš uživateli pomocí Flaskové funkce <code>abort</code> vrátit stavový kód 404 - nenalezeno. Dokumentaci k <code>abort</code> můžeš najít tady: <a href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.abort">https://flask.palletsprojects.com/en/1.1.x/api/#flask.abort</a></p>
+<h3 id="odevzdani">Odevzdání
+<a href="#header-odevzdani" class="header-link">#</a>
+</h3>
+<p>Řešení nezapomeň nahrát na github společně s JSONem s daty.</p>
+<h1 id="bonusy">Bonusy
+<a href="#header-bonusy" class="header-link">#</a>
+</h1>
+<p>Pojem, který by měly znát všechny vývojářky webových aplikací je <a href="https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm">MVC pattern</a>. Co to znamená jsme lehle naťukli na lekci, kdy jste podle tohoto patternu psali svojí Flask aplikaci. Tady jsme mluvili o tom, že další webový framework Django používá MVT pattern a že jsou vlastně velmi podobné. Rozdíl mezi MVC a MVT najdete <a href="https://medium.com/shecodeafrica/understanding-the-mvc-pattern-in-django-edda05b9f43f">zde</a>.</p>
