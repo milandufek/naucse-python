@@ -21,7 +21,7 @@ Pokus se zaručit, že bude vždy unikátní.</p>
 <p>Program piš objektově. Měl by obsahovat část pro konvertor měn,
 pro samotnou položku k fakturaci, vygenerování QR platby,
 řídící část a možná nějaké pomocné funkce pro obecnou práci.
-Kromě řídící části tzv. <code>main</code> by program neměl obsahovat žádné <code>input</code>y ani <code>printy</code>.
+Kromě řídící části tzv. <code>main</code> by program neměl obsahovat žádné <code>inputy</code> ani <code>printy</code>.
 Chceš aby byl i strojově použitelný, např. mohl přečíst 1000 záznamů
 z jiného seznamu nebo API a pro každý vygeneroval fakturu, kterou třeba někam pošle,
 to dělat nemusíš ale mysli na to při návrhu :).</p>
@@ -64,7 +64,7 @@ stačí základní varianta s účtem, částkou, VS a zprávou pro příjemce.<
 <a href="#header-html_template_pro_fakturu" class="header-link">#</a>
 </h3>
 <p>Pro finální fakturu s QR platbou <strong>použij tuto HTML šablonu</strong>, kterou si ulož jako soubor.
-Ten pak budeš pouze <code>formát</code>ovat a generovat z něho konkrétní platby, jak Baťa cvičky.</p>
+Ten pak budeš pouze <code>formátovat</code> a generovat z něho konkrétní platby, jak Baťa cvičky.</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Faktura číslo {}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -81,17 +81,17 @@ Ten pak budeš pouze <code>formát</code>ovat a generovat z něho konkrétní pl
 </pre></div><h2 id="bonus">Bonus
 <a href="#header-bonus" class="header-link">#</a>
 </h2>
-<ol>
-<li>Více položek
-Pokud chceš svůj program vylepšit, napiš ho tak, aby šlo zadat více položek
+<h3 id="1_vice_polozek">1. Více položek
+<a href="#header-1_vice_polozek" class="header-link">#</a>
+</h3>
+<p>Pokud chceš svůj program vylepšit, napiš ho tak, aby šlo zadat více položek
 a vygenerovat pro ně jednu společnou fakturu, kde bude celková částka v Kč
-ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i české měně.</li>
-</ol>
+ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i české měně.</p>
 <p>Pro hezké zobrazení na faktuře už to bude vyžadovat i práci se změnou HTML šablony ;-)</p>
-<ol>
-<li>Parser čísla a měny
-Program si poradí se zápisem částky a měny v jednom řádku</li>
-</ol>
+<h3 id="2_parser_cisla_a_meny">2. Parser čísla a měny
+<a href="#header-2_parser_cisla_a_meny" class="header-link">#</a>
+</h3>
+<p>Program si poradí se zápisem částky a měny v jednom řádku</p>
 <ul>
 <li>10Kč</li>
 <li>10 Eur</li>
