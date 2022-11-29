@@ -8,7 +8,7 @@
 <li>práci se soubory</li>
 <li>práci s HTTP dotazy pomocí knihovny <code>requests</code></li>
 <li>práci s datovým formátem <a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
-<li>práce s dalšími balíčky jako <code>os</code>, <code>datatime</code> a <code>qrcode</code></li>
+<li>práce s dalšími balíčky jako <code>os</code>, <code>datetime</code> a <code>qrcode</code></li>
 </ul>
 <p>Vytvoř jednoduchý účetní program, který bude pracovat s kurzovním lístkem a
 generovat faktury s QR platbou pro uživatele.</p>
@@ -21,7 +21,7 @@ Pokus se zaručit, že bude vždy unikátní.</p>
 <p>Program piš objektově. Měl by obsahovat část pro konvertor měn,
 pro samotnou položku k fakturaci, vygenerování QR platby,
 řídící část a možná nějaké pomocné funkce pro obecnou práci.
-Kromě řídící části tzv. <code>main</code> by program neměl obsahovat žádné <code>inputy</code> ani <code>printy</code>.
+Kromě řídící části tzv. <code>main</code> by program neměl obsahovat <strong>žádné</strong> <code>inputy</code> ani <code>printy</code>.
 Chceš aby byl i strojově použitelný, např. mohl přečíst 1000 záznamů
 z jiného seznamu nebo API a pro každý vygeneroval fakturu, kterou třeba někam pošle,
 to dělat nemusíš ale mysli na to při návrhu :).</p>
@@ -91,7 +91,7 @@ ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i
 <h3 id="2_parser_cisla_a_meny">2. Parser čísla a měny
 <a href="#header-2_parser_cisla_a_meny" class="header-link">#</a>
 </h3>
-<p>Program si poradí se zápisem částky a měny v jednom řádku</p>
+<p>Program si poradí se zápisem částky a měny v jednom řádku:</p>
 <ul>
 <li>10Kč</li>
 <li>10 Eur</li>
@@ -100,3 +100,4 @@ ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i
 <li>10USD</li>
 <li>apod...</li>
 </ul>
+<p>Může se hodit knihovna <code>re</code> pro regulární výrazy ale jde to i bez :)</p>

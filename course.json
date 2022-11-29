@@ -1234,30 +1234,6 @@
                 "static_files": {},
                 "title": "Domácí projekty"
             },
-            "homeworks/database": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "Pro PyLadies Brno napsala Anna Benke, 2020."
-                        ],
-                        "content": {
-                            "path": "database/index.1.html"
-                        },
-                        "license": "cc-by-sa-40",
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/homeworks/database/index.md",
-                        "title": "Domácí projekty",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true
-                        }
-                    }
-                },
-                "source_file": "lessons/homeworks/database/info.yml",
-                "static_files": {},
-                "title": "Domácí projekty"
-            },
             "homeworks/def": {
                 "pages": {
                     "index": {
@@ -1279,30 +1255,6 @@
                     }
                 },
                 "source_file": "lessons/homeworks/def/info.yml",
-                "static_files": {},
-                "title": "Domácí projekty"
-            },
-            "homeworks/flask_project": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "Pro PyLadies Brno napsala Anna Benke, 2019."
-                        ],
-                        "content": {
-                            "path": "flask_project/index.html"
-                        },
-                        "license": "cc-by-sa-40",
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/homeworks/flask_project/index.md",
-                        "title": "Domácí projekty",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true
-                        }
-                    }
-                },
-                "source_file": "lessons/homeworks/flask_project/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
             },
@@ -1402,35 +1354,11 @@
                 "static_files": {},
                 "title": "Domácí projekty"
             },
-            "homeworks/own_project": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "Pro PyLadies Brno napsala Anna Benke, 2019."
-                        ],
-                        "content": {
-                            "path": "own_project/index.html"
-                        },
-                        "license": "cc-by-sa-40",
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/homeworks/own_project/index.md",
-                        "title": "Závěrečný projekt",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true
-                        }
-                    }
-                },
-                "source_file": "lessons/homeworks/own_project/info.yml",
-                "static_files": {},
-                "title": "Závěrečný projekt"
-            },
             "homeworks/servers": {
                 "pages": {
                     "index": {
                         "attribution": [
-                            "Pro PyLadies Brno napsala Anna Benke, 2020."
+                            "Pro kurz PyLadies Brno v Mergadu napsal Milan Dufek, 2022."
                         ],
                         "content": {
                             "path": "servers/index.html"
@@ -1473,6 +1401,30 @@
                 "source_file": "lessons/homeworks/test/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
+            },
+            "intro/django": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz PyLadies Brno v Mergadu napsala Alby Waageová, 2022."
+                        ],
+                        "content": {
+                            "path": "django/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/django/index.md",
+                        "title": "Django instalace",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/intro/django/info.yml",
+                "static_files": {},
+                "title": "Django instalace"
             },
             "intro/flask": {
                 "pages": {
@@ -2151,8 +2103,8 @@
                 "date": "2022-12-14",
                 "materials": [
                     {
-                        "lesson_slug": "intro/flask",
-                        "title": "Flask",
+                        "lesson_slug": "intro/django",
+                        "title": "Django instalace",
                         "type": "lesson"
                     },
                     {
@@ -2161,34 +2113,15 @@
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "homeworks/database",
-                        "title": "Domácí projekty",
-                        "type": "homework"
-                    },
-                    {
-                        "lesson_slug": "homeworks/flask_project",
-                        "title": "Domácí projekty",
-                        "type": "homework"
+                        "lesson_slug": "intro/flask",
+                        "title": "Flask",
+                        "type": "lesson"
                     }
                 ],
                 "serial": "13",
                 "slug": "databases",
                 "source_file": "course.yml",
-                "title": "Flask, databáze"
-            },
-            {
-                "date": "2023-01-18",
-                "materials": [
-                    {
-                        "lesson_slug": "homeworks/own_project",
-                        "title": "Závěrečný projekt",
-                        "type": "lesson"
-                    }
-                ],
-                "serial": "14",
-                "slug": "asteroids",
-                "source_file": "course.yml",
-                "title": "Závěrečné projekty - prezentace"
+                "title": "Django, databáze, Flask"
             }
         ],
         "source_file": "course.yml",

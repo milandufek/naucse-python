@@ -1,0 +1,76 @@
+<h1 id="instalacia_django">Inštalácia: Django
+<a href="#header-instalacia_django" class="header-link">#</a>
+</h1>
+<p>Vo vašom adresári Pyladies, tam kde máte vytvorené zložky k jednotlivým lekciám si vytvorte zložku pre Django aplikáciu a prejdite do nej.</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir django_project
+<span class="gp">$ </span><span class="nb">cd</span> django_project/
+</pre></div><p>Zapnite si virtuálne prostredie (venv).</p>
+<p>V zložke <code>django_project/</code> si vytvorte súbor <code>requirements.txt</code> do ktorého zapíšte:</p>
+<div class="highlight"><pre><span></span><span class="go">Django~=4.0.8</span>
+</pre></div><p>Nainštalujte Django pomocou zadania príkazu do terminálu:</p>
+<div class="highlight"><pre><span></span><span class="go">pip install -r requirements.txt</span>
+</pre></div><p>Na konci výpisu v terminále by ste mali vidieť:</p>
+<div class="highlight"><pre><span></span><span class="go">Successfully installed Django-4.0.8</span>
+</pre></div><h1 id="django_projekt">Django projekt
+<a href="#header-django_projekt" class="header-link">#</a>
+</h1>
+<p>Prvým krokom pri tvorbe projektu v Django je vytvorenie jeho základnej kostry zložiek a súborov pomocou Django skriptov.
+Tieto zložky a súbory budeme neskôr používať, ich umiestnenie a pomenovanie sú pre Django dôležité, preto ich nepresúvajte
+ani nepremenovávajte. Nezabudnite, že je potreba byť v zložke <code>django_project/</code>a mať zapnutý venv (platí aj pre ďalšie príkazy
+do terminálu v rámci tohoto nastavenia).</p>
+<p>Bodka (tečka) na konci príkazu je dôležitá.</p>
+<p>Windows</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>django-admin.exe startproject pyladies_blog .
+</pre></div><p>macOS / Linux</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>django-admin startproject pyladies_blog .
+</pre></div><p><code>django-admin.py</code> je skript ktorý vytvorí súbory a zložky. Štruktúra by mala vyzerať takto:</p>
+<div class="highlight"><pre><code>django_project
+├── manage.py
+├── pyladies_blog
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── requirements.txt</code></pre></div><p>Súbor <code>manage.py</code> je skript ktorý slúži k správe webovej aplikácie.
+Pomocou neho si budeš (okrem iného) môcť spusiť web server na svojom počítači bez nutnosti inštalovať čokoľvek iné.</p>
+<p>Súbor <code>settings.py</code> obsahuje konfiguráciu tvojej aplikácie.</p>
+<p>Súbor <code>urls.py</code> obsahuje zoznam schémat na základe ktorých sa párujú Python triedy (tzv. views) s URL cestami.</p>
+<h1 id="uprava_nastavenia_projektu">Úprava nastavenia projektu
+<a href="#header-uprava_nastavenia_projektu" class="header-link">#</a>
+</h1>
+<p>Do súboru <code>settings.py</code> je potrebné pridať nakoniec:</p>
+<div class="highlight"><pre><code>STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'</code></pre></div><p>Je možné zmeniť si jazyk vašej aplikácie pomocou nastavenia v <code>LANGUAGE_CODE</code>,
+ideálne si ale ponechajte angličtinu (pozn. pre češtinu by bola hodnota <code>cs-CZ</code>).</p>
+<h1 id="nastavenie_databaze">Nastavenie databáze
+<a href="#header-nastavenie_databaze" class="header-link">#</a>
+</h1>
+<p>Je niekoľko databázových software-ov pre uloženie dát o vašej aplikácii, my budeme používať
+defaultné <code>sqlite3</code>. Nastavenie je už súčasťou <code>settings.py</code>.</p>
+<p>Pre vytvorenie databáze pre vašu aplikáciu je potrebné spustiť následovné (zo zložky <code>django_project/</code>):</p>
+<div class="highlight"><pre><span></span><span class="go">python manage.py migrate</span>
+</pre></div><p>Mali by ste v prípade úspechu vidieť takýto výpis:</p>
+<div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv)</span> <span class="go">~/pyladies/django_project$ python manage.py migrate</span>
+<span class="go">Operations to perform:</span>
+<span class="go">  Apply all migrations: admin, auth, contenttypes, sessions</span>
+<span class="go">Running migrations:</span>
+<span class="go">  Applying contenttypes.0001_initial... OK</span>
+<span class="go">  Applying auth.0001_initial... OK</span>
+<span class="go">  Applying admin.0001_initial... OK</span>
+<span class="go">  Applying admin.0002_logentry_remove_auto_add... OK</span>
+<span class="go">  Applying admin.0003_logentry_add_action_flag_choices... OK</span>
+<span class="go">  Applying contenttypes.0002_remove_content_type_name... OK</span>
+<span class="go">  Applying auth.0002_alter_permission_name_max_length... OK</span>
+<span class="go">  Applying auth.0003_alter_user_email_max_length... OK</span>
+<span class="go">  Applying auth.0004_alter_user_username_opts... OK</span>
+<span class="go">  Applying auth.0005_alter_user_last_login_null... OK</span>
+<span class="go">  Applying auth.0006_require_contenttypes_0002... OK</span>
+<span class="go">  Applying auth.0007_alter_validators_add_error_messages... OK</span>
+<span class="go">  Applying auth.0008_alter_user_username_max_length... OK</span>
+<span class="go">  Applying auth.0009_alter_user_last_name_max_length... OK</span>
+<span class="go">  Applying auth.0010_alter_group_name_max_length... OK</span>
+<span class="go">  Applying auth.0011_update_proxy_permissions... OK</span>
+<span class="go">  Applying auth.0012_alter_user_first_name_max_length... OK</span>
+<span class="go">  Applying sessions.0001_initial... OK</span>
+</pre></div><p>Hotovo :)</p>
