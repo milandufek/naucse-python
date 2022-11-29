@@ -173,22 +173,21 @@ sessions:
   - lesson: advanced/generators
   # - lesson: homeworks/advanced
 
-- title: Flask, databáze
+- title: Django, databáze, Flask
   slug: databases
   date: 2022-12-14
   materials:
-  - lesson: intro/flask
+  - lesson: intro/django
   - lesson: beginners/database
-  - lesson: homeworks/database
-    type: homework
-  - lesson: homeworks/flask_project
-    type: homework
+  - lesson: intro/flask
+  # - lesson: homeworks/flask_project
+  #   type: homework
 
-- title: Závěrečné projekty - prezentace
-  slug: asteroids
-  date: 2023-01-18
-  materials:
-  - lesson: homeworks/own_project
+# - title: Závěrečné projekty - prezentace
+#   slug: asteroids
+#   date: 2023-01-18
+#   materials:
+#   - lesson: homeworks/own_project
 
 extra_lessons:
   - beginners/exceptions
