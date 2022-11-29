@@ -6,7 +6,7 @@ Tento domácí úkol ti pomůže procvičit všechny znalosti z posledních lekc
 - práci se soubory
 - práci s HTTP dotazy pomocí knihovny `requests`
 - práci s datovým formátem [JSON](https://en.wikipedia.org/wiki/JSON)
-- práce s dalšími balíčky jako `os`, `datatime` a `qrcode`
+- práce s dalšími balíčky jako `os`, `datetime` a `qrcode`
 
 Vytvoř jednoduchý účetní program, který bude pracovat s kurzovním lístkem a
 generovat faktury s QR platbou pro uživatele.
@@ -21,7 +21,7 @@ Pokus se zaručit, že bude vždy unikátní.
 Program piš objektově. Měl by obsahovat část pro konvertor měn,
 pro samotnou položku k fakturaci, vygenerování QR platby,
 řídící část a možná nějaké pomocné funkce pro obecnou práci.
-Kromě řídící části tzv. `main` by program neměl obsahovat žádné `inputy` ani `printy`.
+Kromě řídící části tzv. `main` by program neměl obsahovat **žádné** `inputy` ani `printy`.
 Chceš aby byl i strojově použitelný, např. mohl přečíst 1000 záznamů
 z jiného seznamu nebo API a pro každý vygeneroval fakturu, kterou třeba někam pošle,
 to dělat nemusíš ale mysli na to při návrhu :).
@@ -95,10 +95,12 @@ ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i
 Pro hezké zobrazení na faktuře už to bude vyžadovat i práci se změnou HTML šablony ;-)
 
 ### 2. Parser čísla a měny
-Program si poradí se zápisem částky a měny v jednom řádku
+Program si poradí se zápisem částky a měny v jednom řádku:
 - 10Kč
 - 10 Eur
 - €10
 - USD 10
 - 10USD
 - apod...
+
+Může se hodit knihovna `re` pro regulární výrazy ale jde to i bez :)
