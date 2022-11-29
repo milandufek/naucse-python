@@ -21,7 +21,7 @@ Pokus se zaručit, že bude vždy unikátní.
 Program piš objektově. Měl by obsahovat část pro konvertor měn,
 pro samotnou položku k fakturaci, vygenerování QR platby,
 řídící část a možná nějaké pomocné funkce pro obecnou práci.
-Kromě řídící části tzv. `main` by program neměl obsahovat žádné `input`y ani `printy`.
+Kromě řídící části tzv. `main` by program neměl obsahovat žádné `inputy` ani `printy`.
 Chceš aby byl i strojově použitelný, např. mohl přečíst 1000 záznamů
 z jiného seznamu nebo API a pro každý vygeneroval fakturu, kterou třeba někam pošle,
 to dělat nemusíš ale mysli na to při návrhu :).
@@ -67,7 +67,7 @@ QR kód by ale měl být validní, aplikace mobilního bankovnictví ho musí um
 
 ### HTML template pro fakturu
 Pro finální fakturu s QR platbou **použij tuto HTML šablonu**, kterou si ulož jako soubor.
-Ten pak budeš pouze `formát`ovat a generovat z něho konkrétní platby, jak Baťa cvičky.
+Ten pak budeš pouze `formátovat` a generovat z něho konkrétní platby, jak Baťa cvičky.
 
 ```html
 <html>
@@ -87,14 +87,14 @@ Ten pak budeš pouze `formát`ovat a generovat z něho konkrétní platby, jak B
 
 ## Bonus
 
-1. Více položek
+### 1. Více položek
 Pokud chceš svůj program vylepšit, napiš ho tak, aby šlo zadat více položek
 a vygenerovat pro ně jednu společnou fakturu, kde bude celková částka v Kč
 ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i české měně.
 
 Pro hezké zobrazení na faktuře už to bude vyžadovat i práci se změnou HTML šablony ;-)
 
-2. Parser čísla a měny
+### 2. Parser čísla a měny
 Program si poradí se zápisem částky a měny v jednom řádku
 - 10Kč
 - 10 Eur
