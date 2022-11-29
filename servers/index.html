@@ -1,8 +1,102 @@
 <h1 id="domaci_projekty">Domácí projekty
 <a href="#header-domaci_projekty" class="header-link">#</a>
 </h1>
-<p>Budou.</p>
-<h1 id="bonusy">Bonusy
-<a href="#header-bonusy" class="header-link">#</a>
-</h1>
-<p>Budou.</p>
+<p>Tento domácí úkol ti pomůže procvičit všechny znalosti z posledních lekcí:</p>
+<ul>
+<li>opakování objektového programování</li>
+<li>využívání otevřeného API třetích stran</li>
+<li>práci se soubory</li>
+<li>práci s HTTP dotazy pomocí knihovny <code>requests</code></li>
+<li>práci s datovým formátem <a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
+<li>práce s dalšími balíčky jako <code>os</code>, <code>datatime</code> a <code>qrcode</code></li>
+</ul>
+<p>Vytvoř jednoduchý účetní program, který bude pracovat s kurzovním lístkem a
+generovat faktury s QR platbou pro uživatele.</p>
+<p>Program se zeptá na položku, její cenu a měnu. Pokud měna nejsou koruny,
+přepočítá částku na koruny podle platného kurzovního lístku ze zdrojové měny.
+Když měna neexistuje/není zadána, vyhodí vlastní výjimku <code>CurrencyError</code>.
+Variabilní symbol (VS) můžeš vygenerovat náhodný -
+ten pak použij i jako unikátní identifikátor faktury a obrázku s QR kódem.
+Pokus se zaručit, že bude vždy unikátní.</p>
+<p>Program piš objektově. Měl by obsahovat část pro konvertor měn,
+pro samotnou položku k fakturaci, vygenerování QR platby,
+řídící část a možná nějaké pomocné funkce pro obecnou práci.
+Kromě řídící části tzv. <code>main</code> by program neměl obsahovat žádné <code>input</code>y ani <code>printy</code>.
+Chceš aby byl i strojově použitelný, např. mohl přečíst 1000 záznamů
+z jiného seznamu nebo API a pro každý vygeneroval fakturu, kterou třeba někam pošle,
+to dělat nemusíš ale mysli na to při návrhu :).</p>
+<h2 id="ocekavany_vystup_programu">Očekávaný výstup programu
+<a href="#header-ocekavany_vystup_programu" class="header-link">#</a>
+</h2>
+<p>V základní variantě, se program na toto zeptá, následně vypíše výsledek a ukončí se.</p>
+<div class="highlight"><pre><span></span>$ python qr_payment_gen.py
+Generátor faktur.
+Částka v jiných měnách než Kč, bude převedena na koruny podle platného kurzu ČNB.
+
+Zadej položku platby: Platba za kurz Pyladies
+Částka: <span class="m">10000</span>
+Měna: Kč
+
+Generuji fakturu...
+Faktura je hotová na odkaze &lt;cesta_k_vygenerovanému_souboru/qr_platba_<span class="o">{</span>unikatni_ID<span class="o">}</span>.html&gt;
+</pre></div><p>S čím si program neporadí je jednotka nebo měna, která není na kurzovním lístku nebo není zadána vůbec.
+Nulová nebo záporná částka. Program by neměl pokračovat.</p>
+<h2 id="zdroje">Zdroje
+<a href="#header-zdroje" class="header-link">#</a>
+</h2>
+<h3 id="kurzy">Kurzy
+<a href="#header-kurzy" class="header-link">#</a>
+</h3>
+<p>Jako kurzovní lístek použij <a href="https://www.kurzy.cz/html-kody/json/kurzy-bank.htm">veřejné API z Kurzy.cz</a>.
+Aby se nemusely kurzy při každém spouštění aplikace stahovat,
+ukládej kopii lokálně ve formátu JSON do souboru a aktualizuj ji,
+jen pokud jsou data v souboru ze staršího kalendářního dne nebo neexistují vůbec.
+V opačném případě je pouze načti ze souboru.</p>
+<h3 id="qr_platba">QR platba
+<a href="#header-qr_platba" class="header-link">#</a>
+</h3>
+<p>Nastuduj si <a href="https://qr-platba.cz/pro-vyvojare/specifikace-formatu/">formát QR platby</a> v jakém ho banky očekávají,
+stačí základní varianta s účtem, částkou, VS a zprávou pro příjemce.</p>
+<p>Pro samotné vygenerování obrázku použij Python knihovnu <code>qrcode</code> (vyžaduje nainstalovat i <code>pillow</code>).</p>
+<p>Účet banky použij nějaký vymyšlený (ale validní), co bude nadefinovaný jako výchozí (počítej, že ho bude možné někdy měnit).</p>
+<p>QR kód by ale měl být validní, aplikace mobilního bankovnictví ho musí umět načíst!</p>
+<h3 id="html_template_pro_fakturu">HTML template pro fakturu
+<a href="#header-html_template_pro_fakturu" class="header-link">#</a>
+</h3>
+<p>Pro finální fakturu s QR platbou <strong>použij tuto HTML šablonu</strong>, kterou si ulož jako soubor.
+Ten pak budeš pouze <code>formát</code>ovat a generovat z něho konkrétní platby, jak Baťa cvičky.</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Faktura číslo {}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Platba za {}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Částka: {}Kč<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Na účet: {}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>VS: {}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>QR platba<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;{}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div><h2 id="bonus">Bonus
+<a href="#header-bonus" class="header-link">#</a>
+</h2>
+<ol>
+<li>Více položek
+Pokud chceš svůj program vylepšit, napiš ho tak, aby šlo zadat více položek
+a vygenerovat pro ně jednu společnou fakturu, kde bude celková částka v Kč
+ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i české měně.</li>
+</ol>
+<p>Pro hezké zobrazení na faktuře už to bude vyžadovat i práci se změnou HTML šablony ;-)</p>
+<ol>
+<li>Parser čísla a měny
+Program si poradí se zápisem částky a měny v jednom řádku</li>
+</ol>
+<ul>
+<li>10Kč</li>
+<li>10 Eur</li>
+<li>€10</li>
+<li>USD 10</li>
+<li>10USD</li>
+<li>apod...</li>
+</ul>
