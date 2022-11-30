@@ -1,34 +1,33 @@
 # Domácí projekty
 
 Tento domácí úkol ti pomůže procvičit všechny znalosti z posledních lekcí:
-- opakování objektového programování
-- využívání otevřeného API třetích stran
-- práci se soubory
-- práci s HTTP dotazy pomocí knihovny `requests`
-- práci s datovým formátem [JSON](https://en.wikipedia.org/wiki/JSON)
-- práce s dalšími balíčky jako `os`, `datetime` a `qrcode`
+- opakování objektového programování,
+- využívání otevřeného API třetích stran,
+- práci se soubory,
+- práci s HTTP dotazy pomocí knihovny `requests`,
+- práci s datovým formátem [JSON](https://en.wikipedia.org/wiki/JSON),
+- práci s dalšími balíčky _(packages)_ jako `os`, `datetime` či třeba `qrcode`.
 
 Vytvoř jednoduchý účetní program, který bude pracovat s kurzovním lístkem a
-generovat faktury s QR platbou pro uživatele.
+bude generovat faktury s QR platbou pro uživatele.
 
-Program se zeptá na položku, její cenu a měnu. Pokud měna nejsou koruny,
-přepočítá částku na koruny podle platného kurzovního lístku ze zdrojové měny.
-Když měna neexistuje/není zadána, vyhodí vlastní výjimku `CurrencyError`.
+Program se zeptá na položku, její cenu a měnu. Pokud měna není v českých korunách,
+přepočítá částku na Kč podle platného kurzovního lístku ze zdrojové měny.
+Pokud taková měna neexistuje či není zadána, program vyhodí vlastní výjimku `CurrencyError`.
 Variabilní symbol (VS) můžeš vygenerovat náhodný -
 ten pak použij i jako unikátní identifikátor faktury a obrázku s QR kódem.
-Pokus se zaručit, že bude vždy unikátní.
+Pokus se zaručit, že VS bude vždy unikátní.
 
 Program piš objektově. Měl by obsahovat část pro konvertor měn,
 pro samotnou položku k fakturaci, vygenerování QR platby,
 řídící část a možná nějaké pomocné funkce pro obecnou práci.
-Kromě řídící části tzv. `main` by program neměl obsahovat **žádné** `inputy` ani `printy`.
-Chceš aby byl i strojově použitelný, např. mohl přečíst 1000 záznamů
-z jiného seznamu nebo API a pro každý vygeneroval fakturu, kterou třeba někam pošle,
-to dělat nemusíš ale mysli na to při návrhu :).
+Kromě hlavní řídící části, tzv. `main`, by program neměl obsahovat **žádné `inputy` ani `printy`**.
+Chceš totiž, aby tvůj program byl i strojově použitelný, např. aby mohl přečíst 1000 záznamů
+z jiného seznamu nebo z nějakého API, a pro každý vygeneroval fakturu, kterou třeba někam pošle - _to dělat nemusíš ale mysli na to při návrhu :)_.
 
 ## Očekávaný výstup programu
 
-V základní variantě, se program na toto zeptá, následně vypíše výsledek a ukončí se.
+V základní variantě se program na něco zeptá, následně vypíše výsledek - a ukončí se.
 
 ```bash
 $ python qr_payment_gen.py
@@ -44,7 +43,7 @@ Faktura je hotová na odkaze <cesta_k_vygenerovanému_souboru/qr_platba_{unikatn
 ```
 
 S čím si program neporadí je jednotka nebo měna, která není na kurzovním lístku nebo není zadána vůbec.
-Nulová nebo záporná částka. Program by neměl pokračovat.
+Při zadání nulové či záporné částky by program neměl pokračovat.
 
 ## Zdroje
 
@@ -52,14 +51,14 @@ Nulová nebo záporná částka. Program by neměl pokračovat.
 Jako kurzovní lístek použij [veřejné API z Kurzy.cz](https://www.kurzy.cz/html-kody/json/kurzy-bank.htm).
 Aby se nemusely kurzy při každém spouštění aplikace stahovat,
 ukládej kopii lokálně ve formátu JSON do souboru a aktualizuj ji,
-jen pokud jsou data v souboru ze staršího kalendářního dne nebo neexistují vůbec.
+pouze pokud jsou data v souboru ze staršího kalendářního dne nebo neexistují vůbec.
 V opačném případě je pouze načti ze souboru.
 
 ### QR platba
-Nastuduj si [formát QR platby](https://qr-platba.cz/pro-vyvojare/specifikace-formatu/) v jakém ho banky očekávají,
+Nastuduj si [formát QR platby](https://qr-platba.cz/pro-vyvojare/specifikace-formatu/) v jakém ho banky očekávají -
 stačí základní varianta s účtem, částkou, VS a zprávou pro příjemce.
 
-Pro samotné vygenerování obrázku použij Python knihovnu `qrcode` (vyžaduje nainstalovat i `pillow`).
+Pro samotné vygenerování obrázku použij Python knihovnu [`qrcode`](https://pypi.org/project/qrcode/) (vyžaduje nainstalovat i knihovnu [`pillow`](https://pypi.org/project/Pillow/)).
 
 Účet banky použij nějaký vymyšlený (ale validní), co bude nadefinovaný jako výchozí (počítej, že ho bude možné někdy měnit).
 
@@ -89,7 +88,7 @@ Ten pak budeš pouze `formátovat` a generovat z něho konkrétní platby, jak B
 
 ### 1. Více položek
 Pokud chceš svůj program vylepšit, napiš ho tak, aby šlo zadat více položek
-a vygenerovat pro ně jednu společnou fakturu, kde bude celková částka v Kč
+a vygenerovat pro ně jednu společnou fakturu, kde bude celková částka v Kč,
 ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i české měně.
 
 Pro hezké zobrazení na faktuře už to bude vyžadovat i práci se změnou HTML šablony ;-)
@@ -103,4 +102,4 @@ Program si poradí se zápisem částky a měny v jednom řádku:
 - 10USD
 - apod...
 
-Může se hodit knihovna `re` pro regulární výrazy ale jde to i bez :)
+Může se hodit knihovna `re` pro regulární výrazy, ale jde to i bez :)
