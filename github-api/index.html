@@ -133,7 +133,7 @@ a <code>PUT</code> metodu zvolíš tak, že zavoláš místo <code>get</code> fu
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;token &#39;</span> <span class="o">+</span> <span class="n">token</span><span class="p">}</span>
 
-<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/user/starred/pyvec/naucse.python.cz&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/user/starred/milandufek/naucse-python&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="n">page</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 </pre></div><p>Tenhle dotaz nevrátí žádný text, ale na
 <a href="https://github.com/pyvec/naucse.python.cz/stargazers">github.com/pyvec/naucse.python.cz/stargazers</a>
