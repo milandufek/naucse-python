@@ -41,7 +41,7 @@ a vrhneme se rovnou na příklad.
 >>> username = input('Username: ')
 Username: hroncok
 >>> password = getpass.getpass()
-Password: 
+Password:
 >>> r = requests.get('https://api.github.com/user', auth=(username, password))
 >>> r.status_code
 200
@@ -119,7 +119,7 @@ Tímto kódem lze například získat popis přihlášeného uživatele, tedy se
 >>> def token_auth(req):
 ...     req.headers['Authorization'] = f'token {token}'
 ...     return req
-... 
+...
 >>> session.auth = token_auth
 >>> r = session.get('https://api.github.com/user')
 >>> r.json()
@@ -131,7 +131,7 @@ většinou přidává specifické hlavičky (jak je tomu i zde).
 Lze ji nastavit buďto na celé session nebo předat argumentem `auth` s každým
 požadavkem.
 
-Existují předpřipravené funkce v modulu `requests.auth`, například 
+Existují předpřipravené funkce v modulu `requests.auth`, například
 `requests.auth.HTTPBasicAuth` provádí základní HTTP přihlášení.
 Dle specifikace zakóduje jméno a heslo pomocí
 algoritmu base64 a přidá hlavičku `Authorization`.
@@ -143,7 +143,7 @@ místo `HTTPBasicAuth` se dá použít i dvojice (jméno, heslo):
 ```pycon
 >>> requests.get('https://httpbin.org/basic-auth/AzureDiamond/hunter2',
                  auth=requests.auth.HTTPBasicAuth('AzureDiamond', 'hunter2'))
->>> 
+>>>
 >>> requests.get('https://httpbin.org/basic-auth/AzureDiamond/hunter2',
                  auth=('AzureDiamond', 'hunter2'))
 ```
@@ -162,7 +162,7 @@ To se dělá přes [nastavení] na GitHubu.
 Hvězdičku pak přidáte takto:
 
 ```pycon
->>> r = session.put('https://api.github.com/user/starred/pyvec/naucse.python.cz')
+>>> r = session.put('https://api.github.com/user/starred/milandufek/naucse-python')
 >>> r.text
 ''
 ```
