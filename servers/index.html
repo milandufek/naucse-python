@@ -3,32 +3,31 @@
 </h1>
 <p>Tento domácí úkol ti pomůže procvičit všechny znalosti z posledních lekcí:</p>
 <ul>
-<li>opakování objektového programování</li>
-<li>využívání otevřeného API třetích stran</li>
-<li>práci se soubory</li>
-<li>práci s HTTP dotazy pomocí knihovny <code>requests</code></li>
-<li>práci s datovým formátem <a href="https://en.wikipedia.org/wiki/JSON">JSON</a></li>
-<li>práce s dalšími balíčky jako <code>os</code>, <code>datetime</code> a <code>qrcode</code></li>
+<li>opakování objektového programování,</li>
+<li>využívání otevřeného API třetích stran,</li>
+<li>práci se soubory,</li>
+<li>práci s HTTP dotazy pomocí knihovny <code>requests</code>,</li>
+<li>práci s datovým formátem <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>,</li>
+<li>práci s dalšími balíčky <em>(packages)</em> jako <code>os</code>, <code>datetime</code> či třeba <code>qrcode</code>.</li>
 </ul>
 <p>Vytvoř jednoduchý účetní program, který bude pracovat s kurzovním lístkem a
-generovat faktury s QR platbou pro uživatele.</p>
-<p>Program se zeptá na položku, její cenu a měnu. Pokud měna nejsou koruny,
-přepočítá částku na koruny podle platného kurzovního lístku ze zdrojové měny.
-Když měna neexistuje/není zadána, vyhodí vlastní výjimku <code>CurrencyError</code>.
+bude generovat faktury s QR platbou pro uživatele.</p>
+<p>Program se zeptá na položku, její cenu a měnu. Pokud měna není v českých korunách,
+přepočítá částku na Kč podle platného kurzovního lístku ze zdrojové měny.
+Pokud taková měna neexistuje či není zadána, program vyhodí vlastní výjimku <code>CurrencyError</code>.
 Variabilní symbol (VS) můžeš vygenerovat náhodný -
 ten pak použij i jako unikátní identifikátor faktury a obrázku s QR kódem.
-Pokus se zaručit, že bude vždy unikátní.</p>
+Pokus se zaručit, že VS bude vždy unikátní.</p>
 <p>Program piš objektově. Měl by obsahovat část pro konvertor měn,
 pro samotnou položku k fakturaci, vygenerování QR platby,
 řídící část a možná nějaké pomocné funkce pro obecnou práci.
-Kromě řídící části tzv. <code>main</code> by program neměl obsahovat <strong>žádné</strong> <code>inputy</code> ani <code>printy</code>.
-Chceš aby byl i strojově použitelný, např. mohl přečíst 1000 záznamů
-z jiného seznamu nebo API a pro každý vygeneroval fakturu, kterou třeba někam pošle,
-to dělat nemusíš ale mysli na to při návrhu :).</p>
+Kromě hlavní řídící části, tzv. <code>main</code>, by program neměl obsahovat <strong>žádné <code>inputy</code> ani <code>printy</code></strong>.
+Chceš totiž, aby tvůj program byl i strojově použitelný, např. aby mohl přečíst 1000 záznamů
+z jiného seznamu nebo z nějakého API, a pro každý vygeneroval fakturu, kterou třeba někam pošle - <em>to dělat nemusíš ale mysli na to při návrhu :)</em>.</p>
 <h2 id="ocekavany_vystup_programu">Očekávaný výstup programu
 <a href="#header-ocekavany_vystup_programu" class="header-link">#</a>
 </h2>
-<p>V základní variantě, se program na toto zeptá, následně vypíše výsledek a ukončí se.</p>
+<p>V základní variantě se program na něco zeptá, následně vypíše výsledek - a ukončí se.</p>
 <div class="highlight"><pre><span></span>$ python qr_payment_gen.py
 Generátor faktur.
 Částka v jiných měnách než Kč, bude převedena na koruny podle platného kurzu ČNB.
@@ -40,7 +39,7 @@ Měna: Kč
 Generuji fakturu...
 Faktura je hotová na odkaze &lt;cesta_k_vygenerovanému_souboru/qr_platba_<span class="o">{</span>unikatni_ID<span class="o">}</span>.html&gt;
 </pre></div><p>S čím si program neporadí je jednotka nebo měna, která není na kurzovním lístku nebo není zadána vůbec.
-Nulová nebo záporná částka. Program by neměl pokračovat.</p>
+Při zadání nulové či záporné částky by program neměl pokračovat.</p>
 <h2 id="zdroje">Zdroje
 <a href="#header-zdroje" class="header-link">#</a>
 </h2>
@@ -50,14 +49,14 @@ Nulová nebo záporná částka. Program by neměl pokračovat.</p>
 <p>Jako kurzovní lístek použij <a href="https://www.kurzy.cz/html-kody/json/kurzy-bank.htm">veřejné API z Kurzy.cz</a>.
 Aby se nemusely kurzy při každém spouštění aplikace stahovat,
 ukládej kopii lokálně ve formátu JSON do souboru a aktualizuj ji,
-jen pokud jsou data v souboru ze staršího kalendářního dne nebo neexistují vůbec.
+pouze pokud jsou data v souboru ze staršího kalendářního dne nebo neexistují vůbec.
 V opačném případě je pouze načti ze souboru.</p>
 <h3 id="qr_platba">QR platba
 <a href="#header-qr_platba" class="header-link">#</a>
 </h3>
-<p>Nastuduj si <a href="https://qr-platba.cz/pro-vyvojare/specifikace-formatu/">formát QR platby</a> v jakém ho banky očekávají,
+<p>Nastuduj si <a href="https://qr-platba.cz/pro-vyvojare/specifikace-formatu/">formát QR platby</a> v jakém ho banky očekávají -
 stačí základní varianta s účtem, částkou, VS a zprávou pro příjemce.</p>
-<p>Pro samotné vygenerování obrázku použij Python knihovnu <code>qrcode</code> (vyžaduje nainstalovat i <code>pillow</code>).</p>
+<p>Pro samotné vygenerování obrázku použij Python knihovnu <a href="https://pypi.org/project/qrcode/"><code>qrcode</code></a> (vyžaduje nainstalovat i knihovnu <a href="https://pypi.org/project/Pillow/"><code>pillow</code></a>).</p>
 <p>Účet banky použij nějaký vymyšlený (ale validní), co bude nadefinovaný jako výchozí (počítej, že ho bude možné někdy měnit).</p>
 <p>QR kód by ale měl být validní, aplikace mobilního bankovnictví ho musí umět načíst!</p>
 <h3 id="html_template_pro_fakturu">HTML template pro fakturu
@@ -85,7 +84,7 @@ Ten pak budeš pouze <code>formátovat</code> a generovat z něho konkrétní pl
 <a href="#header-1_vice_polozek" class="header-link">#</a>
 </h3>
 <p>Pokud chceš svůj program vylepšit, napiš ho tak, aby šlo zadat více položek
-a vygenerovat pro ně jednu společnou fakturu, kde bude celková částka v Kč
+a vygenerovat pro ně jednu společnou fakturu, kde bude celková částka v Kč,
 ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i české měně.</p>
 <p>Pro hezké zobrazení na faktuře už to bude vyžadovat i práci se změnou HTML šablony ;-)</p>
 <h3 id="2_parser_cisla_a_meny">2. Parser čísla a měny
@@ -100,4 +99,4 @@ ale bude obsahovat seznam všech dílčích položek a jejich ceny v původní i
 <li>10USD</li>
 <li>apod...</li>
 </ul>
-<p>Může se hodit knihovna <code>re</code> pro regulární výrazy ale jde to i bez :)</p>
+<p>Může se hodit knihovna <code>re</code> pro regulární výrazy, ale jde to i bez :)</p>
