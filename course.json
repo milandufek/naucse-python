@@ -1423,7 +1423,11 @@
                     }
                 },
                 "source_file": "lessons/intro/django/info.yml",
-                "static_files": {},
+                "static_files": {
+                    "home.png": {
+                        "path": "django/home.png"
+                    }
+                },
                 "title": "Django instalace"
             },
             "intro/flask": {

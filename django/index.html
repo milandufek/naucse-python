@@ -20,13 +20,13 @@ ani nepremenovávajte. Nezabudnite, že je potreba byť v zložke <code>django_p
 do terminálu v rámci tohoto nastavenia).</p>
 <p>Bodka (tečka) na konci príkazu je dôležitá.</p>
 <p>Windows</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>django-admin.exe startproject pyladies_blog .
+<div class="highlight"><pre><span></span><span class="gp">$ </span>django-admin.exe startproject pyladies_project .
 </pre></div><p>macOS / Linux</p>
-<div class="highlight"><pre><span></span><span class="gp">$ </span>django-admin startproject pyladies_blog .
+<div class="highlight"><pre><span></span><span class="gp">$ </span>django-admin startproject pyladies_project .
 </pre></div><p><code>django-admin.py</code> je skript ktorý vytvorí súbory a zložky. Štruktúra by mala vyzerať takto:</p>
 <div class="highlight"><pre><code>django_project
 ├── manage.py
-├── pyladies_blog
+├── pyladies_project
 │   ├── asgi.py
 │   ├── __init__.py
 │   ├── settings.py
@@ -73,4 +73,7 @@ defaultné <code>sqlite3</code>. Nastavenie je už súčasťou <code>settings.py
 <span class="go">  Applying auth.0011_update_proxy_permissions... OK</span>
 <span class="go">  Applying auth.0012_alter_user_first_name_max_length... OK</span>
 <span class="go">  Applying sessions.0001_initial... OK</span>
-</pre></div><p>Hotovo :)</p>
+</pre></div><p>Spustíme si webserver:</p>
+<div class="highlight"><pre><code>$ python manage.py runserver</code></pre></div><p><span class="figure"><a href="naucse:static?filename=home.png"><img src="naucse:static?filename=home.png" alt="Home"></a></span></p>
+<p>Webserver ukončíme tak, že v termináli, v ktorom webserver beží použijeme klávesovú skratku CTRL+C, prípadne CTRL+BREAK pre Windows.</p>
+<p>Hotovo :)</p>
