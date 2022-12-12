@@ -27,7 +27,6 @@ Successfully installed Django-4.0.8
 
 Django projekt
 ======================
-
 Prvým krokom pri tvorbe projektu v Django je vytvorenie jeho základnej kostry zložiek a súborov pomocou Django skriptov.
 Tieto zložky a súbory budeme neskôr používať, ich umiestnenie a pomenovanie sú pre Django dôležité, preto ich nepresúvajte
 ani nepremenovávajte. Nezabudnite, že je potreba byť v zložke `django_project/`a mať zapnutý venv (platí aj pre ďalšie príkazy
@@ -37,12 +36,12 @@ Bodka (tečka) na konci príkazu je dôležitá.
 
 Windows
 ```console
-$ django-admin.exe startproject pyladies_blog .
+$ django-admin.exe startproject pyladies_project .
 ```
 
 macOS / Linux
 ```console
-$ django-admin startproject pyladies_blog .
+$ django-admin startproject pyladies_project .
 ```
 
 `django-admin.py` je skript ktorý vytvorí súbory a zložky. Štruktúra by mala vyzerať takto:
@@ -50,7 +49,7 @@ $ django-admin startproject pyladies_blog .
 ```
 django_project
 ├── manage.py
-├── pyladies_blog
+├── pyladies_project
 │   ├── asgi.py
 │   ├── __init__.py
 │   ├── settings.py
@@ -114,5 +113,18 @@ Running migrations:
   Applying auth.0012_alter_user_first_name_max_length... OK
   Applying sessions.0001_initial... OK
 ```
+
+Spustíme si webserver:
+
+```
+$ python manage.py runserver
+```
+{{ figure(
+    img=static('home.png'),
+    alt="Home"
+) }}
+
+
+Webserver ukončíme tak, že v termináli, v ktorom webserver beží použijeme klávesovú skratku CTRL+C, prípadne CTRL+BREAK pre Windows.
 
 Hotovo :)
