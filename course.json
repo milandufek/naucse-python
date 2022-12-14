@@ -1402,19 +1402,43 @@
                 "static_files": {},
                 "title": "Domácí projekty"
             },
-            "intro/django": {
+            "intro/django/basics": {
                 "pages": {
                     "index": {
                         "attribution": [
                             "Pro kurz PyLadies Brno v Mergadu napsala Alby Waageová, 2022."
                         ],
                         "content": {
-                            "path": "django/index.html"
+                            "path": "basics/index.1.html"
                         },
                         "license": "cc-by-sa-40",
                         "slug": "index",
                         "solutions": [],
-                        "source_file": "lessons/intro/django/index.md",
+                        "source_file": "lessons/intro/django/basics/index.md",
+                        "title": "Django úvod",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/intro/django/basics/info.yml",
+                "static_files": {},
+                "title": "Django úvod"
+            },
+            "intro/django/installation": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz PyLadies Brno v Mergadu napsala Alby Waageová, 2022."
+                        ],
+                        "content": {
+                            "path": "installation/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/intro/django/installation/index.md",
                         "title": "Django instalace",
                         "vars": {
                             "coach-present": true,
@@ -1422,10 +1446,10 @@
                         }
                     }
                 },
-                "source_file": "lessons/intro/django/info.yml",
+                "source_file": "lessons/intro/django/installation/info.yml",
                 "static_files": {
                     "home.png": {
-                        "path": "django/home.png"
+                        "path": "installation/home.png"
                     }
                 },
                 "title": "Django instalace"
@@ -2107,8 +2131,13 @@
                 "date": "2022-12-14",
                 "materials": [
                     {
-                        "lesson_slug": "intro/django",
+                        "lesson_slug": "intro/django/installation",
                         "title": "Django instalace",
+                        "type": "lesson"
+                    },
+                    {
+                        "lesson_slug": "intro/django/basics",
+                        "title": "Django úvod",
                         "type": "lesson"
                     },
                     {

@@ -1,0 +1,338 @@
+<h1 id="vytvorenie_aplikacie">Vytvorenie aplikácie
+<a href="#header-vytvorenie_aplikacie" class="header-link">#</a>
+</h1>
+<p>V rámci projektu si pre poriadok vytvoríme separátnu aplikáciu <code>blog</code>.</p>
+<p>Zapnite si virtuálne prostredie (venv) a presuňte sa v termináli do zložky <code>django_project/</code>.</p>
+<p>Windows / macOS / Linux</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python manage.py startapp blog
+</pre></div><p>Vytvorí sa nová zložka <code>blog</code> a obsahuje ďalšie súbory. Zložka s našim projektom by mala vyzerať takto:</p>
+<div class="highlight"><pre><code>django_project
+├── blog
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+├── manage.py
+├── pyladies_project
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── requirements.txt</code></pre></div><p>Vytvorenú aplikáciu <code>blog</code> pridáme do zoznamu <code>INSTALLED_APPS</code> v nastavení projektu <code>django_project/pyladies_project/settings.py</code> aby Django vedelo, že ju má použiť. Bude to vyzerať takto:</p>
+<div class="highlight"><pre><code>INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'blog',
+]</code></pre></div><h1 id="co_je_django">Čo je Django?
+<a href="#header-co_je_django" class="header-link">#</a>
+</h1>
+<ul>
+<li>vytvorené ako interný projekt pre vývoj webových aplikácií v Lawrence Journal-World v rokoch 2003-2005 (prvý oficiálny release 2008)</li>
+<li>populárny python framework využívaný pre web development</li>
+<li>Django sa drží princípu MVC (Model-View-Controller), ktorý je štandardom pre vývoj webových aplikácií</li>
+<li>opensource, zdarma, má veľkú a aktívnu komunitu, dobrú dokumentáciu a rozličné možnosti rozšírenia (väčšina je zdarma)</li>
+</ul>
+<p>Pre MVC princíp má Django vlastnú konvenciu MVT (Model-View-Template)</p>
+<p><span class="figure"><a href="naucse:static?filename=django.png"><img src="naucse:static?filename=django.png" alt="Architecture"></a></span>
+[Zdroj: <a href="https://pythonguides.com/wp-content/uploads/2021/08/Django-MVT-architecture.png">https://pythonguides.com/wp-content/uploads/2021/08/Django-MVT-architecture.png</a>]</p>
+<p>Model - je vrstva určená k správe dát, predstavuje prepojenie celej architektúry s databázou; 1 model = 1 tabuľka v databáze.</p>
+<p>View - je určené pre definovanie cekovej logiky datového toku. Zároveň zaisťuje odosielanie response (odpovede) danému užívateľovi.</p>
+<p>Template - prezentačná vrstva ktorá sa stará o interakcie s užívateľom.</p>
+<p>User request -&gt; Django controller -&gt; urls.py -&gt; views.py (models + html templates) -&gt; template response</p>
+<h1 id="vytvorenie_modelu_pre_prispevok_na_blogu">Vytvorenie modelu pre príspevok na blogu
+<a href="#header-vytvorenie_modelu_pre_prispevok_na_blogu" class="header-link">#</a>
+</h1>
+<p>Model v Django je špeciálny druh objektu – je uložený v databáze. Databáza je súbor údajov. Je to miesto kam budete ukladať informácie o užívateľoch, príspevky na blogu atď. Na ukladanie údajov budeme používať databázu SQLite (defaultné nastavenie v Django, pre naše potreby postačí).</p>
+<p>Model v databáze si môžete predstaviť ako tabuľku so stĺpcami a riadkami.</p>
+<p>Aké atribúty a metódy by taký príspevok na blogu mohol mať? (len do PPT)</p>
+<p>V súbore <code>blog/models.py</code> budeme definovať všetky objekty nazvané modely, medzi nimi aj príspevok.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+
+
+<span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">created_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+    <span class="n">published_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">published_date</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span>
+</pre></div><p>Viac informácií k typom polí v modeloch nájdete v <a href="https://docs.djangoproject.com/en/4.1/ref/models/fields/#module-django.db.models.fields">dokumentácii Django</a>.</p>
+<p>Pre vytvorenie tabuľky pre model v databáze je potrebné Django najskôr informovať o tom, že máme nejaké zmeny.</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python manage.py makemigrations blog
+<span class="go">Migrations for &#39;blog&#39;:</span>
+<span class="go">  blog/migrations/0001_initial.py</span>
+<span class="go">    - Create model Post</span>
+</pre></div><p>Django vytvorilo súbor s migráciou ktorý chceme aplikovať do našej databáze.</p>
+<div class="highlight"><pre><span></span><span class="gp">$ </span>python manage.py migrate blog
+<span class="go">Operations to perform:</span>
+<span class="go">  Apply all migrations: blog</span>
+<span class="go">Running migrations:</span>
+<span class="go">  Applying blog.0001_initial... OK</span>
+</pre></div><h1 id="django_admin">Django admin
+<a href="#header-django_admin" class="header-link">#</a>
+</h1>
+<p>Pre tvorbu, editáciu a zmazanie príspevkov využijeme Django admin (administrátorské rozhranie).</p>
+<p>Otvoríme si súbor <code>blog/admin.py</code> a vložíme do neho:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Post</span><span class="p">)</span>
+</pre></div><p>Viac informácii k rozhraniu admin nájdete v <a href="https://docs.djangoproject.com/en/4.1/ref/contrib/admin/">dokumentácii Django</a>.</p>
+<p>Spustíme si webserver</p>
+<div class="highlight"><pre><code>$ python manage.py runserver</code></pre></div><p>V prehliadači si otvoríme stránku <code>http://127.0.0.1:8000/admin/</code>.</p>
+<p><span class="figure"><a href="naucse:static?filename=login.png"><img src="naucse:static?filename=login.png" alt="Login"></a></span></p>
+<p>Pre prihlásenie do rozhrania je potrebné vytvoriť si tzv. superuser-a, účet ktorý má v administrátorskom rozhraní plnú kontrolu.
+Otvoríme si nový terminál (webserver nám musí stále bežať) v ktorom máme zapnutý venv a zadáme do neho:</p>
+<div class="highlight"><pre><code>$ python manage.py createsuperuser</code></pre></div><p>Zadáme údaje (heslo sa pri písaní nezobrazuje). Napr.:</p>
+<div class="highlight"><pre><code>Username: alby
+Email address: alby@example.com
+Password:
+Password (again):
+Superuser created successfully.</code></pre></div><p>Vrátime sa späť do prehliadača a údaje použijeme pre prihlásenie. Mali by sme sa po prihlásení dostať do administrátorského rozhrania:</p>
+<p><span class="figure"><a href="naucse:static?filename=admin.png"><img src="naucse:static?filename=admin.png" alt="Admin"></a></span></p>
+<p>Vytvoríme si nejaké príspevky pomocou sekcie Posts.</p>
+<p><span class="figure"><a href="naucse:static?filename=post.png"><img src="naucse:static?filename=post.png" alt="Post"></a></span></p>
+<h1 id="django_orm_object-relational-mapper">Django ORM (Object-Relational-Mapper)
+<a href="#header-django_orm_object-relational-mapper" class="header-link">#</a>
+</h1>
+<p>Umožňuje interakcie s databázou.</p>
+<p>Otvoríme si Django konzolu</p>
+<div class="highlight"><pre><code>$ python manage.py shell</code></pre></div><p>Naimportujeme si náš model</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">blog.models</span> <span class="kn">import</span> <span class="n">Post</span>
+</pre></div><p>Výpis všetkých objektov:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">my</span> <span class="n">post</span> <span class="n">title</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">another</span> <span class="n">post</span> <span class="n">title</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div><p>V konzoli si môžeme tvoriť nové objekty:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">me</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sample title&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+</pre></div><p>V konzoli uvidíme chybovú hlášku. Čo nám hovorí?</p>
+<p>Premenná <code>me</code> je neznáma a aby sme mohli vytvoriť <code>Post</code>, potrebujeme do poľa <code>author</code> predať objekt užívateľa.</p>
+<p>Naimportujeme si Django model <code>User</code>:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+</pre></div><p>Vypíšeme si existujúcich užívateľov.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">User</span><span class="p">:</span> <span class="n">alby</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div><p>Do premennej si uložíme svojho užívateľa:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">me</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;alby&#39;</span><span class="p">)</span>
+</pre></div><p>Vyskúšame vytvoriť znova:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">me</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sample title&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Sample</span> <span class="n">title</span><span class="o">&gt;</span>
+</pre></div><p>Z existujúcich príspevkov môžeme filtrovať:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">title__contains</span><span class="o">=</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Sample</span> <span class="n">title</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="mi">4</span><span class="n">th</span> <span class="n">title</span> <span class="n">of</span> <span class="n">post</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div><p>Skúsime si vyfiltrovať publikované:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">published_date__lte</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[]</span><span class="o">&gt;</span>
+</pre></div><p>Zatiaľ nemáme žiadne publikované články, môžeme nejaké publikovať pomocou metódy <code>publish()</code>:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Sample title&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">post</span><span class="o">.</span><span class="n">publish</span><span class="p">()</span>
+</pre></div><p>Vo vyfiltrovaných publikovaných príspevkoch teraz uvidíme náš príspevok:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">published_date__lte</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Sample</span> <span class="n">title</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div><p>Objekty si môžeme zoradiť:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;created_date&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Sample</span> <span class="n">title</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Post</span> <span class="n">number</span> <span class="mi">2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">My</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">post</span><span class="err">!</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="mi">4</span><span class="n">th</span> <span class="n">title</span> <span class="n">of</span> <span class="n">post</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div><p>Prípadne reversne:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-created_date&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Sample</span> <span class="n">title</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Post</span> <span class="n">number</span> <span class="mi">2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">My</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">post</span><span class="err">!</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="mi">4</span><span class="n">th</span> <span class="n">title</span> <span class="n">of</span> <span class="n">post</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div><p>Reťazenie:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">published_date__lte</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;published_date&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Post</span> <span class="n">number</span> <span class="mi">2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">My</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">post</span><span class="err">!</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="mi">4</span><span class="n">th</span> <span class="n">title</span> <span class="n">of</span> <span class="n">post</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Post</span><span class="p">:</span> <span class="n">Sample</span> <span class="n">title</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div><p>Konzolu opustíme:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">exit</span><span class="p">()</span>
+</pre></div><p>Viac informácii k ORM nájdete v <a href="https://docs.djangoproject.com/en/4.1/topics/db/queries/">dokumentácii Django</a>.</p>
+<h1 id="django_urls">Django URLs
+<a href="#header-django_urls" class="header-link">#</a>
+</h1>
+<p>Django využíva URLconf (URL configuration), ktorý obsahuje zoznam schémat na základe ktorých sa párujú Python triedy (tzv. views) s URL cestami.</p>
+<p>V <code>pyladies_project/urls.py</code> už máme:</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;pyladies_project URL Configuration</span>
+
+<span class="sd">The `urlpatterns` list routes URLs to views. For more information please see:</span>
+<span class="sd">    https://docs.djangoproject.com/en/4.0/topics/http/urls/</span>
+<span class="sd">Examples:</span>
+<span class="sd">Function views</span>
+<span class="sd">    1. Add an import:  from my_app import views</span>
+<span class="sd">    2. Add a URL to urlpatterns:  path(&#39;&#39;, views.home, name=&#39;home&#39;)</span>
+<span class="sd">Class-based views</span>
+<span class="sd">    1. Add an import:  from other_app.views import Home</span>
+<span class="sd">    2. Add a URL to urlpatterns:  path(&#39;&#39;, Home.as_view(), name=&#39;home&#39;)</span>
+<span class="sd">Including another URLconf</span>
+<span class="sd">    1. Import the include() function: from django.urls import include, path</span>
+<span class="sd">    2. Add a URL to urlpatterns:  path(&#39;blog/&#39;, include(&#39;blog.urls&#39;))</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div><p><code>path('admin/', admin.site.urls)</code> znamená, že pre všetky URL, ktoré začínajú na <code>admin/</code> Django nájde korešpondujúce view. V tomto prípade to zahŕňa veľké množstvo admin podstránok, ktoré sú zabalené do jedného súboru z modulu admin.</p>
+<p>Aby sme do URLs nášho projektu zahrnuli aj schémata z našej aplikácie blog, pridáme ich do <code>urlpatterns</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;blog.urls&#39;</span><span class="p">)),</span>
+<span class="p">]</span>
+</pre></div><p>Toto zaistí, že pri všetkých requestoch smerujúcich na <code>http://127.0.0.1:8000/</code> sa Django pozrie do <code>blog.urls</code> a hľadá tam ďalšie inštrukcie.</p>
+<p>Vytvorenie vlastných URL pre aplikáciu blog v súbore <code>blog/urls.py</code>:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">PostListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;post_list&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div><p>K root URL adrese teraz priraďujeme view <code>PostListView</code>. Toto URL schéma sa napáruje na prázdny reťazec a Django URL resolver bude ignorovať názov domény (t. j. <code>http://127.0.0.1:8000/</code>), ktorý je predponou celej URL. Toto schéma povie Djangu, že PostListView je to správne miesto, kam ísť, ak niekto vstúpi na '<a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>'.</p>
+<p>Posledná časť <code>name='post_list'</code> je názov URL, ktorý budeme používať na identifikáciu. Názvy URL budeme ďalej v aplikácii používať, je dôležité aby boli unikátne, jednoduché na zapamätenie a mali výpovednú hodnotu.</p>
+<p>Ak by sme si teraz spustili webserver tak by sme v termináli mali vidieť hlášku:</p>
+<div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;/home/alby/www/django_project/blog/urls.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">PostListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;post_list&#39;</span><span class="p">),</span>
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="n">module</span> <span class="s1">&#39;blog.views&#39;</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;PostListView&#39;</span>
+</pre></div><p>Tá nám hovorí, že PostListView naša aplikácia nepozná, preto si ju musíme vytvoriť.</p>
+<p>Viac informácii k URLs nájdete v <a href="https://docs.djangoproject.com/en/4.1/topics/http/urls/">dokumentácii Django</a>.</p>
+<h1 id="django_views">Django views
+<a href="#header-django_views" class="header-link">#</a>
+</h1>
+<p>Do súboru <code>blog/views.py</code> si pridáme novú view.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+
+
+<span class="k">class</span> <span class="nc">PostListView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;blog/post_list.html&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template_name</span><span class="p">,</span> <span class="p">{})</span>
+</pre></div><p>Naša view dedí z <code>TeplateView</code>, ktoré je vytvorené v Django frameworku a už má v sebe zabudovanú funkcionalitu, ktorú prevezmeme do nášho view (spomeňme si na dedičnosť tried). Do atribútu triedy <code>template_name</code> uložíme názov šablóny pre danú stránku.</p>
+<p>Do našej triedy pridáme aj metódu <code>get()</code>, ktorá si za argument vezme <code>request</code> (všetky informácie ktoré dostane od užívateľa pri jeho pristúpení na stránku) a vráti nám hodnotu, ktorú vráti funkcia <code>render()</code>.</p>
+<p>Funkcia <code>render()</code> je v Djangu jedna z najpoužívanejších funkcií, ktorá vezme kombinuje šablónu (hodnota v našej <code>template_name</code>) s kontextom a vráti <code>HttpResponse objekt</code> s príslušným kontextom.</p>
+<p>Viac informácii k views nájdete v <a href="https://docs.djangoproject.com/en/4.1/ref/class-based-views/base/">dokumentácii Django</a>.</p>
+<h1 id="html_sablony_v_django">HTML šablóny v Django
+<a href="#header-html_sablony_v_django" class="header-link">#</a>
+</h1>
+<p>HTML šablóna je súbor v jazyku HTML, ktorý sa dá prepoužiť pre zobrazenie rôznych informácií v konzistentnom formáte.</p>
+<p>HTML (HyperText Markup Language) je kód interpretovaný prehliadačom pre zobrazenie webovej stránky užívateľovi.</p>
+<p>Je zložený z tzv. tagov každý začínajúci na <code>&lt;</code> a končiaci na <code>&gt;</code>, ktoré reprezentujú elementy.</p>
+<p>Pre vytvorenie prvej šablóny si v zložke blog vytvoríme následovné podzložky:</p>
+<div class="highlight"><pre><code>blog
+└───templates
+    └───blog</code></pre></div><p>A v zložke <code>blog/templates/blog</code> si vytvoríme súbor <code>post_list.html</code>.</p>
+<p>Pridáme:</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Alby&#39;s blog<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hi there!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It works!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div><p><code>!DOCTYPE html</code> - nie je to HTML tag, určuje typ dokumentu.
+<code>html</code> - ohraničuje obsah stránky.
+<code>head</code> - obsahuje rôzne informácie pre dokument, ktoré sa užávateľovi nezobrazujú.
+<code>body</code> - všetko ostatné, čo sa užívateľovi na stráne zobrazuje.</p>
+<p>Rôzne HTML tagy nájdte vypísané napr. <a href="https://www.w3schools.com/TAGS/default.asp">tu</a>.</p>
+<p>Dôležité je nezabúdať na odsadenie v zanorených tagoch a ukončovací tag (až na výnimky, napr. <code>&lt;br&gt;</code>).</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Django Girls blog<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Django Girls Blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">time</span><span class="p">&gt;</span>published: 14.06.2014, 12:14<span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>My first post<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">time</span><span class="p">&gt;</span>published: 14.06.2014, 12:14<span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>My second post<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div><p>Zatiaľ však pomocou šablóny zobrazujeme presne stanovené informácie, no šablóny by nám predovšetkým mali umožniť zobrazovať rôzne informácie v rovnakom formáte.</p>
+<p>Chceme zobraziť objekty modelu <code>Post</code>, ktoré sme si vytvorili.</p>
+<h1 id="dynamicke_data_v_sablonach">Dynamické dáta v šablónach
+<a href="#header-dynamicke_data_v_sablonach" class="header-link">#</a>
+</h1>
+<p>Pre zobrazenie nami vytvorených publikovaných príspevkov (modely uložené do databáze) v našej šablóne využijeme <code>PostListView()</code> v súbore <code>views.py</code>.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+
+
+<span class="k">class</span> <span class="nc">PostListView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;blog/post_list.html&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template_name</span><span class="p">,</span> <span class="p">{})</span>
+</pre></div><ol>
+<li>Naimportujeme si model <code>Post()</code> a modul <code>timezone</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
+</pre></div><ol>
+<li>Vytvoríme si Queryset (zoznam objektov z databáze, umožňuje čítať, radiť či filtrovať dáta z databáze).</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">published_date__lte</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;published_date&#39;</span><span class="p">)</span>
+</pre></div><ol>
+<li>Uložíme si ho do premennej</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">posts</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">published_date__lte</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;published_date&#39;</span><span class="p">)</span>
+</pre></div><ol>
+<li>Premennú pridáme do posledného parametru funkcie <code>render()</code>, ktorá sa nazýva <code>context</code> a nesie v sebe informácie, ktoré chceme šablóne poskytnúť.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
+
+<span class="k">class</span> <span class="nc">PostListView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;blog/post_list.html&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">posts</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">published_date__lte</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;published_date&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template_name</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;posts&#39;</span><span class="p">:</span> <span class="n">posts</span><span class="p">})</span>
+</pre></div><ol>
+<li>Pridáme dáta do šablóny.</li>
+</ol>
+<p>Vypísanie jednotlivých príspevkov:</p>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">posts</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">post</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div><p>Vypísanie jednotlivých príspevkov a ich detailov</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Django Girls Blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">posts</span> <span class="cp">%}</span>
+    <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">time</span><span class="p">&gt;</span>published: <span class="cp">{{</span> <span class="nv">post.published_date</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.text</span> <span class="o">|</span> <span class="nf">linebreaksbr</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
