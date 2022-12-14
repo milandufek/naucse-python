@@ -177,7 +177,8 @@ sessions:
   slug: databases
   date: 2022-12-14
   materials:
-  - lesson: intro/django
+  - lesson: intro/django/installation
+  - lesson: intro/django/basics
   - lesson: beginners/database
   - lesson: intro/flask
   # - lesson: homeworks/flask_project
@@ -187,7 +188,7 @@ sessions:
 #   slug: asteroids
 #   date: 2023-01-18
 #   materials:
-#   - lesson: homeworks/own_project
+#   - lesson: homeworks/final_project
 
 extra_lessons:
   - beginners/exceptions
