@@ -1423,7 +1423,20 @@
                     }
                 },
                 "source_file": "lessons/intro/django/basics/info.yml",
-                "static_files": {},
+                "static_files": {
+                    "admin.png": {
+                        "path": "basics/admin.png"
+                    },
+                    "django.png": {
+                        "path": "basics/django.png"
+                    },
+                    "login.png": {
+                        "path": "basics/login.png"
+                    },
+                    "post.png": {
+                        "path": "basics/post.png"
+                    }
+                },
                 "title": "Django úvod"
             },
             "intro/django/installation": {
