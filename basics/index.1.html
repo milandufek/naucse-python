@@ -254,11 +254,11 @@ Superuser created successfully.</code></pre></div><p>Vrátime sa späť do prehl
 <div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Django Girls blog<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Pyladies blog<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Django Girls Blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Pyladies blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
 
         <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
@@ -319,20 +319,94 @@ Superuser created successfully.</code></pre></div><p>Vrátime sa späť do prehl
 </pre></div><ol>
 <li>Pridáme dáta do šablóny.</li>
 </ol>
-<p>Vypísanie jednotlivých príspevkov:</p>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">posts</span> <span class="cp">%}</span><span class="x"></span>
-<span class="x">    </span><span class="cp">{{</span> <span class="nv">post</span> <span class="cp">}}</span><span class="x"></span>
-<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div><p>Vypísanie jednotlivých príspevkov a ich detailov</p>
+<p>Vypísanie jednotlivých príspevkov a ich detailov v našej šablóne urobíme tak, že obsah elementu <code>&lt;body&gt;</code> vymeníme za:</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Django Girls Blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Pyladies blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
 
 <span class="cp">{%</span> <span class="k">for</span> <span class="nv">post</span> <span class="k">in</span> <span class="nv">posts</span> <span class="cp">%}</span>
     <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">time</span><span class="p">&gt;</span>published: <span class="cp">{{</span> <span class="nv">post.published_date</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.text</span> <span class="o">|</span> <span class="nf">linebreaksbr</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.title</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">{{</span> <span class="nv">post.text</span><span class="o">|</span><span class="nf">linebreaksbr</span> <span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
 <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-</pre></div>
+</pre></div><h1 id="django_formulare">Django formuláre
+<a href="#header-django_formulare" class="header-link">#</a>
+</h1>
+<p>Pridanie príspevku sme si ukazovali v administrátorskom rozhraní a v Django konzoli. Bolo by fajn, mať možnosť si príspevok vytvoriť priamo v našej aplikácii. To nám umožní práve formulár.</p>
+<p>Vytvoríme si súbor <code>forms.py</code> v našej zložke blog:</p>
+<div class="highlight"><pre><code>blog
+   └── forms.py</code></pre></div><p>Pridáme do neho:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Post</span>
+
+<span class="k">class</span> <span class="nc">PostForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Post</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,)</span>
+</pre></div><p><code>PostForm</code> je názov nášho formulára a tým, že dedí z triedy <code>forms.ModelForm</code> hovoríme Djangu že je to <code>ModelForm</code> - t.j. formulár priamo naviazaný na konkrétny model.</p>
+<p>V triede <code>Meta</code>, kde určíme aký model Django v tomto formulári použije. Určíme field(s) - polia, ktoré bude náš formulár obsahovať. Budeme chcieť iba <code>title</code> a <code>text</code>, <code>author</code> bude aktuálne prihlásený užívateľ (t.j. ten náš ktorého sme si vytvorili) a <code>created_date</code> sa naplní automaticky pri vytvorení prípevku.</p>
+<h1 id="url_pre_pridanie_noveho_prispevku">URL pre pridanie nového príspevku
+<a href="#header-url_pre_pridanie_noveho_prispevku" class="header-link">#</a>
+</h1>
+<p>Do blog/urls.py pridáme novú URL.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">PostListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;post_list&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;post_new/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">PostNewView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;post_new&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div><h1 id="view_pre_pridanie_noveho_prispevku">View pre pridanie nového príspevku
+<a href="#header-view_pre_pridanie_noveho_prispevku" class="header-link">#</a>
+</h1>
+<p>Do súboru <code>blog/views.py</code> si naimportujeme náš formulár, Django triedu <code>FormView</code> a triedu <code>HttpResponseRedirect</code>.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.views.generic.edit</span> <span class="kn">import</span> <span class="n">FormView</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+<span class="kn">from</span> <span class="nn">.forms</span> <span class="kn">import</span> <span class="n">PostForm</span>
+</pre></div><p>Vytvoríme si view pre pridanie nového príspevku:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PostNewView</span><span class="p">(</span><span class="n">FormView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;blog/post_new.html&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">PostForm</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">template_name</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;form&#39;</span><span class="p">:</span> <span class="n">form</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">PostForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">post</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">post</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+            <span class="n">post</span><span class="o">.</span><span class="n">published_date</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+            <span class="n">post</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</pre></div><p><code>PostNewView()</code> trieda obsahuje dve metódy <code>get()</code> a <code>post()</code>.</p>
+<p>Metódu <code>get()</code> Django použije pri pristúpení (requeste) užívateľa na stránku pričom náš formulár predávame šablóne k dispozícii aby ho pre užívateľa mohla pripraviť.</p>
+<p>Metódu <code>post()</code> Django použije pri odoslaní formulára (ukážeme si ako to zadefinujeme priamo v šablóne) a v requeste má v tejto situácii nejaké nové dáta práve z nášho formuláru.</p>
+<p>Tieto dáta využijeme na vytvorenie nového objektu modelu <code>Post</code>, ktorý je naviazaný na náš formulár. Po uložení nás Django presmeruje na domovskú stránku.</p>
+<h1 id="sablona_pre_pridanie_noveho_prispevku">Šablóna pre pridanie nového príspevku
+<a href="#header-sablona_pre_pridanie_noveho_prispevku" class="header-link">#</a>
+</h1>
+<p>Vytvoríme si novú šablónu <code>post_new.html</code> a pridáme do nej:</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Pyladies blog<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Pyladies blog<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>New post<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-form&quot;</span><span class="p">&gt;</span><span class="cp">{%</span> <span class="k">csrf_token</span> <span class="cp">%}</span>
+            <span class="cp">{{</span> <span class="nv">form.as_p</span> <span class="cp">}}</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;save btn btn-secondary&quot;</span><span class="p">&gt;</span>Save<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div><p>Dôležitý je element <code>&lt;form&gt;</code>, ktorý reprezentuje náš formulár a pomocou parametru <code>method="POST"</code> určuje, že odoslaním formuláru pomocou tlačítka <code>&lt;button&gt;</code>sa dáta odošlú a naše <code>PostNewView()</code> bude vedieť, že metóda requestu je <code>POST</code> a použije teda adekvátnu metódu.</p>
