@@ -448,11 +448,11 @@ Dôležité je nezabúdať na odsadenie v zanorených tagoch a ukončovací tag 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Pyladies blog</title>
     </head>
     <body>
         <header>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1><a href="/">Pyladies blog</a></h1>
         </header>
 
         <article>
@@ -528,30 +528,137 @@ class PostListView(TemplateView):
 
 5. Pridáme dáta do šablóny.
 
-Vypísanie jednotlivých príspevkov:
-
-{% raw %}
-```jinja
-{% for post in posts %}
-    {{ post }}
-{% endfor %}
-```
-{% endraw %}
-
-Vypísanie jednotlivých príspevkov a ich detailov
+Vypísanie jednotlivých príspevkov a ich detailov v našej šablóne urobíme tak, že obsah elementu `<body>` vymeníme za:
 
 {% raw %}
 ```html+jinja
 <header>
-    <h1><a href="/">Django Girls Blog</a></h1>
+    <h1><a href="/">Pyladies blog</a></h1>
 </header>
 
 {% for post in posts %}
     <article>
         <time>published: {{ post.published_date }}</time>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text | linebreaksbr }}</p>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <hr>
     </article>
 {% endfor %}
 ```
 {% endraw %}
+
+
+Django formuláre
+==================
+
+Pridanie príspevku sme si ukazovali v administrátorskom rozhraní a v Django konzoli. Bolo by fajn, mať možnosť si príspevok vytvoriť priamo v našej aplikácii. To nám umožní práve formulár.
+
+Vytvoríme si súbor `forms.py` v našej zložke blog:
+
+```
+blog
+   └── forms.py
+```
+
+Pridáme do neho:
+
+```python
+from django import forms
+
+from .models import Post
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('title', 'text',)
+
+```
+
+`PostForm` je názov nášho formulára a tým, že dedí z triedy `forms.ModelForm` hovoríme Djangu že je to `ModelForm` - t.j. formulár priamo naviazaný na konkrétny model.
+
+V triede `Meta`, kde určíme aký model Django v tomto formulári použije. Určíme field(s) - polia, ktoré bude náš formulár obsahovať. Budeme chcieť iba `title` a `text`, `author` bude aktuálne prihlásený užívateľ (t.j. ten náš ktorého sme si vytvorili) a `created_date` sa naplní automaticky pri vytvorení prípevku.
+
+URL pre pridanie nového príspevku
+====================================
+
+Do blog/urls.py pridáme novú URL.
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.PostListView.as_view(), name='post_list'),
+    path('post_new/', views.PostNewView.as_view(), name='post_new'),
+]
+```
+
+View pre pridanie nového príspevku
+====================================
+
+Do súboru `blog/views.py` si naimportujeme náš formulár, Django triedu `FormView` a triedu `HttpResponseRedirect`.
+
+```python
+from django.views.generic.edit import FormView
+from django.http import HttpResponseRedirect
+from .forms import PostForm
+```
+
+Vytvoríme si view pre pridanie nového príspevku:
+
+```python
+class PostNewView(FormView):
+    template_name = 'blog/post_new.html'
+
+    def get(self, request):
+        form = PostForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return HttpResponseRedirect('/')
+
+```
+
+`PostNewView()` trieda obsahuje dve metódy `get()` a `post()`.
+
+Metódu `get()` Django použije pri pristúpení (requeste) užívateľa na stránku pričom náš formulár predávame šablóne k dispozícii aby ho pre užívateľa mohla pripraviť.
+
+Metódu `post()` Django použije pri odoslaní formulára (ukážeme si ako to zadefinujeme priamo v šablóne) a v requeste má v tejto situácii nejaké nové dáta práve z nášho formuláru.
+
+Tieto dáta využijeme na vytvorenie nového objektu modelu `Post`, ktorý je naviazaný na náš formulár. Po uložení nás Django presmeruje na domovskú stránku.
+
+Šablóna pre pridanie nového príspevku
+======================================
+
+Vytvoríme si novú šablónu `post_new.html` a pridáme do nej:
+
+{% raw %}
+```html+jinja
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pyladies blog</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="/">Pyladies blog</a></h1>
+        </header>
+
+        <h2>New post</h2>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-secondary">Save</button>
+        </form>
+    </body>
+</html>
+```
+{% endraw %}
+
+Dôležitý je element `<form>`, ktorý reprezentuje náš formulár a pomocou parametru `method="POST"` určuje, že odoslaním formuláru pomocou tlačítka `<button>`sa dáta odošlú a naše `PostNewView()` bude vedieť, že metóda requestu je `POST` a použije teda adekvátnu metódu.
