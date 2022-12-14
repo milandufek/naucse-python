@@ -184,11 +184,11 @@ sessions:
   # - lesson: homeworks/flask_project
   #   type: homework
 
-# - title: Závěrečné projekty - prezentace
-#   slug: asteroids
-#   date: 2023-01-18
-#   materials:
-#   - lesson: homeworks/final_project
+- title: Závěrečné projekty - prezentace
+  slug: asteroids
+  date: 2023-01-25
+  materials:
+  - lesson: homeworks/final_project
 
 extra_lessons:
   - beginners/exceptions
