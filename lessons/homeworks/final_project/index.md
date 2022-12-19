@@ -18,26 +18,26 @@ Závěrečný projekt je nejen zakončením kurzu, ale může velmi dobře poslo
 Základní znalosti si získala na kurzu, ale o svém vybraném tématu si budeš muset něco nastudovat i sama. Projektem nemáš jen ukázat, že jsi zvládla pochopit látku kurzu, ale že se dokážeš sama dále vzdělávat a řešit složitější problémy.
 
 ## Kouč tvého projektu
-S projektem ti nemusí pomáhat kouč, který ti pomáhal celý semestr. Každý z koučů je dobrý v něčem jiném, takže by bylo dobré využít jeho znalostí a vedení v jeho specializaci. Podle toho, co si vybereš za téma, tak pak napiš příslušnému kouči.
+S projektem ti nemusí pomáhat pouze kouč, který ti pomáhal celý semestr. Každý z koučů je dobrý v něčem jiném, takže by bylo dobré využít jeho znalostí v jeho specializaci. Podle toho, co si vybereš za téma, tak pak můžeš kontaktovat i jiné kouče.
 
-##### Alby
+#### Alby
 Konzole tě moc nebaví, raději pracuješ s grafikou a moderní interaktivními aplikacemi?
 Web v Djangu je pro to ideální a těžko najít v našem týmu někoho lepšího než Alby.
 
-##### Milan
+#### Milan
 Ráda šetříš čas automatizací, pracuješ s daty a analyzuješ?
 Pak zkus Milana, který má v téhle oblasti zkušenosti z praxe a může ti pomoct při scrapingu webů, datovou analýzou a vývojem automatizačních nástrojů.
 
-##### Patrik
+#### Patrik
 Zajímají tě databáze, API a co se děje na pozadí webu ale ne UI?
 Radši by si vystavovala endpointy a vracela JSONy než řešila formátování testu a barvičky?
 Patrik tě rád dovede až k práci backend vývojářky.
 
-##### Přema
+#### Přema
 Pokud ráda zkoumáš problémy do hloubky a chceš si vyzkoušet například analyzovat jazyk nebo vytvořit vlastní?
 Přema se tímto rád baví taky a bude ti dobrým pomocníkem. Dále pomůže v optimalizaci řešení složitějších problémů.
 
-##### Zdeněk
+#### Zdeněk
 Líbila se ti Flasková aplikace, ale přišla ti moc nudná, když vracela jen text?
 Jestli by tě bavilo jí obarvit a rozhýbat, tak napiš Zdeňkovi.
 Sám obarvil a rozhýbal několik webových aplikací, takže ti s roky zkušeností bude dobrým koučem.
@@ -65,4 +65,4 @@ Každá firma může mít vlastní tzv. code style, podle kterého formátuje k�
 
 Na projekt si udělej nový repositář na [GitHubu](https://github.com). Zkus se vyhnout commit messages ve stylu `done`, `fixed bug` a podobně. Na hezkých a dobře vysvětlující **commit messages** záleží víc než si myslíš. Společně s kvalitní dokumentací pomáhají ostatním vývojářům a tobě v budoucnu se nezamotat v nic neříkajícím kódu bez vysvětlení. Jak psát hezké commit messages najdeš [zde](https://chris.beams.io/posts/git-commit/).
 
-Doufám, že si práci na závěrečném projektu užiješ a budeme se těšit na jeho prezentaci na konci ledna 2023 v 18h klasicky v Nekavárně, bude upřesněno na poslední hodině.
+Doufám, že si práci na závěrečném projektu užiješ a budeme se těšit na jeho prezentaci 25.1.2023 v 18h klasicky v Nekavárně.
