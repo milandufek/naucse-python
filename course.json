@@ -988,6 +988,71 @@
                 "static_files": {},
                 "title": "Cyklus While"
             },
+            "django/basics": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz PyLadies Brno v Mergadu napsala Alby Waageová, 2022."
+                        ],
+                        "content": {
+                            "path": "basics/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/django/basics/index.md",
+                        "title": "Django úvod",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/django/basics/info.yml",
+                "static_files": {
+                    "admin.png": {
+                        "path": "basics/admin.png"
+                    },
+                    "django.png": {
+                        "path": "basics/django.png"
+                    },
+                    "login.png": {
+                        "path": "basics/login.png"
+                    },
+                    "post.png": {
+                        "path": "basics/post.png"
+                    }
+                },
+                "title": "Django úvod"
+            },
+            "django/installation": {
+                "pages": {
+                    "index": {
+                        "attribution": [
+                            "Pro kurz PyLadies Brno v Mergadu napsala Alby Waageová, 2022."
+                        ],
+                        "content": {
+                            "path": "installation/index.html"
+                        },
+                        "license": "cc-by-sa-40",
+                        "slug": "index",
+                        "solutions": [],
+                        "source_file": "lessons/django/installation/index.md",
+                        "title": "Django instalace",
+                        "vars": {
+                            "coach-present": true,
+                            "pyladies": true
+                        }
+                    }
+                },
+                "source_file": "lessons/django/installation/info.yml",
+                "static_files": {
+                    "home.png": {
+                        "path": "installation/home.png"
+                    }
+                },
+                "title": "Django instalace"
+            },
             "fast-track/http": {
                 "pages": {
                     "index": {
@@ -1024,7 +1089,7 @@
                             "Pro PyLadies Brno napsal Petr Viktorin, 2015-2017."
                         ],
                         "content": {
-                            "path": "basics/index.html"
+                            "path": "basics/index.1.html"
                         },
                         "css": ".green  {   color:  #0a0;    }\n.red    {   color:  #a00;    }\n.yellow {   color:  #a50;    }\n.strong {   font-weight:  bold;    }\n.blue   {   color:  #0aa;    }\n",
                         "license": "cc-by-sa-40",
@@ -1425,71 +1490,6 @@
                 "source_file": "lessons/homeworks/test/info.yml",
                 "static_files": {},
                 "title": "Domácí projekty"
-            },
-            "intro/django/basics": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "Pro kurz PyLadies Brno v Mergadu napsala Alby Waageová, 2022."
-                        ],
-                        "content": {
-                            "path": "basics/index.1.html"
-                        },
-                        "license": "cc-by-sa-40",
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/intro/django/basics/index.md",
-                        "title": "Django úvod",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true
-                        }
-                    }
-                },
-                "source_file": "lessons/intro/django/basics/info.yml",
-                "static_files": {
-                    "admin.png": {
-                        "path": "basics/admin.png"
-                    },
-                    "django.png": {
-                        "path": "basics/django.png"
-                    },
-                    "login.png": {
-                        "path": "basics/login.png"
-                    },
-                    "post.png": {
-                        "path": "basics/post.png"
-                    }
-                },
-                "title": "Django úvod"
-            },
-            "intro/django/installation": {
-                "pages": {
-                    "index": {
-                        "attribution": [
-                            "Pro kurz PyLadies Brno v Mergadu napsala Alby Waageová, 2022."
-                        ],
-                        "content": {
-                            "path": "installation/index.html"
-                        },
-                        "license": "cc-by-sa-40",
-                        "slug": "index",
-                        "solutions": [],
-                        "source_file": "lessons/intro/django/installation/index.md",
-                        "title": "Django instalace",
-                        "vars": {
-                            "coach-present": true,
-                            "pyladies": true
-                        }
-                    }
-                },
-                "source_file": "lessons/intro/django/installation/info.yml",
-                "static_files": {
-                    "home.png": {
-                        "path": "installation/home.png"
-                    }
-                },
-                "title": "Django instalace"
             },
             "intro/flask": {
                 "pages": {
@@ -2168,12 +2168,12 @@
                 "date": "2022-12-14",
                 "materials": [
                     {
-                        "lesson_slug": "intro/django/installation",
+                        "lesson_slug": "django/installation",
                         "title": "Django instalace",
                         "type": "lesson"
                     },
                     {
-                        "lesson_slug": "intro/django/basics",
+                        "lesson_slug": "django/basics",
                         "title": "Django úvod",
                         "type": "lesson"
                     },
