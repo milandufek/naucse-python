@@ -177,8 +177,8 @@ sessions:
   slug: databases
   date: 2022-12-14
   materials:
-  - lesson: intro/django/installation
-  - lesson: intro/django/basics
+  - lesson: django/installation
+  - lesson: django/basics
   - lesson: beginners/database
   - lesson: intro/flask
   # - lesson: homeworks/flask_project
